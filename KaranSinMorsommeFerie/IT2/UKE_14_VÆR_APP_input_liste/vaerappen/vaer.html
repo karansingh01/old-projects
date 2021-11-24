@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vaer.js"></script>
+    <script src="steder.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.1/css/foundation-float.min.css">
+
+    <title>Værappen</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3rem;
+        }
+        h1{
+            text-align: center;
+        }
+        select{
+            width: 200px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Værappen</h1>
+    <select name="selBy" id="selBy">
+        <option>Velg by</option>
+    </select>
+
+    <div id="divVaer">
+
+    </div>
+
+    <script>
+
+        const selBy = document.querySelector("#selBy")
+        const divVaer = document.querySelector("#divVaer")
+for(let sted of Object.keys(steder)){
+  console.log(sted);
+  selBy.innerHTML += `
+<option value=${sted}>${sted}</option>
+  `;
+}
+
+selBy.onchange= function() {
+divVaer.innerHTML= `<h1>${selBy.value}</h1>`;
+let lat = steder[selBy.value].lat
+let lon = steder[selBy. value].lon
+hentData(lat, lon);
+
+}
+async function hentData(lat, lon){
+  const url = `https://api.met.no/weatherapi/locationforecast/2.0/.json?lat=${lat}&lon=${lon}`
+  const svar = await fetch(url);
+  const data = await svar.json();
+  const temp = data.properties.timeseries[0].data .instant.details.air_temperature;
+  let type = data.properties.timeseries[0].data.next_1_hours.summary.symbol_code;
+  type = type.split("_")[0]
+  divVaer.innerHTML+= `
+<p>${typer[type].beskrivelse}${typer[type].emoji}</p>
+<p>Temp:${temp}</p>`;
+}
+
+
+
+    </script>
+</body>
+</html>

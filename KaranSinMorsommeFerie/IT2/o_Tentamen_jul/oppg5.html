@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title><style media="screen">
+      #input_felt{
+        display:none;
+        padding-left: 500px;
+        padding-top: 300px;
+      }
+      #divInfo{
+        padding-left: 500px;
+        padding-top: 30px;
+      }
+      #btn_gjester{
+        background-color: lightblue;
+        padding:5px;
+      }
+      #btn_videre{
+        padding: 50px;
+        margin-top: 20px;
+        margin-left: 500px;
+        display:none;
+        background-color: lightblue;
+
+      }
+      #divOpplysning{
+        display:none;
+        margin-left: 300px;
+        margin-top: 20px;
+        background-color: lightblue;
+
+      }
+      #btnFerdig{
+        display:none;
+        margin-left: 500px;
+        background-color: lightblue;
+
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div id="app">
+      <div id="bilder">
+
+      <img id="imgMiddag" src="vedlegg/middag.png">
+      <img id="middager_2" src="vedlegg/matkasse2.png">
+      <img id="middager_3" src="vedlegg/matkasse3.png">
+    </div>
+
+    <div id="input_felt">
+
+    <label for="inpVerdi">Skriv inn hvor mange gjester det er før du går videre:</label>
+    <input id="verdi" type="number" name="" placeholder="skriv inn antall gjester " required value="">
+    <button id="btn_gjester" type="button" name="button">send inn hvor mange gjester før du går videre</button>
+    </div>
+
+      <div id="divInfo">
+
+      </div>
+      <button type="button" id="btn_videre" name="button">Trykk her for å gå videre</button>
+
+      <div id="divOpplysning">
+        <label for="inpNavn">Navn:</label>
+        <input id="inpNavn" type="text" placeholder="navn" value="">
+
+        <label for="inpMail">Adresse:</label>
+        <input id="inpAdresse" type="text" placeholder="Adresse:" value="">
+
+        <button id="btnRegistrer" type="button" name="button">Registrer</button>
+        </div>
+        <button id="btnFerdig" type="button" name="button">Trykker her hvis du har bekreftet ordren</button>
+
+      </div>
+
+
+<script src="oppg5.js" charset="utf-8"></script>
+  </body>
+</html>

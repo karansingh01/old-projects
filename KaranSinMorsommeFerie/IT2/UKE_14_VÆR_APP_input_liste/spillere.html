@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>SPILLERE</h1>
+
+    <div id="spilere"></div>
+
+        <button id="btnHent"> hent inn spillere</button>
+
+    <script>
+
+
+        // https://pokeapi.co/api/v2/pokemon/pikachu
+
+        const btnHent = document.querySelector("#btnHent");
+        const spillere = document.querySelector("#spillere");
+
+
+        btnHent.onclick = async function(){
+            const url = "https://pokeapi.co/api/v2/pokemon/";
+            const res = await fetch(url);
+            const data = await res.json();
+            //console.log(data);
+            console.log(data.name);
+            console.log(data.sprites.front_default);
+
+            spillere.innerHTML = `
+                <h2>${data.name}</h2>
+                <img src=${data.sprites.front_default}>
+            `;
+        }
+
+
+    </script>
+
+  </body>
+</html>

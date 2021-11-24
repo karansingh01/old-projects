@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+<link rel="stylesheet" href="mld.css">
+  <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyACdQUmZXXAeDy4j7L3-0RNW2xMJwJQr1E",
+      authDomain: "minforstedatabase1-5e342.firebaseapp.com",
+      databaseURL: "https://minforstedatabase1-5e342.firebaseio.com",
+      projectId: "minforstedatabase1-5e342",
+      storageBucket: "minforstedatabase1-5e342.appspot.com",
+      messagingSenderId: "206856832804"
+    };
+
+
+
+
+    firebase.initializeApp(config);
+  </script>
+</head>
+
+<body>
+  <h1>Superchat</h1>
+<form id="skjema">
+  <input type="text" id="inpAvsender" required placeholder="Hvem er du?">
+  <input type="text" name="" id="inpMening" required placeholder="Hva sier du?">
+  <button type="button" class="button">Send</button>
+
+</form>
+<article id="txtMeldinger">
+</article>
+
+
+  <script type="text/javascript">
+    let database= firebase.database();
+    let meldinger = database.ref("meldinger");
+    let skjema=document.
+    getElementById("skjema");
+    let inpAvsender = document.
+    getElementById("inpAvsender");
+
+  let inpMening= document.
+  getElementById("inpMening");
+  function visMelding(snapshot) {
+    let melding= snapshot.val();
+    let meldingTekst= `<p>
+      <b>$ {melding.avsender}:</b>
+      <i>$ {melding.tekst}</i>
+      </p>
+      txtMeldinger.innerHTML = txtMeldinger.
+      innerHTML + meldingTekst;`
+  }
+
+function regNyMelding(evt){
+  evt.preventDefault();
+  var nyMelding = {
+    avsender: inpAvsender.value,
+    tekst:inpMening.value
+  };
+  meldinger.push(nyMelding);
+  inpMening.value="";
+}
+meldinger.on("child_added", visMelding);
+skjema.onsubmit = regNyMelding;
+</script>

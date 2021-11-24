@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>OM SISAKA</title>
+  <link rel="stylesheet" href="oss.css">
+
+  <script src="main.js">
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBXt6HrwrG3frVTfTwqeXKUOOmNr5jwON0",
+      authDomain: "hoved-klesbutikk-riktig.firebaseapp.com",
+      databaseURL: "https://hoved-klesbutikk-riktig.firebaseio.com",
+      projectId: "hoved-klesbutikk-riktig",
+      storageBucket: "hoved-klesbutikk-riktig.appspot.com",
+      messagingSenderId: "844489859082"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="main.js">
+
+  </script>
+</head>
+
+<body>
+  <header>
+    <!-- seksjon for den delen over søkemotoren -->
+    <section class="header_øverst">
+
+      <!-- kode for den lange hvite linjen øverst -->
+      <section class="lang">
+        <a>Gratis <b><span style="color:blue"> frakt</span></b> og <b><span style="color:blue">retur</span></b> året rundt</a>
+      </section>
+
+      <section class="usynlig">
+      </section>
+
+      <!-- kode for logoen -->
+      <section class="logo">
+        <a href="index.html"><img src="bilder_klær_riktig/ny_logo.png" alt="logo" class="logo"></a>
+      </section>
+
+      <section class="usynlig1">
+      </section>
+
+      <!-- kode for logg inn, ønskeliste og handlekurv knappene er under her  -->
+      <section class="lenke">
+        <a href="logginn.html"><img src="bilder_klær_riktig/innlogging.svg" alt="bilde" class="iconbilde"> </a>
+        <a href="logginn.html"><br>LOGG INN</a>
+      </section>
+
+      <!-- kode for  ønskeliste knappen er under her  -->
+      <section class="lenke">
+        <a href="ønskeliste.html"><img src="bilder_klær_riktig/ønskeliste.png" alt="bilde" class="iconbilde"> </a>
+        <a href="ønskeliste.html">ØNSKELISTE</a>
+      </section>
+      <!-- kode for Handlekurv knappen er under her  -->
+      <section class="lenke">
+        <a href="handlekurv.html"><img src="bilder_klær_riktig/kurv1.png" alt="bilde" class="iconbilde"> </a>
+        <a href=handlekurv.html><br>KURV</a>
+      </section>
+
+    </section>
+    <!-- slutt på kode for handlekurv, ønskeliste og logg inn -->
+
+    <!-- kode for søkefeltet -->
+    <section class="søkemotor">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <input type="text" placeholder="Søk etter klær eller merker...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </section>
+
+    <!-- kode for navigasjonbarene starter under her-->
+    <nav class="navigation">
+
+      <!-- kode for dropned for klær i navigasjons baren-->
+      <section class="dropned">
+        <a href="klær.html" class="dropknapp">Klær</a>
+        <section class="dropned-content">
+          <a href="gensere.html">gensere</a>
+          <a href="bukser.html">Bukser</a>
+          <a href="skjorter.html">skjorter</a>
+          <a href="jakker.html">jakker</a>
+        </section>
+      </section>
+
+      <section class="dropned">
+        <a href="sport.html" class="dropknapp">Sport</a>
+      </section>
+
+      <section class="dropned">
+        <a href="tilbehor.html" class="dropknapp">Tilbehør</a>
+      </section>
+
+
+      <section class="dropned">
+        <a href="sko.html" class="dropknapp">Sko</a>
+      </section>
+
+      <section class="dropned">
+        <a href="nyheter.html" class="dropknapp">Nyheter</a>
+      </section>
+
+      <section class="dropned">
+        <a href="salg.html" class="dropknapp">Salg</a>
+      </section>
+
+    </nav>
+
+  </header>
+  <!-- slutt på kode for header-->
+
+  <main>
+
+
+    <section class="les_mer">
+
+      <button class="tilbake_knapp" onclick="goBack()"> <--Tilbake</button>
+
+        <h2> Vi er desverre under vedlikhold og blir ferdig om 15 dager</h2>
+
+          <h3>OM OSS</h3>
+          <p>SISAKA er en av verden beste online klasbutikker. Den ble dannet i 2019 av Karan Singh. Vi har en rekke unike produkter på priser som slår alle. VI er desverre under vedlikhold og blir ferdig om 15 dager. Etter det kan dere se litt mer
+            om våre ansatte og hvordan du kan få deg en jobb her.<span id="dots">...</span><span id="more"> SISAKA.com, Inc. er et Norsk IT-selskap. Selskapet driver elektronisk handel over Internett, og eier Alexa Internet, A9.com og Internet Movie
+              Database (IMDb).
+              SISAKA er kjent for å ha revolusjonert netthandelen og gjort om netthandel-industrien til et av de mest lønnsomme markedene i verden i dag. Selskapet har store varehus i både Nord-Amerika, Europa og Asia. I Europa er de stort sett
+              plassert i England, men også Tyskland og Frankrike. Varer leveres omtrent verden over. Selskapet har dessuten forskjellige websider for forskjellige land, og det er Canada, England, Tyskland, Østerrike, Frankrike, Kina og Japan som for
+              øyeblikket har sine egne sider.
+          </p>
+
+          <button onclick="myFunction()" id="myBtn">LES MER</button>
+
+
+          <script>
+            function myFunction() {
+              var dots = document.getElementById("dots");
+              var moreText = document.getElementById("more");
+              var btnText = document.getElementById("myBtn");
+
+              if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "LES MER";
+                moreText.style.display = "none";
+              } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "LES MINDRE";
+                moreText.style.display = "inline";
+              }
+            }
+          </script>
+
+
+
+
+
+          <h1>RESTERENDE TID</h1>
+          <div id="clockdiv">
+            <div>
+              <span class="days"></span>
+              <div class="smalltext">Days</div>
+            </div>
+            <div>
+              <span class="hours"></span>
+              <div class="smalltext">Hours</div>
+            </div>
+            <div>
+              <span class="minutes"></span>
+              <div class="smalltext">Minutes</div>
+            </div>
+            <div>
+              <span class="seconds"></span>
+              <div class="smalltext">Seconds</div>
+            </div>
+          </div>
+
+
+
+          <script>
+            function getTimeRemaining(endtime) {
+              var t = Date.parse(endtime) - Date.parse(new Date());
+              var seconds = Math.floor((t / 1000) % 60);
+              var minutes = Math.floor((t / 1000 / 60) % 60);
+              var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+              var days = Math.floor(t / (1000 * 60 * 60 * 24));
+              return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+              };
+            }
+
+            function initializeClock(id, endtime) {
+              var clock = document.getElementById(id);
+              var daysSpan = clock.querySelector('.days');
+              var hoursSpan = clock.querySelector('.hours');
+              var minutesSpan = clock.querySelector('.minutes');
+              var secondsSpan = clock.querySelector('.seconds');
+
+              function updateClock() {
+                var t = getTimeRemaining(endtime);
+
+                daysSpan.innerHTML = t.days;
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                if (t.total <= 0) {
+                  clearInterval(timeinterval);
+                }
+              }
+
+              updateClock();
+              var timeinterval = setInterval(updateClock, 1000);
+            }
+
+            var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+            initializeClock('clockdiv', deadline);
+          </script>
+
+
+
+
+          <script type="text/javascript">
+            // FirebaseUI config.
+            var uiConfig = {
+              signInSuccessUrl: 'index.html',
+              signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+              ],
+              // tosUrl and privacyPolicyUrl accept either url string or a callback
+              // function.
+              // Terms of service url/callback.
+              tosUrl: '<your-tos-url>',
+              // Privacy policy url/callback.
+              privacyPolicyUrl: function() {
+                window.location.assign('<your-privacy-policy-url>');
+              }
+            };
+            // Initialize the FirebaseUI Widget using Firebase.
+            // The start method will wait until the DOM is loaded.
+          </script>
+          <script>
+            function goBack() {
+              window.history.back();
+            }
+          </script>
+
+
+          <section>
+            <h1>VÅRE ANSATTE I STYRET</h1>
+          </section>
+          <section class="ansatte">
+            <section class="hver_for_seg_ansatte">
+              <h2>Elon Musk</h2>
+              <h4>Economy manager</h4>
+              <img src="bilder_klær_riktig/elon2.jpg" alt="">
+            </section>
+            <section class="hver_for_seg_ansatte">
+              <h2>Jeff Bezos</h2>
+              <h4>Production manager</h4>
+              <img src="bilder_klær_riktig/jeff2.jpg" alt="">
+            </section>
+
+            <section class="hver_for_seg_ansatte">
+              <h2>Zuckerberg</h2>
+              <h4>Social Media manager</h4>
+              <img src="bilder_klær_riktig/mark.jpg" alt="">
+            </section>
+
+          </section>
+
+</section>
+  </main>
+
+
+
+
+
+  <section class="reklame2">
+    <a href="klær.html"><img src="bilder_klær_riktig/reklame_2bild.jpg" alt="bilde"></a>
+  </section>
+
+
+
+  <footer>
+
+    <section class="hele_footer">
+
+
+      <section class="om_oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th>INFORMASJON</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="logginn.html"> LOGG INN</a></td>
+            </tr>
+            <tr>
+              <td><a href="ønskeliste.html">ØNSKELISTE</a></td>
+            </tr>
+            <tr>
+              <td><a href="kundeservice.html">KONTAKT OSS</a></td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">FÅ NYHETSBREV</a></td>
+            </tr>
+          </tbody>
+
+        </table>
+      </section>
+
+      <section class="">
+        <table>
+          <thead>
+            <tr>
+              <th><a href="index.html">VARER</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <a href="klær.html">klær</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="sport.html">sport</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="sko.html">sko</a></td>
+            </tr>
+            <tr>
+              <td><a href="tilbehor.html">tilbehør</a></td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </section>
+
+      <section class="oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th><a href="oss.html">OM OSS</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="oss.html">søk jobb</a></td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">ansatte</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">historikk</a></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+
+
+
+      <section class="sosial_footer">
+        <table>
+          <thead>
+            <tr>
+              <th>Følg oss</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://www.facebook.com"><img src="bilder_klær_riktig/face.png" class="sosbilder"></a></td>
+              <td><a href="http://www.twitter.com"><img src="bilder_klær_riktig/twit.png" class="sosbilder"></a></td>
+              <td><a href="http://www.instagram.com"><img src="bilder_klær_riktig/insta.jpg" class="sosbilder"></a></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      </section>
+
+
+
+    </section>
+  </footer>

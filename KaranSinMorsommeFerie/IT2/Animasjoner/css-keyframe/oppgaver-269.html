@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    @keyframes trekant {
+      from {
+        left: 0%;
+        top: 0%;
+
+
+      }
+
+      25% {
+        top: 0%;
+        left: 100%;
+        transform: translateX(-100%);
+
+      }
+
+      50% {
+        left: 100%;
+        top: 100%;
+        transform: translateY(-100%);
+        transform: translateX(-100%);
+
+      }
+
+      75%{
+        left: 0%;
+        top: 100%;
+        transform: translateY(-100%);
+      }
+
+      to {
+        left: 0%;
+        top: 0%;
+      }
+    }
+
+    img {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      animation: trekant 6s infinite alternate ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="../NETFLIX/kevin.jpg" alt="">
+
+</body>
+
+</html>

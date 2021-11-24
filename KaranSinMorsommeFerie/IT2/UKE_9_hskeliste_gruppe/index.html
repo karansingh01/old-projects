@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+      #head{
+        text-align: center;
+      }
+
+#info{
+  margin-left: 390px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+h1{
+  font-style: oblique;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+ul{
+  position: relative;
+  padding: 15px;
+  margin-right: 360px;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+#slett1{
+  padding-right: 25px;
+  padding-left: 25px;
+  position: absolute;
+  left: 85%;
+  top: 7%;
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+#inpHusk {
+  padding-right: 120px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+#label{
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+button{
+  padding: 9px;
+  margin:5px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+body{
+  background-color: salmon;
+}
+
+#alt{
+border-radius: 10px;
+background-color: #d0ff00;
+border-color: black;
+border-style: solid;
+padding: 10px;
+margin-left: 300px;
+margin-right: 300px;
+}
+    </style>
+  </head>
+  <body>
+    <div id="head">
+<img src="Skjermbilde 2020-03-03 kl. 11.22.36.png" alt="">
+<h1>LAG DIN EGEN HUSKELISTE</h1>
+
+<input id="inpHusk" type="text" name="" value="" placeholder="Ting å huske">
+<button id="btnLeggTil" type="button" name="button">Legg til</button>
+<button id="slett" type="button" name="button">Slett Alt</button>
+</div>
+
+<div id="info">
+
+</div>
+
+
+
+<script>
+const inpHusk = document.querySelector("#inpHusk");
+const btnLeggTil = document.querySelector("#btnLeggTil");
+const info = document.querySelector("#info");
+const btnSlett = document.querySelector("#slett");
+const slett1 = document.querySelector("#slett1");
+
+let huskeliste = [];
+
+btnLeggTil.onclick = leggTil;
+
+
+function leggTil() {
+huskeliste.push(inpHusk.value);
+//info.innerHTML = huskeliste;
+console.log(huskeliste);
+lagHtml();
+}
+
+btnSlett.onclick = function () {
+info.innerHTML = [];
+huskeliste = [];
+}
+
+function fjernVare(i) {
+huskeliste.splice(i,1);
+console.log(huskeliste);
+lagHtml();
+}
+
+function lagHtml() {
+  info.innerHTML = ``;
+  for(let i=0; i<huskeliste.length; i+=1){
+    info.innerHTML += `
+  <ul ><input type="checkbox" id="check" name="" value=""> ${huskeliste[i]}<button type="button" onclick= "fjernVare(${i})" id="slett1" name="button">slett</button> </ul>`;
+  }
+
+}
+</script>
+  </body>
+</html>

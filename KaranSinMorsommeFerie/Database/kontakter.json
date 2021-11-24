@@ -1,0 +1,14 @@
+{
+  "kontaktliste": {
+    "1": {
+      "Firstname": "Karan Singh",
+      "LastName": "Sandhu",
+      "Telephone": 99112250
+    },
+    "2": {
+      "Firstname": "Aleksander",
+      "LastName": "Vestlund",
+      "Telephone": 91694994
+    }
+  }
+}

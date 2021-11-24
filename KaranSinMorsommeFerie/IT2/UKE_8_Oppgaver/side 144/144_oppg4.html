@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <label for="velg_dag">Ukedag du skal møte opp:</label>
+
+<select id="velg_dag" name="dag">
+<option>Velg en dag</option>
+<option>Mandag</option>
+<option>Tirsdag</option>
+<option>Onsdag</option>
+<option>Torsdag</option>
+<option>Fredag</option>
+<option>lørdag</option>
+<option>søndag</option>
+</select>
+<div id="div1" >
+
+</div>
+
+
+
+  <script type="text/javascript">
+  const velg_dag = document.querySelector("#velg_dag");
+  const div1 = document.querySelector("#div1");
+
+velg_dag.onchange = function() {
+  console.log("hei!");
+var valgtDag = velg_dag.value;
+div1.innerHTML = "Valgt dag er " + valgtDag
+}
+/*
+  function sjekkRadio() {
+    alert("sfkjkk")
+
+  }
+button.onclick = sjekkRadio
+*/
+  </body>
+</html>

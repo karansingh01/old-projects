@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div id="alt">
+
+<h1>Prosent kalkulator</h1>
+<label for="inpTall1">Forbruk:</label>
+<input id="inpTall1" type="number" name="" placeholder="forbruk" value="">
+<label for="inpTall2">tank:</label>
+<input id="inpTall2" type="number" name="" placeholder="drivstoff" value="">
+<span>=</span>
+<button id="btn" type="button" name="button">Beregn</button>
+
+<div id="div2" >
+</div>
+
+    </div>
+
+<div id="oppg2">
+
+<button type="button" id="btnFiat" name="button">Fiat</button>
+<button type="button" id="btnPorsche" name="button">Porsche</button>
+<button type="button" id="btnPrius" name="button">Toyota Prius</button>
+
+<div id="svar">
+
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+  const inpTall1 = document.querySelector("#inpTall1")
+  const inpTall2 = document.querySelector("#inpTall2")
+  const btn = document.querySelector("#btn")
+  const div2 = document.querySelector("#div2")
+
+
+  // funksjon som gjør at vi kan finne prosent
+  btn.onclick = beregn_bruk;
+
+  function beregn_bruk(){
+    let drivstoff = (Number(inpTall2.value));
+    let forbruk = (Number(inpTall1.value));
+    let bruk= drivstoff/forbruk;
+
+    div2.innerHTML = "du kan kjøre" + bruk + "mil på en tank";
+}
+
+
+
+//OPPGAVE 2B)
+
+const btnFiat = document.querySelector("#btnFiat")
+const btnPorsche = document.querySelector("#btnPorsche")
+const btnPrius = document.querySelector("#btnPrius")
+
+
+
+const biler = [
+  {
+    navn: "Fiat 500",
+    Tank: 35,
+    Forbruk: 0.51
+  },
+  {
+    navn: "Porsche 911",
+    Tank: 64,
+    Forbruk: 0.91
+  },
+  {
+    navn: "Toyota Prius",
+    Tank: 45,
+    Forbruk: 0.39
+  }
+];
+
+btnFiat.onclick = function() {
+bil("Fiat 500");
+}
+btnPorsche.onclick = function() {
+bil("Porsche 911");
+}
+btnPrius.onclick = function() {
+bil("Toyota Prius");
+}
+
+function bil(bilNavn) {
+  for(let bil of biler){
+    if(bilNavn === bil.navn){
+      let avstand = bil.Tank/bil.forbruk*10+200;
+    svar.innerHTML = "Navn: " + bil.navn + " Tank: " + bil.Tank + " forbruk: " + bil.forbruk + "du kan kjøre" + bil.Tank/bil.forbruk + "mil på en tank"
+//    svar.innerHTML += "<div class="soyle positiv" style="height:"" + avstand "</div>";
+    }
+  }
+}
+
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<link rel="stylesheet" href="lag_egen.css">
+<link rel="shortcut icon" href="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png">
+
+<body>
+  <div class="logo">
+    <a href="index.html"><img src="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png" alt="logo" class="logo"></a>
+  </div>
+
+
+  <div id="divInp">
+    <label for="inpNavn">Navn:</label>
+    <input id="inpNavn" type="text">
+
+    <label for="inpHp">HP:</label>
+    <input id="inpHp" type="text">
+
+    <label for="inpBilde">Bilde(URL):</label>
+    <input id="inpBilde" type="text">
+
+
+    <label for="inpType">Type:</label>
+    <select id="inpType" name="">
+      <option>Type</option>
+      <option>Fire</option>
+      <option>Water</option>
+      <option>Grass</option>
+      <option>Poison</option>
+      <option>Flying</option>
+      <option>Normal</option>
+    </select>
+
+    <label for="inpAbillity">Abillity:</label>
+    <input id="inpAbillity" type="text">
+
+    <label for="inpInfo">Informasjon om abbility:</label>
+    <input id="inpInfo" type="text">
+
+    <button id="btnReg">Lag kort</button>
+  </div>
+
+  <div id="kort">
+
+  </div>
+
+  <div id="kort_under">
+
+  </div>
+
+
+  <script type="text/javascript">
+    const kort = document.querySelector("#kort"); //Globale Variabel som referer til elementer i html
+    const inpNavn = document.querySelector("#inpNavn");
+    const inpHp = document.querySelector("#inpHp");
+    const inpBilde = document.querySelector("#inpBilde");
+    const inpType = document.querySelector("#inpType");
+    const inpAbillity = document.querySelector("#inpAbillity");
+    const inpInfo = document.querySelector("#inpInfo");
+    const btnRegn = document.querySelector("#btnRegn");
+
+    const colors = { // variabel
+      Fire: '#FDDFDF',
+      Grass: '#DEFDE0',
+      Water: '#DEF3FD',
+      Poison: '#98d7a5',
+      flying: '#F5F5F5',
+      Normal: '#F5F5F5'
+    };
+
+function poke(i) { // parameteren er i
+  kort.innerHTML =
+    `
+<div id="øverst_kort">
+    <h3>  ${inpNavn.value}</h3>
+        <h3>  HP: ${Number(inpHp.value)} </h3>
+</div>
+     <img id="bilde" src=${i} >
+<div id="nederst_kort">
+
+<div id="type_pokemon">
+      ${inpType.value}
+</div>
+<div id="Abillity">
+      ${inpAbillity.value}:
+<div>
+      ${inpInfo.value}
+<div>
+`
+}
+
+    btnReg.onclick = function() {
+      document.body.style.background = colors[inpType.value]
+
+      if (inpNavn.value === "" && inpHp.value === "") {
+        kort_under.innerHTML = ` <h3> Vennligst skriv inn navn og hp for pokemonen din</h3>
+`
+      } else if (inpBilde.value === "") {
+  poke("https://i.pinimg.com/originals/95/d5/cd/95d5cded00f3a3e8a98fb1eed568aa9f.png")
+      }
+      else {
+poke(inpBilde.value) // funskjonskall
+      };
+    };
+  </script>
+
+</body>
+
+</html>

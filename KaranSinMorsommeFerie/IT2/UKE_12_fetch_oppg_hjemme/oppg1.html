@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 1 - Data fra Stortinget</title>
+</head>
+<body>
+    <h1>1) Data om Stortinget</h1>
+
+    <div>a) Største parti: <span id="sp1a"></span> </div> <!-- Arbeiderpartiet -->
+
+    <div>b) De to minste partiene: <span id="sp1b"></span></div> <!-- Rødt og Miljøpartiet De Grønne-->
+
+    <div>c) Alle partier: <ul id="ul1c"></ul> </div>
+
+    <button id="btnSkriv">Skriv ut svar</button>
+
+    <script>
+        const sp1a = document.querySelector("#sp1a");
+        const sp1b = document.querySelector("#sp1b");
+        const ul1c = document.querySelector("#ul1c");
+        const btnSkriv = document.querySelector("#btnSkriv");
+
+        const partier = [
+            "Arbeiderpartiet",
+            "Høyre",
+            "Fremskrittspartiet",
+            "Senterpartiet",
+            "Sosialistisk Venstreparti",
+            "Kristelig Folkeparti",
+            "Venstre",
+            "Miljøpartiet De Grønne",
+            "Rødt"
+        ];
+
+        btnSkriv.onclick = function(){
+            // Kode for 1a
+            sp1a.innerHTML= partier[0];
+
+            // Kode for 1b
+           sp1b.innerHTML= `${partier[8]} og ${partier[7]}`
+
+            // Kode for 1c
+            for (let parti of partier) {
+              console.log(parti);
+              ul1c.innerHTML+= `<ul>${parti}, </ul>`
+
+            }
+
+        }
+
+    </script>
+</body>
+</html>

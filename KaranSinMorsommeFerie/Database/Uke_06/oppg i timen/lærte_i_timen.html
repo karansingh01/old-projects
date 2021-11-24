@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBBfaYKkwusYEAEFOJjbkCEm-LP1tEkkjw",
+    authDomain: "real-time-kontakter.firebaseapp.com",
+    databaseURL: "https://real-time-kontakter.firebaseio.com",
+    projectId: "real-time-kontakter",
+    storageBucket: "real-time-kontakter.appspot.com",
+    messagingSenderId: "699220478292"
+  };
+  firebase.initializeApp(config);
+</script>
+  </head>
+  <body>
+
+
+<script type="text/javascript">
+  const db = firebase.database();
+  const bloggere = db.ref("bloggere");
+
+//Pusher et objekt il databasen
+  bloggere.push({
+    "navn":"Sophie Elise",
+    "følgere": "59000",
+    "Alder":23
+  });
+
+  // Pusher to strings til databasen
+  bloggere.push("Pappahjerte")
+  bloggere.push("Annijor")
+
+const bilGates = bloggere.child(90440000)
+bilGates.set({
+  "navn": "Bill Gates",
+  "epost": "bill@gmail.com"
+});
+
+const steveJobs = bloggere.child(90440000);
+steveJobs.set({
+  "navn": "Steve Jobs",
+  "epost" : "Email@hotmail.com"
+});
+
+// endre data
+steveJobs.update({
+  "navn": "jeff Bezos"
+});
+
+
+// bloggere.remove();   for å fjerne alle bloggere og // for fjerne en linje  /* og */ for flere linjer
+
+</script>
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,59 @@
+html {
+
+  font-size: 100%;
+
+}
+body{
+  background-color: lightgreen;
+  font-family: sans-serif;
+  color: white;
+
+}
+
+main{
+    padding-top: 4rem;
+    max-width: 970px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px 400px;
+    grid-gap: 2rem;
+}
+
+main article {
+display: grid;
+grid-template-rows: 1fr 1fr 1fr;
+justify-content: center;
+text-align: center;
+align-items: center;
+background-position: center;
+background-size: cover;
+overflow: hidden;
+
+}
+
+
+main article p{
+  font-weight: bold;
+  transform: translatex(-200%);
+  transition: 0.5s;
+
+}
+
+
+main article a{
+  background-color: darkorange;
+  padding: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transform: translatex(200%);
+  transition: 0.5s;
+}
+main article:hover p{
+  transform: translateX(0);
+}
+
+main article:hover a{
+  transform: translateX(0);
+}

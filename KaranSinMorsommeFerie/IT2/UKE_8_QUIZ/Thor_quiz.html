@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Karan quiz</title>
+  <style media="screen">
+    #start{
+      display: block;
+      margin: auto;
+    }
+    body{
+      text-align: center;
+      padding-top: 250px;
+    }
+    #sporsmalTekst{
+      font-size: 30px;
+    }
+    label{
+      font-size: 20px;
+      padding-left: 30px;
+    }
+
+    #send_inn{
+      background-color: blueviolet;
+      margin: 20px;
+      padding: 1rem;
+      border-radius: 1rem;
+      color: white;
+    }
+    #send_inn:hover{
+      background-color: red;
+      transition-duration: 1s;
+    }
+
+  </style>
+</head>
+
+<body>
+  <form>
+    <div>
+      <h4 id="sporsmalTekst">spm tekst her</h4>
+      <label id="lA" for="kah"></label>
+      <input id="rbA" type="radio" name="sporsmal" value="kah" />
+      <label id="lB" for="ob"></label>
+      <input id="rbB" type="radio" name="sporsmal" value="ob" />
+      <label id="lC" for="kir"></label>
+      <input id="rbC" type="radio" name="sporsmal" value="kir" />
+    </div>
+    <button id="send_inn" type="submit" name="button">Svar</button>
+  </form>
+
+  <script type="text/javascript">
+    const form = document.querySelector("form");
+    const rbA = document.querySelector("#rbA");
+    const rbB = document.querySelector("#rbB");
+    const rbC = document.querySelector("#rbC");
+    const lA = document.querySelector("#lA");
+    const lB = document.querySelector("#lB");
+    const lC = document.querySelector("#lC");
+    const sporsmalTekst = document.querySelector("#sporsmalTekst");
+
+    let riktig = 0;
+    let feil = 0;
+
+    let spNr = 0; // Varibael som bestemmer hvilket spm som skal vises.
+
+    const sporsmal = [{
+        tekst: "Hvem er partileder i krf?",
+        alternativer: ["Knut Arild Hardeide", "Kjell Ropstad", "Ole Bollestad"],
+        riktig: "Kjell Ropstad"
+      },
+      {
+        tekst: "Hvem er partileder i AP?",
+        alternativer: ["Hadia Tajik", "Haaland", "Gandhi"],
+        riktig: "Haaland"
+      }
+    ];
+
+    lagSporsmal(spNr) // kjøres når siden lastes inn
+
+    function lagSporsmal(i) {
+      sporsmalTekst.innerHTML = sporsmal[i].tekst;
+      lA.innerHTML = sporsmal[i].alternativer[0]; // Endrer label eller tekst på label
+      lB.innerHTML = sporsmal[i].alternativer[1];
+      lC.innerHTML = sporsmal[i].alternativer[2];
+
+      rbA.value = sporsmal[i].alternativer[0] // endrer Value på Radio buttons.
+      rbB.value = sporsmal[i].alternativer[1]
+      rbC.value = sporsmal[i].alternativer[2]
+    }
+
+    form.onsubmit = function(event) {
+      event.preventDefault();
+      const formdata = new FormData(form);
+      const svar = formdata.get("sporsmal");
+      console.log(svar);
+
+      if (svar === sporsmal[spNr].riktig) {
+        riktig += 1;
+      } else {
+        feil += 1;
+
+      }
+      if (spNr < sporsmal.length -1) {
+        form.reset
+        spNr += 1;
+        lagSporsmal(spNr);
+      } else {
+        alert("antall riktig " + riktig)
+        form.style.display= "none";
+      }
+    };
+  </script>
+</body>
+
+</html>

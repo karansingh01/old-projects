@@ -1,0 +1,63 @@
+
+    {
+        "prosjekter" : {
+            "3D" : {
+                "tittel" : "3D-Tegning",
+                "beskrivelse" : "Fine tegninger i 3D",
+                "tema" : "Grafisk design",
+                "sammendrag" : "I temaet fordypet jeg meg i modellering med 3D-programmet 3DMAX. Det var en lærerik prosess",
+                "verktøy" : [
+                    "Photoshop",
+                    "Illustrator",
+                    "Sketch",
+                    "3D MAX"
+                ],
+                "bilder" : [
+                    "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                    "https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                    "https://images.pexels.com/photos/205316/pexels-photo-205316.png?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                    "https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                ],
+                "forsidebilde": 1
+            },
+            "Animasjon" : {
+                "tittel" : "Animasjon",
+                "beskrivelse" : "Animasjon av en printer",
+                "tema" : "Web-utvikling og design",
+                "sammendrag" : "I temaet fordypet jeg meg i modellering med 3D-programmet 3DMAX. Det var en lærerik prosess",
+                "verktøy" : [
+                    "Photoshop",
+                    "Illustrator",
+                    "Sketch",
+                    "3D MAX",
+                    "Notepad"
+                ],
+                "bilder" : [
+                    "https://images.pexels.com/photos/990824/pexels-photo-990824.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                    "https://images.pexels.com/photos/1757322/pexels-photo-1757322.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                    "https://images.pexels.com/photos/1040626/pexels-photo-1040626.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                ],
+                "forsidebilde": 2
+            },
+            "HTML-og-CSS" : {
+                "tittel" : "HTML og CSS",
+                "beskrivelse" : "En mobil-vennlig web-app",
+                "tema" : "Webprogrammering",
+                "sammendrag" : "I temaet fordypet jeg meg i modellering med 3D-programmet 3DMAX. Det var en lærerik prosess",
+                "verktøy" : [
+                    "Photoshop",
+                    "Illustrator",
+                    "Sketch",
+                    "Word",
+                    "Excel"
+                ],
+                "bilder" : [
+                    "https://images.pexels.com/photos/459203/pexels-photo-459203.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                    "https://images.pexels.com/photos/1708547/pexels-photo-1708547.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                    "https://images.pexels.com/photos/830891/pexels-photo-830891.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                    "https://images.pexels.com/photos/1405773/pexels-photo-1405773.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                ],
+                "forsidebilde": 0
+            }
+        }
+    }

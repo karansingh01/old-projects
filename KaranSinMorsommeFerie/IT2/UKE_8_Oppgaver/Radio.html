@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radioknapper</title>
+</head>
+
+<body>
+  <h2>Radioknapper</h2>
+
+  <form>
+    <div>
+      <h4>KRF</h4>
+      <label for="kah">Knut Arild Hareide</label>
+      <input type="radio" name="krf" value="kah" />
+      <label for="ob">Olaug Bollestad</label>
+      <input type="radio" name="krf" value="ob" />
+      <label for="kir">Kjell Ingolf Ropstad</label>
+      <input type="radio" name="krf" value="kir" />
+    </div>
+    <div>
+      <h4>FRP</h4>
+      <label for="sj">Siv Jensen</label>
+      <input type="radio" name="frp" value="sj" />
+      <label for="bh">Bård Hoksrud</label>
+      <input type="radio" name="frp" value="bh" />
+      <label for="sl">Sylvi Listhaug</label>
+      <input type="radio" name="frp" value="sl" />
+    </div>
+    <div>
+      <h4>AP</h4>
+      <label for="ht">Hadia Tajik</label>
+      <input type="radio" name="ap" value="ht" />
+      <label for="jb">Jan Bøhler</label>
+      <input type="radio" name="ap" value="ob" />
+      <label for="jgs">Jonas Gahr Støre</label>
+      <input type="radio" name="ap" value="jgs" />
+    </div>
+    <div>
+      <h4>Høyre</h4>
+      <label for="es">Erna Solberg</label>
+      <input type="radio" name="h" value="ht" />
+      <label for="eh">Erling Haaland</label>
+      <input type="radio" name="h" value="eh" />
+      <label for="jl">Jesse Lingard</label>
+      <input type="radio" name="h" value="jl" />
+    </div>
+
+    <input type="text" name="tekst1" placeholder="favoritt fotballspiller" value="">
+    <input type="text" name="tekst2" placeholder="favoritt is" value="">
+
+    <input type="range" name="range" value="">
+
+    <button type="submit">Svar</button>
+  </form>
+
+
+  <script type="text/javascript">
+    const form = document.querySelector("form");
+    const losninger = {
+
+      frp: "sj",
+      ap: "jgs",
+      krf: "kah"
+    };
+
+    let poeng = 0;
+
+
+    form.onsubmit = function(event) {
+        event.preventDefault(); // Hindrer nettsiden i å oppdatere seg
+        const formdata = new FormData(form);
+
+        // console.log(formdata.get("krf")); Tar bare ut en
+        for (let valg of formdata) {
+          console.log(valg);
+
+          if (losninger[valg[0]] === valg[1]) {
+              console.log("Riktig svar" + valg[0]);
+              poeng += 1;
+            }
+            /*
+                    if (valg[0] === "frp" && valg[1] === "sj") {
+                      alert("korrekt, du er flink på frp")
+                    }
+                    if (valg[0] === "krf" && valg[1] === "kah") {
+                      alert("korrekt, du er flink på krf")
+                    }
+                    if (valg[0] === "ap" && valg[1] === "jgs") {
+                      alert("korrekt, du er flink på ape")
+                    }
+            */
+          }
+          alert("du fikk " + poeng + "poeng")
+        }
+  </script>
+
+
+</body>
+
+</html>

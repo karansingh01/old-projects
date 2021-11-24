@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <label for="inpBredde">Skriv inn bredde i piksler</label>
+    <input type="number" name="" id="inpBredde" value="">
+
+    <label for="inpHøyde">Skriv inn høyde i piksler:</label>
+    <input type="number" name="" id="inpHoyde" value="">
+
+    <button type="button" id="btnStart" name="button">Trykk for å regne ut antall piksler og megapiksler</button>
+
+    <div id="resultat">
+
+    </div>
+
+    <script type="text/javascript">
+      const inpBredde = document.querySelector("#inpBredde");
+      const inpHoyde = document.querySelector("#inpHoyde");
+      const btnStart = document.querySelector("#btnStart");
+      const resultat = document.querySelector("#resultat");
+
+
+      btnStart.onclick = function() {
+        let bredde = Number(inpBredde.value);
+        let hoyde = Number(inpHoyde.value);
+        let piksler = bredde * hoyde;
+        let megapiksler = (bredde*hoyde/1000000);
+        resultat.innerHTML = `Pikslene er ${piksler} og Pikslene i megapiskler er ${megapiksler}`;
+        }
+</script>
+
+
+
+  </body>
+</html>

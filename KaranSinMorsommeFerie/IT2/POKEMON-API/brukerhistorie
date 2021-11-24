@@ -1,0 +1,38 @@
+Brukerhistorie:
+
+for pokemon.html
+- Som bruker ønsker jeg å kunne søke etter en spesifikk pokemon for å gjøre siden mer innteresant.
+- Som bruker ønsker jeg et bedre berukergrensesnitt, likte ikke bakgrunnsbildene.
+
+for quiz.html
+- som bruker ønsker jeg et mer midstilt tekst for bedre brukergrensesnitt.
+
+for lag_egen.html
+- Som bruker ønsker jeg at det skal være noe bilde hvis man ikke har et siden man orker ikke alltid å finne et bilde.
+
+
+
+FUNKSJONELLE KRAV
+
+pokemon.html:
+funksjonelle krav:  kunne se alle pokemon som finnes med bilde og søke.
+
+lag_egen.html:
+funksjonelle krav: sette inn forskjellige verdier som skal komme på kortet.
+
+quiz.html:
+funksjonelle krav: kunne se hvor mange korrekt man fikk og hva de riktige svarene var.
+
+sorter.Html
+funksjonelle krav: kunne sortere etter rangering som viser navn og rangering.
+
+rangering.Html
+funksjonelle krav: kunne gi poeng etter som om de har tapt lik eller vunnet og sette dem inn i en tabell.
+
+ikke noen ikke funksjonelle krav.
+
+
+
+PSUDOKODE for sorter.html:
+- Hvis det ikke er skrevet inn pokemon verdi eller tall veriden er over 100 skal det komme opp en alert som returns: "Vennligst prøv igjen" og den skal fjernes fra arrayen.
+ellers skal det legges til en u ordnet liste med alle veridene i verdien liste.

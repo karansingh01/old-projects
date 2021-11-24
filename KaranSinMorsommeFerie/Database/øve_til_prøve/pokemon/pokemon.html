@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Pokemon</title>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCC7gisI2C8EQ1vYVsa8kV-ckTdBXKoLw0",
+    authDomain: "pokemon-5ff15.firebaseapp.com",
+    databaseURL: "https://pokemon-5ff15.firebaseio.com",
+    projectId: "pokemon-5ff15",
+    storageBucket: "pokemon-5ff15.appspot.com",
+    messagingSenderId: "1038538774670"
+  };
+  firebase.initializeApp(config);
+</script>
+  <style>
+    #secPokemon{
+        /* Legger alle nye pokemon i en grid */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5px;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+      }
+      .pokemon{
+        background-color: lightgrey;
+        border-radius: 3px;
+      }
+      #secPokemon img{
+        width: 100%;
+}
+  .button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin:0px 50px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+
+
+      }
+
+      h1{
+text-align: center;
+font-size: 39px;
+      }
+    </style>
+</head>
+
+<body>
+  <header>
+    <h1>Pokemons</h1>
+    <button type="button" name="button" class="button" onclick="vis20SterkestePokemon()">Vis sterkeste</button>
+    <!-- Knapp for å vise de sterkeste 20 pokemon, legg merke til oncklick="vis20SterkestePokemon()", den gjør at funksjonen kjøres idet knappen trykkes på -->
+    <button type="button" name="button" class="button" onclick="visAllePokemon()">Vis alle</button> <!-- Knapp for å vise alle pokemon, legg merke til oncklick="visAllePokemon()", den gjør at funksjonen kjøres idet knappen trykkes på -->
+    <button type="button" name="button" class="button" onclick="vis20HPPokemon()">Vis mest HP</button>
+    <button type="button" name="button" class="button" onclick="AZ()">A-C</button>
+    <button type="button" name="button" class="button" onclick="visGress()">Vis gress</button>
+  </header>
+  <main>
+    <section id="secPokemon">
+
+    </section>
+  </main>
+
+  <script type="text/javascript">
+    // Referanser til HTML-elementer
+    const secAllePokemon = document.querySelector("#secPokemon");
+    // Referanser til firebase-databasen - viktig
+    const db = firebase.database();
+    const pokemon = db.ref("pokemon");
+    visAllePokemon(); // Kjører funksjonen visAllePokemon i det nettsiden starter, funksjonen er definert under
+    // Funksjonsdefinisjoner for spørringer.
+    // Funksjoner kjøres bare når de kalles, slik som visAllePokemon(); på linje 57
+    function visAllePokemon() {
+      // En funksjon som kjører en spørring for å vise alle pokemon
+      secAllePokemon.innerHTML = ""; // Sletter innholdet i html-elementet secAllePokemon, etter komma det som blir svart på
+      pokemon.on("child_added", genererHTML); // Spørrefunksjon som henter alle pokemon fra databasen, og kjører funksjonen genererHTML på hver pokemon.
+    }
+
+    // visAllePokemon();   skriv dette for å vise?   skrive på linje
+
+    function vis20SterkestePokemon() {
+      // En funksjon som kjører en spørring for å vise de 20 sterkeste pokemon(max CP)
+      secAllePokemon.innerHTML = "";
+      pokemon.orderByChild("Max CP")
+      .limitToLast(20)
+      .on("child_added", genererHTML);
+    }
+
+    function vis20SvakestePokemon() {
+
+      // En funksjon som kjører en spørring for å vise de 20 svakeste pokemon(max CP)
+      secAllePokemon.innerHTML = ``;
+      pokemon.orderByChild("Max CP").limitToFirst(20).on("child_added", genererHTML);
+    }
+
+    function vis20HPPokemon() {
+      // En funksjon som kjører en spørring for å vise de 20 sterkeste pokemon(max CP)
+      secAllePokemon.innerHTML = ``;
+      pokemon.orderByChild("Max HP")
+        .limitToLast(20)
+        .on("child_added", genererHTML);
+    }
+
+    function AZ() {
+      // En funksjon som kjører en spørring for å vise de 20 sterkeste pokemon(max CP)
+      secAllePokemon.innerHTML = ``;
+      pokemon.orderByChild("Name")
+        .endAt("C")
+        .on("child_added", genererHTML);
+    }
+
+function visGress(){
+secAllePokemon.innerHTML = "";
+pokemon.orderByChild("Type 1")
+.equalTo("Grass")
+.on("child_added",genererHTML);
+}
+
+
+
+    function genererHTML(snapshot) {
+      // Javascript-funksjon for å generere HTML for hver Pokemon
+      // Denne får dere på prøven
+      let key = snapshot.key;
+      let poke = snapshot.val();
+      secAllePokemon.innerHTML +=
+        `
+          <section class="pokemon">
+            <h3>${key}:${poke["Name"]}</h3>
+            <img src=${poke["Image URL"]}>
+            <p>Type: ${poke["Type 1"]}</p>
+            <p>Max HP: ${poke["Max HP"]}</p>
+            <p>Max CP: ${poke["Max CP"]}</p>
+          </section>
+        `
+    }
+  </script>
+</body>
+
+</html>

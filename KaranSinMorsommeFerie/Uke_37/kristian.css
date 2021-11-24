@@ -1,0 +1,26 @@
+body{
+  background-color: #00ffff;
+  background-image:url("kris.jpg");
+  background-repeat: no-repeat;
+  color: blue;
+
+}
+main{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+  p {
+    background-color:
+    padding: 30px;
+  }
+
+  h1 {
+    background-color: #000099;
+  }
+
+  p,h1  {
+color: white;
+  }

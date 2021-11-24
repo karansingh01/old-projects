@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<link rel="stylesheet" href="main.css">
+<link rel="shortcut icon" href="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png">
+
+<body>
+  <div class="logo">
+    <a href="index.html"><img src="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png" alt="logo" class="logo"></a>
+  </div>
+
+  <div class="main">
+
+    <section class="under_nav">
+      <section class="spillere_get">
+        <a href="pokemon.html"> Alle Pokemon </a>
+      </section>
+      <section class="eget_get">
+        <a href="lag_egen.html"> LAG DIN EGEN Pokemon</a>
+      </section>
+    </section>
+
+    <div class="del_2">
+      <section class="sorter_her">
+        <a href="rangering.html"> Pokemon Turnering</a>
+      </section>
+
+      <section class="quiz_her">
+        <a href="quiz.html"> Quiz om pokemon</a>
+      </section>
+    </div>
+    <section class="favoritt">
+      <a href="sorter.html"> Velg favoritt pokeomons dine</a>
+    </section>
+
+    <section>
+      <h3>POKEMON KORT ER FREMTIDEN</h3>
+      <video src="bilder/riktig.mp4" id="video_pokemon" autoplay controls></video>
+    </section>
+    <button id="video_fart" type="button" name="button">dobbel fart</button>
+    <button id="video_normal" type="button" name="button">Normal fart</button>
+
+
+</body>
+<script>
+const video_fart = document.querySelector("#video_fart"); // Variabel som referer til elementer i html
+const video_pokemon = document.querySelector("#video_pokemon"); // Variabel som referer til elementer i html
+const video_normal = document.querySelector("#video_normal"); // Variabel som referer til elementer i html
+
+video_fart.onclick = function() {
+video_pokemon.playbackRate = 2
+}
+video_normal.onclick = function() {
+video_pokemon.playbackRate = 1
+}
+
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="inpBredde">Skriv inn bredde</label>
+<input type="text" name="" id="inpBredde" value="">
+
+<label for="inpHøyde">Skriv inn høyde:</label>
+<input type="text" name="" id="inpHoyde" value="">
+
+<button type="button" id="trekant" name="button">trykk her hvis trekant</button>
+<button type="button" id="rektangel" name="button">trykk her hvis rektangel</button>
+
+
+<div id="main">
+
+</div>
+
+<script type="text/javascript">
+  const inpBredde = document.querySelector("#inpBredde");
+  const inpHoyde = document.querySelector("#inpHoyde");
+  const trekant = document.querySelector("#trekant");
+  const rektangel = document.querySelector("#rektangel");
+  const main = document.querySelector("#main");
+
+
+trekant.onclick = function() {
+let Areal = (inpBredde.value*inpHoyde.value)/2
+main.innerHTML = "Arealet er " + Areal
+}
+
+rektangel.onclick= function() {
+let Areal = inpBredde.value*inpHoyde.value
+main.innerHTML = "Arealet er " + Areal
+}
+
+
+</script>
+
+  </body>
+</html>

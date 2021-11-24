@@ -1,0 +1,120 @@
+
+  body{
+    background-color: lightgrey;
+    text-align: center;
+  }
+
+
+  h1{
+    text-align: center;
+  }
+  img{
+    width: 200px;
+    margin: 25px;
+    border: 15px solid pink;
+    box-shadow: 30px 20px 20px 0 black;
+  }
+  #tekstUt3>img, #tekstUt7>img, #tekstUt2>img {
+    width: 350px;
+    height: 200px;
+    margin: 20px;
+    border: 5px solid pink;
+    box-shadow: 30px 20px 20px 0 black;
+  }
+    #tekstUt3>img:hover, #tekstUt7>img:hover, #tekstUt2>img:hover{
+    width: 500px;
+    height: 300px;
+    transition-duration: 1s;
+  }
+  th>a>img:hover{
+    width: 300px;
+    transition-duration: 2s;
+  }
+
+  video{
+    width: 420px;
+    position: absolute;
+    left: 500px;
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  header {
+    /* bakgrunnbilde til header*/
+    background-image: url(bilder/hotel.jpg);
+  }
+
+.trykk_bestill{
+padding: 15px;
+font-size: 20px;
+border-radius: 22px;
+background-color: lightgrey;
+border-width: 5px;
+border-color: #2ecc71;
+transition: 0.2s;
+
+}
+.trykk_bestill:hover{
+  background-color:#2ecc71;
+  border-color: #3498dd;
+transition-duration: 0.4s;
+color: white;
+font-size: 28px;
+}
+
+
+
+ .type_rom{
+padding: 15px;
+border-radius: 10px;
+font-size: 15px;
+ }
+ .type_rom:hover{
+   background-color: red;
+ }
+
+ .dropned_rom{
+   font-size: 20px;
+   border-style: dashed;
+   border-radius: 20px;
+   margin: 20px 350px;
+   background-color: salmon;
+ }
+
+ .info_bestilling{
+   font-size: 25px;
+   background-color: salmon;
+   opacity: 0.9;
+   border-style: solid;
+   border-radius: 10px;
+   border-color: black;
+   margin: 20px 250px;
+   padding: 20px;
+ }
+
+ .registrer{
+   font-size: 30px;
+   background-color: green;
+   padding: 10px;
+   border-radius: 5px;
+ }
+.registrer:hover{
+  background-color: lightgreen;
+}
+
+h2>a{
+  font-size: 30px;
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: white;
+  padding: 20px;
+  font-style: oblique;
+}
+
+footer{
+  background-color: black;
+  margin: 0px;
+  margin-top:620px;
+  padding: 100px;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    body{
+      text-align: center;
+      padding: 10px;
+    }
+      #kort{
+        border-radius: 2px;
+        border-color:red;
+        border-width: 5px;
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+
+<div id="knapper">
+  <button type="button" id="bryllup" name="button">Bryllup</button>
+  <button type="button" id="konf" name="button">konfirmasjon</button>
+  <button type="button" id="dåp" name="button">barnedåp</button>
+</div>
+
+
+
+<div id="info_valg">
+  <label for="inpTall1">Skriv inn Dato</label>
+  <input id="inpTall1" type="number" name="" placeholder="forbruk" value="">
+  <label for="inpTall2">Dag</label>
+  <input id="inpTall2" type="text" name="" placeholder="drivstoff" value="">
+  <label for="inpTall3">klokkeslett</label>
+  <input id="inpTall3" type="text" name="" placeholder="forbruk" value="">
+  <label for="inpTall4">Sted</label>
+  <input id="inpTall4" type="text" name="" placeholder="drivstoff" value="">
+  <label for="inpTall5">tekst:</label>
+  <input id="inpTall5" type="text" name="" placeholder="drivstoff" value="">
+
+<button type="button" id="send" name="button">Send inn</button>
+</div>
+
+<div id="kort">
+  <div id="overskrift">
+  </div>
+
+  <div id="info">
+
+  </div>
+<img src="" id="img" alt="">
+</div>
+
+
+
+<script type="text/javascript">
+  const knapper = document.querySelector("#knapper");
+  const bryllup = document.querySelector("#bryllup");
+  const konfirmasjon = document.querySelector("#konf");
+  const barnedop = document.querySelector("#dåp");
+
+  const overskrift = document.querySelector("#overskrift");
+  const info = document.querySelector("#info");
+  const kort = document.querySelector("#kort");
+
+  const inpTall1 = document.querySelector("#inpTall1");
+  const inpTall2 = document.querySelector("#inpTall2");
+  const inpTall3 = document.querySelector("#inpTall3");
+  const inpTall4 = document.querySelector("#inpTall4");
+  const inpTall5 = document.querySelector("#inpTall5");
+
+  const send = document.querySelector("#send");
+
+
+
+bryllup.onclick = bryllup1;
+konfirmasjon.onclick = konfirmasjon1;
+barnedop.onclick = barnedop1;
+
+send.onclick = informasjon;
+
+function bryllup1() {
+overskrift.innerHTML = "Velkommen til vårt bryllup"
+img.src = "../o_Tentamen_jul/vedlegg/middag.png"
+}
+function konfirmasjon1() {
+overskrift.innerHTML = "Velkommen til vår konfirmasjon"
+img.src = "eget bilde"
+}
+function barnedop1() {
+overskrift.innerHTML = "Velkommen til vårbarnedåp"
+img.src = "legg inn bilde du har fått i vedlegget tobbi"
+}
+
+function informasjon() {
+info.innerHTML+= "<div>" + inpTall5.value + "</div>";
+
+info.innerHTML += "Dato:" + inpTall1.value;
+info.innerHTML+= "Dag: " + inpTall2.value;
+info.innerHTML+= "klokkeslett: " + inpTall3.value;
+info.innerHTML+= "Sted: " + inpTall4.value;
+
+}
+
+</script>
+  </body>
+</html>

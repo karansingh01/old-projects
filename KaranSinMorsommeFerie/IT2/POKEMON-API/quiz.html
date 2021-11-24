@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Karan quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="shortcut icon" href="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png">
+
+</head>
+
+<body>
+  <a href="index.html"><img src="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png" alt="logo" class="logo"></a>
+
+
+  <form>
+    <div id="spm_div">
+      <h4 id="sporsmalTekst"></h4>
+      <label id="lA" for="1"></label>
+      <input id="rbA" type="radio" name="sporsmal" value="1" />
+      <label id="lB" for="2"></label>
+      <input id="rbB" type="radio" name="sporsmal" value="2" />
+      <label id="lC" for="3"></label>
+      <input id="rbC" type="radio" name="sporsmal" value="3" />
+    </div>
+    <button id="send_inn" type="submit" name="button">Svar</button>
+  </form>
+
+  <script type="text/javascript">
+    const form = document.querySelector("form"); // Variabel som referer til elementer i html
+    const rbA = document.querySelector("#rbA"); // Variabler som er erklært med const opprettholder konstante verdier
+    const rbB = document.querySelector("#rbB");
+    const rbC = document.querySelector("#rbC");
+    const lA = document.querySelector("#lA");
+    const lB = document.querySelector("#lB");
+    const lC = document.querySelector("#lC");
+    const sporsmalTekst = document.querySelector("#sporsmalTekst");
+
+    let riktig = 0; // Global Varibael som teller hvor mange korrekt du har
+    let feil = 0; // Global Varibael som teller hvor mange feil du har
+
+    let spNr = 0; //Global Varibael som bestemmer hvilket spm som skal vises.
+
+    const sporsmal = [{ // variabel som holder kosntant verdi.
+        tekst: "Hvem er den tyngste Pokemonen av disse?", // en array med tekst som er spm
+        alternativer: ["Charmander", "Pikachu", "Bulbasaur"],
+        riktig: "Charmander"
+      },
+      {
+        tekst: "Hvem var Ash sin første Pokemon?",
+        alternativer: ["Mewto", "Dragonite", "Pikachu"],
+        riktig: "Pikachu"
+      },
+      {
+        tekst: "Hvilken Pokemon er Nr 3 på pokedexen?",
+        alternativer: ["Lapras", "Nidorino", "Venusaur"],
+        riktig: "Venusaur"
+      }
+    ];
+
+    lagSporsmal(spNr) // kjøres når siden lastes inn
+    //spørsmål nummerr = spNr forteller hvilket del av arrayen som skal vises entent 0, 1, 2...
+
+    function lagSporsmal(spNr) {
+      sporsmalTekst.innerHTML = sporsmal[spNr].tekst;
+      lA.innerHTML = sporsmal[spNr].alternativer[0]; // Endrer label eller tekst på label
+      lB.innerHTML = sporsmal[spNr].alternativer[1];
+      lC.innerHTML = sporsmal[spNr].alternativer[2];
+
+      rbA.value = sporsmal[spNr].alternativer[0] // endrer Value på Radio buttons.
+      rbB.value = sporsmal[spNr].alternativer[1]
+      rbC.value = sporsmal[spNr].alternativer[2]
+    }
+
+    form.onsubmit = function(event) { // form lager et skjema for bruker inputt.
+      event.preventDefault(); // stopper innsenidng av data
+      const formdata = new FormData(form); // opretter et nytt objekt av klassen formData som skal bruke verdien (form)
+      const svar = formdata.get("sporsmal"); // konstantent svar er henter inn dataen fra sporsmal arrayen som vi velger.
+      rbA.checked = false; // gjør slik at radio knappen ikke allerede er valgt før neste spm.
+      rbB.checked = false; // er en boolean
+      rbC.checked = false;
+      console.log(svar);
+
+      if (svar === sporsmal[spNr].riktig) { // hvis svar er helt lik sorsmal[hvilken array nr vi er på som vil være 0 på første] og hva vi har sett på som riktig på den.
+        riktig += 1; // plusser på 1 på den globale veriden riktig.
+      } else {
+        feil += 1;
+      }
+
+      if (spNr < sporsmal.length - 1) { // hvis spmNr er mindre enn array lengden -1,
+        form.reset // resetter formen slik at det gamle spørsmålet fjernes.
+        spNr += 1;
+        lagSporsmal(spNr); // kjører funksjonen lagSporsmal, men nå er spNR+i slik at neste del av arrayen vises.
+      } else if (riktig === sporsmal.length) { // hvis spnr er er mindre enn array lengden og det altså ikke er flere spm igjen og riktig er 3
+        form.innerHTML = `<h3>Takk for at du spilte</h3>
+          <h2>du fikk alt riktig</h2>
+          <a href="quiz.html"><button type="button">Start på nytt</button></a>` // restarter siden igjen
+      } else {
+        form.innerHTML =
+          `<h3>Takk for at du spilte</h3>
+
+  <h2>du fikk ${riktig} riktig og ${feil} feil</h2>
+  <a href="quiz.html"><button type="button">Start på nytt</button></a>
+  <h2>riktig svar på oppg 1: ${sporsmal[0].riktig}</h2> <!-- viser hvilke svar som egentlig er riktig-->
+  <h2>riktig svar på oppg 2: ${sporsmal[1].riktig}</h2>
+  <h2>riktig svar på oppg 3: ${sporsmal[2].riktig}</h2>
+`
+      }
+    };
+  </script>
+</body>
+
+</html>

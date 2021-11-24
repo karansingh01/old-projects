@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBBfaYKkwusYEAEFOJjbkCEm-LP1tEkkjw",
+    authDomain: "real-time-kontakter.firebaseapp.com",
+    databaseURL: "https://real-time-kontakter.firebaseio.com",
+    projectId: "real-time-kontakter",
+    storageBucket: "real-time-kontakter.appspot.com",
+    messagingSenderId: "699220478292"
+  };
+  firebase.initializeApp(config);
+</script>
+  <link rel="stylesheet" href="oppg.css">
+</head>
+
+<body>
+  <section>
+    <form id="skjema">
+      <input id="inpNavn" type="text" required placeholder="navn">
+      <input id="inpTelefon" type="text" required placeholder="telefon">
+      <input id="inpEpost" type="text" required placeholder="epost">
+      <button type="submit">Registrer kontakt</button>
+    </form>
+  </section>
+  <section id="secKontakter">
+
+
+  </section>
+
+
+
+  <script src="./main.js"></script>
+
+
+
+</body>

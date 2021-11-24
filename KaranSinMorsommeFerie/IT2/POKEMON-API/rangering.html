@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangering pokemon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation-prototype.min.css">
+    <link rel="stylesheet" href="rangering.css">
+    <link rel="shortcut icon" href="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png" alt="logo" class="logo"></a>
+  </div>
+<h1>POKEMON TURNERING</h1>
+  <div id="regler">
+<h6>vinn= 4 poeng, likt = 2 poeng, tap = 0 poeng</h6>
+  </div>
+</header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Pokemon</th>
+                <th>Spilt</th>
+                <th>Vunnet</th>
+                <th>Uavgjort</th>
+                <th>Tap</th>
+                <th>Poeng</th>
+                <th>Bilde</th>
+                <th>pokemon rating</th>
+            </tr>
+        </thead>
+        <tbody id="tabell">
+
+        </tbody>
+    </table>
+
+    <div id="divReg">
+        <label for="inpPokemon">Pokemon:(skriv inn ekte pokemon navn)</label>
+        <input id="inpPokemon" type="text">
+
+        <label for="inpVunnet">Vunnet:</label>
+        <input id="inpVunnet" type="text">
+
+        <label for="inpUavgjort">Uavgjort:</label>
+        <input id="inpUavgjort" type="text">
+
+        <label for="inpTap">Tap:</label>
+        <input id="inpTap" type="text">
+
+        <button id="btnReg">Registrer Pokemon</button>
+    </div>
+
+
+    <script>
+        const tabell = document.querySelector("#tabell"); // Globale variabel som referer til elementer i html
+        const inpPokemon = document.querySelector("#inpPokemon");
+        const inpVunnet = document.querySelector("#inpVunnet"); //
+        const inpUavgjort = document.querySelector("#inpUavgjort");
+        const inpTap = document.querySelector("#inpTap");
+        const btnReg = document.querySelector("#btnReg");
+
+        const poke_turnering = []; // en tom Array uten noen objekter.
+
+            function sorterPoeng(a, b){ // sorteringsfunksjon
+                return (b.vunnet * 4 + b.uavgjort*2) - (a.vunnet * 4 + a.uavgjort*2);
+            }
+
+async function skrivPokemon() {
+  tabell.innerHTML = ``;
+  poke_turnering.sort(sorterPoeng);
+            for(let i = 0; i < poke_turnering.length; i += 1){ // for løkke hvor variabelen i er mindre enn lengden av rrayen
+                let spilte = poke_turnering[i].vunnet + poke_turnering[i].uavgjort + poke_turnering[i].tap; // variabelen spilt plusser vunnet uavgjort og tapt sammen.
+                let poeng = poke_turnering[i].vunnet * 4 + poke_turnering[i].uavgjort*2; // variabelen poeng forteller hvor mange poeng man har fått.
+                let navnet = poke_turnering[i].navn.toLowerCase(); // setter toLowerCase for at det blir i små bokstaver
+                const url = `https://pokeapi.co/api/v2/pokemon/${navnet}`; //  constant funksjon url som er linken til poekapi son endres etter hva navnet er
+                const res = await fetch(url); //hente dataen,skriver hvor det skal hente fra i ()parantese
+                // siden det er async kan vi vente på å få svar noe javascript ikke gjør vanlighvis derfo har vi await.
+                const data = await res.json(); // gjør om json filen som apien er til et javascript objekkt.
+
+                tabell.innerHTML += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${poke_turnering[i].navn}</td>
+                        <td>${spilte}</td>
+                        <td>${poke_turnering[i].vunnet}</td>
+                        <td>${poke_turnering[i].uavgjort}</td>
+                        <td>${poke_turnering[i].tap}</td>
+                        <td>${poeng}</td>
+                        <td><img src=${data.sprites.front_default}></td>
+                        <td>${data.stats[0].base_stat}</td>
+
+                    </tr>
+                `;
+              }
+        }
+            btnReg.onclick = function(){ // funksjon som kjøres når btnReg blir trykket på.
+                  poke_turnering.push({ // sender dette objekte inn i arrayen
+                      navn: inpPokemon.value,
+                      vunnet: Number(inpVunnet.value),
+                      uavgjort: Number(inpUavgjort.value),
+                      tap: Number(inpTap.value)
+                  });
+      skrivPokemon(); // kjører funksjonen skrivpokemon() igjen nå som det har blitt lagt til innhold i Arrayen
+      console.log(poke_turnering);
+
+            }
+
+    </script>
+</body>
+</html>

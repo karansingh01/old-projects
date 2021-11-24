@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Enkel grid</title>
+  <style media="screen">
+    main {
+      display: grid; /* Main element skl være grid for at det skal være ved siden av hverandre, kan også skrive hvor mange pixels bare*/
+      grid-template-columns: 3fr 1fr 1fr;/*To kolloner, en stor og en mindre*/
+      grid-column-gap:10px;/*hvor mye collumn gap mellom griddene*/
+      grid-row-gap:10px;
+background-color: blue;
+      width: 700px;
+    margin:auto;
+    }
+
+    main>article {
+      background-color: cyan;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+      <h1>oppgave grid</h1>
+  </header>
+  <main>
+    <article> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</article>
+    <article> Grid element 2</article>
+    <article> Grid element 3</article>
+    <article> Grid element 4</article>
+    <article> Grid element 5</article>
+    <article> Grid element 6</article>
+    <article> Grid element 7</article>
+    <article> Grid element 8</article>
+    <article> Grid element 9</article>
+
+  </main>
+
+</body>
+
+</html>

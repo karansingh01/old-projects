@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oppgave 2 - Data fra Stortinget</title>
+</head>
+
+<body>
+  <h1>2) Data om Stortinget</h1>
+
+  <div>a) Lederen i KrF: <span id="sp2a"></span> </div> <!-- Kjell Ingolf Ropstad -->
+
+  <div>b) Alle partiene i datasettet: <ul id="ul2b"></ul>
+  </div>
+
+  <div>c) Alle politikerene til Venstre som er i datasettet: <ul id="ul2c"></ul>
+  </div>
+
+  <div>d) Alle politikerene i datasettet: <ul id="ul2d"></ul>
+  </div>
+
+  <div>e) Alle parti med liste over politikere under hvert parti <div id="div2e"></div>
+  </div>
+
+  <button id="btnSkriv">Skriv ut svar</button>
+
+  <script>
+    const btnSkriv = document.querySelector("#btnSkriv")
+    const sp2a = document.querySelector("#sp2a");
+    const ul2b = document.querySelector("#ul2b");
+    const ul2c = document.querySelector("#ul2c");
+    const ul2d = document.querySelector("#ul2d");
+    const div2e = document.querySelector("#div2e");
+
+    const partier = [{
+        navn: "Kristelig Folkeparti",
+        politikere: ["Kjell Ingolf Ropstad", "Olaug Bollestad", "Ingelin Noresjø"]
+      },
+      {
+        navn: "Venstre",
+        politikere: ["Trine Skei Grande", "Ola Elvestuen", "Iselin Nybø", "Abid Raja", "Sveinung Rotevatn"]
+      },
+      {
+        navn: "Sosialistisk Venstreparti",
+        politikere: ["Audun Lysbakken", "Kirsti Bergstø", "Torgeir Knag Fylkesnes"]
+      },
+      {
+        navn: "Senterpartiet",
+        politikere: ["Trygve Slagsvold Vedum", "Ola Borten Moe", "Liv Signe Navarsete"]
+      }
+    ];
+
+    btnSkriv.onclick = function() {
+      sp2a.innerHTML += partier[0].politikere[0];
+      ul2c.innerHTML += partier[1].politikere;
+
+
+      for (let parti of partier) {
+        ul2b.innerHTML += `${parti.navn}, `;
+        ul2d.innerHTML += `${parti.politikere},`;
+        div2e.innerHTML += ` <h2>${parti.navn}</h2> <h4>partiledere:</h4> ${parti.politikere}`;
+
+
+      }
+
+    }
+  </script>
+</body>
+
+</html>

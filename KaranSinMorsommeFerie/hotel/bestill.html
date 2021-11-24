@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="hotel.css">
+  </head>
+  <body>
+    <link rel="shortcut icon" href="bilder/logo2.png">
+<header>
+  <div class="logo">
+  <a href="hotel.html"><img src="bilder/logo2.png"  alt=""></a>
+  </div>
+</header>
+
+    <div class="forskjellig_rom">
+    <button onclick="visStandard()" class="type_rom" >Vis standard</button>
+    <p id="tekstUt2"></p><br>
+
+    <button onclick="visVIP()" class="type_rom" >Vis VIP</button>
+    <p id="tekstUt7"></p><br>
+
+    <button onclick="visSuite()" class="type_rom" >Vis suite</button>
+    <p id="tekstUt3"></p><br><br>
+</div>
+
+<div class="info_bestilling">
+<h2>Bestill rom her</h2>
+        Fornavn: <input id="inpFor" placeholder="Skriv her fornavn..."><br><br>
+        Etternavn: <input id="inpEtter" placeholder="Skriv her etternavn..."><br><br>
+        Mobil nummer: <input id="inpMobil" placeholder="Skriv mobilnr her..." type="number"><br><br>
+        Velg kjønn: <select id="inpKjønn">
+          <option value="">Velg</option>
+          <option value="mann">Mann</option>
+          <option value="kvinne">Kvinne</option>
+        </select><br><br>
+
+        Velg romtype: <select id="inpRomType">
+          <option value="">Velg</option>
+          <option value="standard">Standard</option>
+          <option value="vip">VIP</option>
+          <option value="suite">Suite</option>
+
+        </select><br><br>
+
+
+        <button onclick="sjekkInn()" class="registrer" >Register gjest</button>
+        <p id="tekstUt1"></p><br><br>
+
+
+                <button onclick="visGjester()" class="trykk_bestill">Trykk her for å vise bestilling</button>
+                <button onclick="fjerngjester()" class="trykk_bestill" name="button">fjern gjeste lister</button>
+
+                <p id="tekstUt"></p>
+
+
+
+      </div>
+
+
+
+
+
+  </body>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAkZfjMyMiiqVKLwTvtYsv6URrSH6LD4xA",
+      authDomain: "nytt-hotel.firebaseapp.com",
+      databaseURL: "https://nytt-hotel.firebaseio.com",
+      projectId: "nytt-hotel",
+      storageBucket: "nytt-hotel.appspot.com",
+      messagingSenderId: "9566139422",
+      appId: "1:9566139422:web:af82cd59438b49daf2ea0f"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+
+  <script>
+    let database = firebase.database();
+    let rom = database.ref("rom");
+    let suite = database.ref("suite");
+    let vip = database.ref("VIP");
+    let standard = database.ref("standard");
+    let gjester = database.ref("gjester")
+    let tekstUt = document.getElementById("tekstUt");
+
+  function visStandard(){
+    rom.once("value", function(snapshot) {
+      let romliste = snapshot.val();
+      let rom = romliste["standard"];
+      tekstUt2.innerHTML = `<p class = "dropned_rom">
+      Antall ledige: ${rom.ledige}<br>
+      Pris per natt: ${rom.pris}<br>
+      Seng: ${rom.seng}
+      </p>
+      <img src="bilder/rom1.jpeg" alt="">
+      <img src="bilder/bad.webp" alt="">
+      <img src="bilder/ekstra_!.jpg" alt="">
+`;
+    })
+  }
+
+  function visVIP() {
+    rom.once("value", function(snapshot) {
+      let romliste = snapshot.val();
+      let rom = romliste["VIP"];
+      tekstUt7.innerHTML = `<p class = "dropned_rom">
+      Antall ledige: ${rom.ledige} <br>
+      Pris per natt: ${rom.pris} <br>
+      Seng: ${rom.seng}
+      </p>
+      <img src="bilder/rom2.jpeg" alt="">
+      <img src="bilder/bad_2.jpg" alt="">
+      <img src="bilder/ekstra_2.jpg" alt="">
+`;
+    })
+  }
+
+  function visSuite(){
+    rom.once("value", function(snapshot) {
+      let romliste = snapshot.val();
+      let rom = romliste["Suite"];
+      tekstUt3.innerHTML = `<p class = "dropned_rom">
+      Antall ledige: ${rom.ledige}<br>
+      Pris per natt: ${rom.pris}<br>
+      Seng: ${rom.seng}
+      </p>
+      <img src="bilder/rom3.jpeg" alt="">
+      <img src="bilder/bad_3.jpg" alt="">
+      <img src="bilder/ekstra_3.jpg" alt="">
+`;
+    })
+  }
+
+  function sjekkInn(){
+    let fornavn = document.getElementById("inpFor").value;
+    let etternavn = document.getElementById("inpEtter").value;
+    let mobil = document.getElementById("inpMobil").value;
+    let kjønn = document.getElementById("inpKjønn").value;
+    let rom = document.getElementById("inpRomType").value;
+    let nygjest = {
+      "Fornavn": fornavn,
+      "Etternavn": etternavn,
+      "Mobil": mobil,
+      "Kjønn": kjønn,
+      "Romtype": rom
+    };
+    gjester.push(nygjest);
+    tekstUt1.innerHTML = "Gjest har skjekket inn."
+  }
+
+
+  function visGjester(){
+    tekstUt.innerHTML += `<h2>Rom bestillinger:</h2>`;
+    gjester.orderByChild('Etternavn').on('child_added',function(snapshot){
+      let gjest = snapshot.val();
+      tekstUt.innerHTML += `<p>
+      Fornavn:${gjest.Fornavn}<br>
+      Etternavn:${gjest.Etternavn}<br>
+      Mobil nummer:${gjest.Mobil}
+      </p>`
+    })
+  }
+
+    function fjerngjester(){
+         gjester.remove()
+         tekstUt.innerHTML = `Gjestene er fjernet, det er ingen gjester registrert`;
+       }
+
+
+
+
+
+
+  </script>
+
+
+</html>

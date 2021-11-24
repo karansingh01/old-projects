@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="logginn.css">
+  <script src="main.js">
+  </script>
+  <title>Log in</title>
+
+</head>
+
+<body>
+  </head>
+
+  <body>
+    <header>
+      <!-- seksjon for den delen over søkemotoren -->
+      <section class="header_øverst">
+
+        <!-- kode for den lange hvite linjen øverst -->
+        <section class="lang">
+          <a>Gratis <b><span style="color:blue"> frakt</span></b> og <b><span style="color:blue">retur</span></b> året rundt</a>
+        </section>
+
+        <section class="usynlig">
+        </section>
+
+        <!-- kode for logoen -->
+        <section class="logo">
+          <a href="index.html"><img src="bilder_klær_riktig/ny_logo.png" alt="logo" class="logo"></a>
+        </section>
+
+        <section class="usynlig1">
+        </section>
+
+        <!-- kode for logg inn, ønskeliste og handlekurv knappene er under her  -->
+        <section class="lenke">
+          <a href="logginn.html"><img src="bilder_klær_riktig/innlogging.svg" alt="bilde" class="iconbilde"> </a>
+          <a href="logginn.html"><br>LOGG INN</a>
+        </section>
+
+        <!-- kode for  ønskeliste knappen er under her  -->
+        <section class="lenke">
+          <a href="ønskeliste.html"><img src="bilder_klær_riktig/ønskeliste.png" alt="bilde" class="iconbilde"> </a>
+          <a href="ønskeliste.html">ØNSKELISTE</a>
+        </section>
+        <!-- kode for Handlekurv knappen er under her  -->
+        <section class="lenke">
+          <a href="handlekurv.html"><img src="bilder_klær_riktig/kurv1.png" alt="bilde" class="iconbilde"> </a>
+          <a href=handlekurv.html><br>KURV</a>
+        </section>
+
+      </section>
+      <!-- slutt på kode for handlekurv, ønskeliste og logg inn -->
+
+      <!-- kode for søkefeltet -->
+      <section class="søkemotor">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <input type="text" placeholder="Søk etter klær eller merker...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </section>
+
+      <!-- kode for navigasjonbarene starter under her-->
+      <nav class="navigation">
+
+        <!-- kode for dropned for klær i navigasjons baren-->
+        <section class="dropned">
+          <a href="klær.html" class="dropknapp">Klær</a>
+          <section class="dropned-content">
+            <a href="gensere.html">gensere</a>
+            <a href="bukser.html">Bukser</a>
+            <a href="skjorter.html">skjorter</a>
+            <a href="jakker.html">jakker</a>
+          </section>
+        </section>
+
+        <section class="dropned">
+          <a href="sport.html" class="dropknapp">Sport</a>
+        </section>
+
+        <section class="dropned">
+          <a href="tilbehor.html" class="dropknapp">Tilbehør</a>
+        </section>
+
+
+        <section class="dropned">
+          <a href="sko.html" class="dropknapp">Sko</a>
+        </section>
+
+        <section class="dropned">
+          <a href="nyheter.html" class="dropknapp">Nyheter</a>
+        </section>
+
+        <section class="dropned">
+          <a href="salg.html" class="dropknapp">Salg</a>
+        </section>
+
+      </nav>
+
+    </header>
+    <!-- slutt på kode for header-->
+
+    <button class="tilbake_knapp" onclick="goBack()"><--Tilbake</button>
+     <h1>LOGG INN FOR Å SE ØNSKELISTE</h1>
+      <div id="firebaseui-auth-container"></div>
+
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBw148vUQE0uezb6DbQLxjE1j9_pUOzZSo",
+          authDomain: "chat-281af.firebaseapp.com",
+          databaseURL: "https://chat-281af.firebaseio.com",
+          projectId: "chat-281af",
+          storageBucket: "chat-281af.appspot.com",
+          messagingSenderId: "1053246261853"
+        };
+        firebase.initializeApp(config);
+      </script>
+        <!-- DENNE KODEN KOMMER FRA Firebase.auth -->
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <script type="text/javascript">
+          // FirebaseUI config.
+          var uiConfig = {
+            signInSuccessUrl: 'index.html',
+            signInOptions: [
+              // Leave the lines as is for the providers you want to offer your users.
+              firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // tosUrl and privacyPolicyUrl accept either url string or a callback
+            // function.
+            // Terms of service url/callback.
+            tosUrl: '<your-tos-url>',
+            // Privacy policy url/callback.
+            privacyPolicyUrl: function() {
+              window.location.assign('<your-privacy-policy-url>');
+            }
+          };
+          // Initialize the FirebaseUI Widget using Firebase.
+          var ui = new firebaseui.auth.AuthUI(firebase.auth());
+          // The start method will wait until the DOM is loaded.
+          ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+        <script>
+          function goBack() {
+            window.history.back();
+          }
+        </script>
+
+
+
+
+        <section class="reklame2">
+          <a href="klær.html"><img src="bilder_klær_riktig/reklame_2bild.jpg" alt="bilde"></a>
+        </section>
+        <footer>
+        </footer>
+
+
+        <footer>
+
+          <section class="hele_footer">
+
+
+            <section class="om_oss_footer">
+              <table>
+                <thead>
+                  <tr>
+                    <th>INFORMASJON</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="logginn.html"> LOGG INN</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="ønskeliste.html">ØNSKELISTE</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="kundeservice.html">KONTAKT OSS</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="oss.html">FÅ NYHETSBREV</a></td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </section>
+
+            <section class="">
+              <table>
+                <thead>
+                  <tr>
+                    <th><a href="index.html">VARER</a></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> <a href="klær.html">klær</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="sport.html">sport</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="sko.html">sko</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="tilbehor.html">tilbehør</a></td>
+                  </tr>
+                </tbody>
+
+              </table>
+
+            </section>
+
+            <section class="oss_footer">
+              <table>
+                <thead>
+                  <tr>
+                    <th><a href="oss.html">OM OSS</a></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="oss.html">søk jobb</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="oss.html">ansatte</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="oss.html">historikk</a></td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </section>
+
+
+
+
+            <section class="sosial_footer">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Følg oss</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="http://www.facebook.com"><img src="bilder_klær_riktig/face.png" class="sosbilder"></a></td>
+                    <td><a href="http://www.twitter.com"><img src="bilder_klær_riktig/twit.png" class="sosbilder"></a></td>
+                    <td><a href="http://www.instagram.com"><img src="bilder_klær_riktig/insta.jpg" class="sosbilder"></a></td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+            </section>
+
+
+
+          </section>
+        </footer>
+  </body>
+
+</html>

@@ -1,0 +1,44 @@
+{
+ "varer" : {
+    "bukser" : {
+      "bukse001" : {
+        "merke" : "Olabukse",
+        "modell" : "Stretchy",
+        "pris" : 490,
+        "bilde" : "bukse001.jpg"
+      },
+      "bukse002" : {
+        "merke" : "Kortbukse",
+        "modell" : "Steinvaska",
+        "pris" : 580,
+        "bilde" : "bukse002.jpg"
+      },
+      "bukse003" : {
+        "merke" : "Billigbuksa",
+        "modell" : "Steinvaska",
+        "pris" : 180,
+        "bilde" : "bukse003.jpg"
+      },
+      "bukse004" : {
+        "merke" : "Jobbebuksa",
+        "modell" : "Steinvaska",
+        "pris" : 580,
+        "bilde" : "bukse004.jpg"
+      }
+    },
+    "skjorter" : {
+      "skjorte001" : {
+        "merke" : "Rutete",
+        "modell" : "Rett",
+        "pris" : 480,
+        "bilde" : "skjorte001.jpg"
+      },
+      "skjorte002" : {
+        "merke" : "Stripete",
+        "modell" : "Innsvinget",
+        "pris" : 380,
+        "bilde" : "skjorte002.jpg"
+      }
+    }
+  }
+}

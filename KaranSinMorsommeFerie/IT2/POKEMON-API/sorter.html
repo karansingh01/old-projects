@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <link rel="stylesheet" href="sorter.css">
+  <link rel="shortcut icon" href="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png">
+</head>
+
+<body>
+
+  <div id="head">
+    <div class="logo">
+      <a href="index.html"><img src="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png" alt="logo" class="logo"></a>
+    </div>
+    <h1>Sorter dine Pokemons</h1>
+
+    <input id="inpPokemon" type="text" name="" value="" placeholder="Pokemon Navn">
+
+    <label for="inpTall">Ranger din POKEMON(100 er best):</label>
+    <input id="inpTall" type="number" name="" value="" placeholder="Beste er 100">
+
+
+    <button id="btnLeggTil" type="button" name="button">Legg til</button>
+    <button id="slett" type="button" name="button">Slett Alt</button>
+  </div>
+
+<div id="over">
+
+</div>
+  <div id="liste">
+  </div>
+
+
+
+  <script>
+    const inpPokemon = document.querySelector("#inpPokemon"); // Global variabel som referer til elementer i html
+    const inpTall = document.querySelector("#inpTall");
+    const btnLeggTil = document.querySelector("#btnLeggTil");
+    const liste = document.querySelector("#liste");
+    const btnSlett = document.querySelector("#slett");
+    const slett1 = document.querySelector("#slett1");
+    const over = document.querySelector("#over");
+
+    let pokemons = []; // tom array uten objekter.
+
+console.log(pokemons);
+
+    btnLeggTil.onclick = leggTil; // kjører funksjonen når knappen blir trykket.
+
+
+    function leggTil() {
+      pokemons.push({ // pusher/sender inn
+          navn: inpPokemon.value,
+          poeng: Number(inpTall.value)
+      });
+      lagHtml(); // inni funksjonen kjøres også lagHtml som legger til innhold på siden.
+    }
+
+    function sorterRang(a, b) { // funksjon for å sortere poeng fra høyeste til lavest.
+      return b.poeng - a.poeng;
+    }
+    pokemons.sort(sorterRang); // sortere arrayen ved bruk av sorterRang
+
+
+    btnSlett.onclick = function() { // funksjon uten navn, er selvpåkallende funksjon som skjer med en gang, trenger ikke å bli kalt
+      liste.innerHTML = ``; // liste html innhold: gjør den tom
+      pokemons = []; // gjør array tom
+    }
+
+
+    function fjernVare(i) { // fjerner en spesifikk vare som du trykker på.
+      pokemons.splice(i, 1); // splice array nr i og, bare den ene.
+      lagHtml(); // kjører lag Html igjen slik at den nå er fjernet fra siden
+    }
+
+    function lagHtml() {
+      liste.innerHTML = ``; // list innhold er tomt.
+      pokemons.sort(sorterRang); // sorterer arrayen etter poeng
+      for (let i = 0; i < pokemons.length; i += 1) { // for løkke
+        if (inpPokemon.value === "" || inpTall.value>100) {
+          alert("venligst prøv på nytt")
+          fjernVare(i); // fjerner varen fra arrayen
+        }
+        else { // ellers vises det du har skrevet på siden
+        liste.innerHTML += `
+  <ul>
+  <td>${i + 1}.</td>
+  ${pokemons[i].navn}:
+<div>
+  <td>${pokemons[i].poeng} poeng</td>
+</div>
+  <button type="button" onclick= "fjernVare(${i})" id="slett1" name="button">slett</button>
+   </ul>
+   `;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

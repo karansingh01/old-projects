@@ -1,0 +1,48 @@
+body {
+	margin: 0;
+	background: #222;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+	color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image:url("wifi.jpg");
+
+
+}
+.oppgave{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: grey;
+  margin-bottom: 50px;
+    border-color: salmon;
+    border-radius: 50px;
+    border-style: solid;
+  padding-left: 30px;
+  padding-right: 15px;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+
+}
+
+header>h1{
+	color: black;
+}
+  p {
+
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  h1 {
+		margin: 0px;
+    text-align: center;
+
+  }
+
+  p,h1  {
+color: white;
+  }

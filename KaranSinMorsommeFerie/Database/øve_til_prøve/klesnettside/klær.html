@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="nb">
+    <head>
+        <meta charset="UTF-8">
+        <title>Nettbutikken</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <button class="button" onclick="visAlleVarer()">Alle varer</button>
+                <button class="button" onclick="visBukser()">Bukser</button>
+                <button class="button" onclick="visSkjorter()">Skjorter</button>
+                <button class="button" onclick="pris()">Pris</button>
+
+                <button>Handlekurv</button>
+                <button>Tøm handlekurv</button>
+                <input id="sokefelt" type="text">
+            </nav>
+
+        </header>
+        <main></main>
+        <!-- Erstatt de to script-elementene nedenfor med koden fra Firebase her -->
+
+
+
+       <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+       <script>
+         // Initialize Firebase
+         var config = {
+           apiKey: "AIzaSyDZAlHSbyFgF9OMKG-QdDLmm610fIg-Kc8",
+           authDomain: "klear-for-prove-oving.firebaseapp.com",
+           databaseURL: "https://klear-for-prove-oving.firebaseio.com",
+           projectId: "klear-for-prove-oving",
+           storageBucket: "klear-for-prove-oving.appspot.com",
+           messagingSenderId: "287871386440"
+         };
+         firebase.initializeApp(config);
+       </script>
+
+        <script>
+          let database = firebase.database();
+          let bukser = database.ref("varer/bukser");
+          let varer = database.ref("varer");
+          let skjorter = database.ref("varer/skjorter");
+          var sokefelt = document.getElementById("sokefelt");
+          var søketekst ="";
+          let main = document.querySelector("main");
+          function visVare(snapshot) {
+              let vare = snapshot.val();
+              main.innerHTML += `
+                  <article>
+                      <img src="bilder/${vare.bilde}">
+                      <h1>${vare.merke} ${vare.modell}</h1>
+                      <p>${vare.pris}</p>
+                  </article>
+              `;
+          }
+          sokefelt.oninput = sok;
+          function sok () {
+              søketekst=sokefelt.value;
+              visBukser();
+
+          }
+          function visAlleVarer() {
+              bukser.on("child_added", visVare);
+              skjorter.on("child_added", visVare);
+          }
+          visAlleVarer();
+          function visAlleVarer() {
+              main.innerHTML = " "; //Fjerner alt innhold i main
+              bukser.on("child_added", visVare);
+              skjorter.on("child_added", visVare);
+          }
+          function visBukser() {
+              main.innerHTML = " ";
+              //bukser.on("child_added", visVare);
+              bukser
+                  .orderByChild("merke")
+                  .startAt(søketekst)
+                  .endAt(søketekst + '\uf8ff')
+                  .on("child_added", visVare);
+          }
+          function visSkjorter() {
+              main.innerHTML = " ";
+              bukser.on("child_added", visVare);
+              skjorter.on("child_added", visVare);
+          }
+          function pris(){
+            main.innerHTML = ``;
+            bukser.orderByChild("pris")
+            .limitToLast(20)
+            .on("child_added",visVare);
+            skjorter.orderByChild("pris")
+            .limitToLast(20)
+            .on("child_added",visVare);
+          }
+
+
+
+        </script>
+    </body>
+</html>

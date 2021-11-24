@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <label for="rbja">Ja</label>
+    <input id="rbja" type="radio" name="jaEllerNei" value="ja">
+
+    <label for="rbnei">Nei</label>
+    <input id="rbnei" type="radio" name="jaEllerNei" value="Nei">
+
+<button idea type="submit" name="button">Send inn</button>
+  <script type="text/javascript">
+  const rbja = document.querySelector("#rbja");
+  const rbnei = document.querySelector("#rbnei");
+  const button = document.querySelector("button");
+
+
+  function sjekkRadio() {
+    if(rbja.checked){
+      alert("Takk for at du vil delta")
+    }
+    else {
+      alert("Takk for nå")
+    }
+  }
+button.onclick = sjekkRadio
+/*
+  rbja.onclick = sjekkRadio; // ikke paranteser når
+  rbnei.onclick = sjekkRadio; // hvorfor ikke ()
+*/
+
+  </script>
+  </body>
+</html>

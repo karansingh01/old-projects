@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 3 - værdata</title>
+</head>
+<body>
+
+    <h1>Oppgave 3 - Værdata</h1>
+
+    <div>
+        <p>
+            I denne oppvagen skal du jobbe med værdata.
+            I javascript-koden ligger et stort objekt med værdata for Sandvika.
+            Denne dataen er hentet fra Yr.no sitt API, du kan se rådataen her: <a href="https://api.met.no/weatherapi/locationforecast/2.0/.json?lat=59.88&lon=10.52">https://api.met.no/weatherapi/locationforecast/2.0/.json?lat=59.88&lon=10.52</a>.
+
+        </p>
+    </div>
+
+    <div>a) Logg vaerData i konsollen.</div>
+    <div>b) Bruk konsollen og finn temperaturen i Sandvika nå.</div>
+    <div>c) Logg temperaturen fra b) i konsollen</div>
+    <div>d) Skriv temperaturen ut på nettsiden</div>
+    <div>e) Skriv ut værtypen (symbol_code) i Sandvika for den neste timen på nettsiden.</div>
+    <div>f) Lag en for-løkke som går igjennom arrayen timeseries, og skriv ut værtypene.</div>
+
+    <script>
+        const vaerData = {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.52,
+                    59.88,
+                    23
+                ]
+            },
+            "properties": {
+                "meta": {
+                    "updated_at": "2020-03-16T06:57:26Z"
+                },
+                "timeseries": [
+                    {
+                        "time": "2020-03-16T07:00:00Z",
+                        "data": {
+                            "instant": {
+                                "details": {
+                                    "air_temperature": 3.5,
+                                    "wind_speed": 2.9,
+                                }
+                            },
+                            "next_1_hours": {
+                                "summary": {
+                                    "symbol_code": "cloudy"
+                                },
+                                "details": {
+                                    "probability_of_precipitation": 0,
+                                    "probability_of_thunder": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "time": "2020-03-16T08:00:00Z",
+                        "data": {
+                            "instant": {
+                                "details": {
+                                    "air_temperature": 4,
+                                    "wind_speed": 2.9,
+                                }
+                            },
+                            "next_1_hours": {
+                                "summary": {
+                                    "symbol_code": "partlycloudy_day"
+                                },
+                                "details": {
+                                    "probability_of_precipitation": 0,
+                                    "probability_of_thunder": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "time": "2020-03-16T09:00:00Z",
+                        "data": {
+                            "instant": {
+                                "details": {
+                                    "air_temperature": 4.9,
+                                    "wind_speed": 3.3
+                                }
+                            },
+                            "next_1_hours": {
+                                "summary": {
+                                    "symbol_code": "fair_day"
+                                },
+                                "details": {
+                                    "probability_of_precipitation": 0,
+                                    "probability_of_thunder": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "time": "2020-03-16T10:00:00Z",
+                        "data": {
+                            "instant": {
+                                "details": {
+                                    "air_temperature": 5.8,
+                                    "wind_speed": 3.1
+                                }
+                            },
+                            "next_1_hours": {
+                                "summary": {
+                                    "symbol_code": "clearsky_day"
+                                },
+                                "details": {
+                                    "probability_of_precipitation": 0,
+                                    "probability_of_thunder": 0
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+
+console.log(vaerData);
+
+    </script>
+</body>
+</html>

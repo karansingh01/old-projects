@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>OPPG1</title>
+  <style media="screen">
+    #bilderamme {
+      width: 607px;
+      height: 700px;
+      position: relative;
+    }
+    .muskel{
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+       position: absolute;
+    }
+
+    #arm{
+      top: 20%;
+      left: 60%;
+    }
+    #rygg{
+      top: 31%;
+      left: 47%;
+    }
+    .bilde{
+width: 400px;
+height: 600px;
+    }
+    #gruppe{
+      position: absolute;
+      top: 10%;
+      left: 20%
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div id="bilderamme">
+      <img id="bilde" src="IT2_H19_vedlegg 2/kropp.gif" alt="">
+      <div id="arm" class="muskel">
+      </div>
+      <div id="rygg" class="muskel">
+      </div>
+
+<p id="gruppe">muskelgruppe</p>
+
+    </div>
+
+    <audio id="arm_lyd" src="vedlegg/arm_riktig_mixdown.wav" controls>
+    </audio>
+
+    <audio id="rygg_lyd" src="vedlegg/brede_ryggmuskel.mp3" controls>
+    </audio>
+
+
+  </div>
+
+  <script src="script.js" charset="utf-8"></script>
+</body>
+
+</html>

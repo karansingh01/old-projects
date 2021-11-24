@@ -1,0 +1,23 @@
+body {
+  padding: 0;
+  margin: 0;
+  }
+
+#header{
+  display: flex;
+  text-align:center;
+
+}
+
+#header>h1{ 
+  text-align:center;
+}
+
+
+#divPoeng{
+  background-color: salmon;
+  border-radius: 5px;
+font-size: 30px;
+margin-right: 250px;
+padding: 15px;
+}

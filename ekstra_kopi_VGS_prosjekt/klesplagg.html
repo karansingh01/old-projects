@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="klesplagg.css">
+  <title></title>
+  <script src="main.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBXt6HrwrG3frVTfTwqeXKUOOmNr5jwON0",
+        authDomain: "hoved-klesbutikk-riktig.firebaseapp.com",
+        databaseURL: "https://hoved-klesbutikk-riktig.firebaseio.com",
+        projectId: "hoved-klesbutikk-riktig",
+        storageBucket: "hoved-klesbutikk-riktig.appspot.com",
+        messagingSenderId: "844489859082"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+</head>
+
+<body>
+  <header>
+
+    <section class="header_øverst">
+
+      <!-- kode for den lange hvite linjen øverst -->
+      <section class="lang">
+        Gratis <b><span style="color:blue"> frakt</span></b> og <b><span style="color:blue">retur</span></b> året rundt
+      </section>
+
+      <section class="usynlig">
+      </section>
+
+      <!-- kode for logoen -->
+      <section class="logo">
+        <a href="index.html"><img src="bilder_klær_riktig/ny_logo.png" alt="logo" class="logo"></a>
+      </section>
+
+      <!-- kode for usynlig del -->
+      <section class="usynlig1">
+      </section>
+
+
+      <!-- kode for logg inn, og handlekurv knappene er under her  -->
+      <section class="lenke ">
+        <a href="logginn.html"><img src="bilder_klær_riktig/innlogging.svg" alt="bilde" class="iconbilde"> </a>
+        <a href="logginn.html"><br>LOGG INN</a>
+      </section>
+
+
+      <!-- kode for  ønskeliste og knappene er under her  -->
+      <section class="lenke  ønskeliste">
+        <a href="ønskeliste.html"><img src="bilder_klær_riktig/ønskeliste.png" alt="bilde" class="iconbilde"> </a>
+        <a href="ønskeliste.html">ØNSKELISTE</a>
+      </section>
+
+      <section class="lenke handlekurv">
+        <a href="handlekurv.html"><img src="bilder_klær_riktig/kurv1.png" alt="bilde" class="iconbilde"> </a>
+        <a href=handlekurv.html><br>KURV</a>
+      </section>
+
+    </section>
+    <!-- slutt på kode for handlekurv, ønskeliste og logg inn -->
+
+    <!-- kode for søkefeltet -->
+    <section class="søkemotor">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <input type="text" placeholder="Søk etter klær eller merker...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </section>
+
+
+    <!-- kode for navigasjonbarene starter under her-->
+    <nav class="navigation">
+
+      <!-- kode for dropned for navigasjons baren-->
+      <section class="dropned">
+        <a href="klær.html" class="dropknapp">Klær</a>
+        <section class="dropned-content">
+          <a href="gensere.html">gensere</a>
+          <a href="bukser.html">Bukser</a>
+          <a href="skjorter.html">skjorter</a>
+          <a href="jakker.html">jakker</a>
+        </section>
+      </section>
+
+
+      <!-- kode for knapper som ikke har dropdown i navigasjons baren-->
+      <section class="dropned">
+        <a href="sport.html" class="dropknapp">Sport</a>
+      </section>
+
+      <section class="dropned">
+        <a href="tilbehor.html" class="dropknapp">Tilbehør</a>
+      </section>
+
+
+      <section class="dropned">
+        <a href="sko.html" class="dropknapp">Sko</a>
+      </section>
+
+      <section class="dropned">
+        <a href="nyheter.html" class="dropknapp">Nyheter</a>
+      </section>
+
+      <section class="dropned">
+        <a href="salg.html" class="dropknapp">Salg</a>
+      </section>
+
+    </nav>
+    <!-- kode for navigasjons varen er slutt  -->
+
+  </header>
+  <!-- slutt på kode for header-->
+
+
+  <!-- kode for tilbake knapp -->
+  <button class="tilbake_knapp" onclick="goBack()">
+    <--Tilbake </button> <!--kode for main under her-->
+      <main>
+        <section id="main">
+        </section>
+
+        <section class="lignendeProdukter">
+          <h1>Folk liker også</h1>
+        </section>
+        <section class="seclignendeProdukter">
+
+        </section>
+      </main>
+
+      <!-- kode for reklamen-->
+      <section class="reklame2">
+        <a href="klær.html"><img src="bilder_klær_riktig/reklame_2bild.jpg" alt="bilde"></a>
+      </section>
+
+      <!-- kode for innholdet i footer -->
+      <footer>
+
+        <section class="hele_footer">
+
+          <!-- kode for linje 1 i footer -->
+          <section class="om_oss_footer">
+            <table>
+              <thead>
+                <tr>
+                  <th>INFORMASJON</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="logginn.html"> LOGG INN</a></td>
+                </tr>
+                <tr>
+                  <td><a href="ønskeliste.html">ØNSKELISTE</a></td>
+                </tr>
+                <tr>
+                  <td><a href="kundeservice.html">KONTAKT OSS</a></td>
+                </tr>
+                <tr>
+                  <td><a href="oss.html">FÅ NYHETSBREV</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- kode for linje 2 i footer -->
+          <section class="oss_footer">
+            <table>
+              <thead>
+                <tr>
+                  <th><a href="index.html">VARER</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> <a href="klær.html">klær</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="sport.html">sport</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="sko.html">sko</a></td>
+                </tr>
+                <tr>
+                  <td><a href="tilbehor.html">tilbehør</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- kode for linje 3 i footer -->
+          <section class="oss_footer">
+            <table>
+              <thead>
+                <tr>
+                  <th><a href="oss.html">OM OSS</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="oss.html">søk jobb</a></td>
+                </tr>
+                <tr>
+                  <td><a href="oss.html">ansatte</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="oss.html">historikk</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- del av footer med sosiale medier bilder -->
+          <section class="sosial_footer">
+            <table>
+              <thead>
+                <tr>
+                  <th>Følg oss</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://www.facebook.com"><img src="bilder_klær_riktig/face.png" class="sosbilder"></a></td>
+                  <td><a href="http://www.twitter.com"><img src="bilder_klær_riktig/twit.png" class="sosbilder"></a></td>
+                  <td><a href="http://www.instagram.com"><img src="bilder_klær_riktig/insta.jpg" class="sosbilder"></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+        </section>
+      </footer>
+      <!-- footer slutter her-->
+
+      <!-- javascript starter under her -->
+      <script>
+        const main = document.querySelector("#main"); // Variabel som referer til main id-elementet
+        const seclignendeProdukter = document.querySelector(".seclignendeProdukter");
+
+        let url_string = window.location.href;
+        let url = new URL(url_string);
+        let id = url.searchParams.get("id");
+        let parentId = url.searchParams.get("parent");
+        //let parentParent = url.searchParams.get("parentParent");
+
+        console.log("id:" + id);
+
+        //Skriv referanser til database under her:
+        const db = firebase.database();
+        const Valgt_vare = db.ref("varer/" + parentId + "/" + id);
+        const bukser = db.ref("varer/bukser"); //Referere til dataene som ligger under varer/bukser.
+        const skjorter = db.ref("varer/skjorter");
+        const gensere = db.ref("varer/gensere");
+        const sport = db.ref("varer/sport");
+        const jakker = db.ref("varer/jakker");
+        const sko = db.ref("varer/sko");
+        const tilbehor = db.ref("varer/tilbehor");
+
+        Valgt_vare.on("value", visVare);
+        // Funksjon som kjøres når siden lastes
+
+        function visVare(snapshot) {
+          let key = snapshot.key;
+          let data = snapshot.val();
+          let parent = snapshot.ref.parent.key;
+          //Javascript-funksjon som skriver varene ut på nettsiden i main-elementet
+          main.innerHTML +=
+            `
+<section class="bilde_liten">
+<section class="bilde_liten1">  <img src="${data.bilde2}" alt=""> </section>
+<section class="bilde_liten2">  <img src="${data.bilde3}" alt=""> </section>
+</section>
+<section class="bilde_stor">  <img src="${data.bilde1}" alt=""> </section>
+<section class="varer_info">
+<h1 class="navn_varer">${data.modell} - ${data.merke1}</h1>
+<p class="pris_varer">Pris: ${data.pris} kr
+<a href="kundeservice.html" class="tilbakemelding">Tilbakemelding</a> </p>
+<section class="styled-select slate">
+  <select>
+
+
+    <option value="farge" class="hver_str_alene">FARGE</option>
+    <option value="farge">${data.Farge1}</option>
+  </select>
+  <section class="styled-select slate">
+    <select>
+      <option value="størrelse" class="hver_str_alene"> STØRRELSE</option>
+      <option value="størrelse">${data.Storrelse}</option>
+      <option value="størrelse">${data.Storrelse1}</option>
+      <option value="størrelse">${data.Storrelse2}</option>
+    </select>
+    <section class="styled-select slate">
+      <select>
+        <option value="ANTALL" class="hver_str_alene">ANTALL</option>
+        <option value="ANTALL">1</option>
+        <option value="ANTALL">2</option>
+        <option value="ANTALL">3</option>
+        <option value="ANTALL">4</option>
+        <option value="ANTALL">ikke flere på lager</option>
+      </select>
+</section>
+
+<button type="submit" class="handlekurv_knapp"> Legg til i handlekurv
+</button>
+`;
+        }
+
+        function genererHTML(snapshot) {
+          let key = snapshot.key;
+          let data = snapshot.val();
+          let parent = snapshot.ref.parent.key;
+          seclignendeProdukter.innerHTML +=
+            `
+<section class="lignende_hvert_produkt">
+<section class="bilde_liten">
+<a href="klesplagg.html?id=${key}&parent=${parent}" class="link_lignende">
+<section class="bilde_liten_lignende"> <img src="${data.bilde2}" alt=""> </section>
+</section>
+<section class="lignende_info">
+<h1 class="navn_varer">${data.modell} - ${data.merke1}</h1>
+<p class="pris_varer">Pris: ${data.pris} kr </p>
+  </a>
+<a href="kundeservice.html" class="tilbakemelding_lignende">Tilbakemelding</a>
+</section>
+</section>
+
+`;
+        }
+
+        function lignendeProdukter() {
+          skjorter
+            .limitToFirst(1)
+            .on("child_added", genererHTML); // viser frem det spesifikke vi vil vise på den måten vi har valgt i genrererHTML
+          gensere
+            .limitToFirst(1)
+            .on("child_added", genererHTML);
+          sport
+            .limitToFirst(1)
+            .on("child_added", genererHTML);
+          jakker
+            .limitToFirst(1)
+            .on("child_added", genererHTML);
+          bukser
+            .limitToFirst(1)
+            .on("child_added", genererHTML);
+          tilbehor
+            .limitToFirst(1)
+            .on("child_added", genererHTML);
+        };
+        sko
+          .limitToFirst(1)
+          .on("child_added", genererHTML);
+
+        lignendeProdukter();
+      </script>
+
+</body>
+
+</html>

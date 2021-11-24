@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SISAKA-BUKSER</title>
+  <link rel="stylesheet" href="klær.css">
+  <script src="main.js">
+
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBXt6HrwrG3frVTfTwqeXKUOOmNr5jwON0",
+      authDomain: "hoved-klesbutikk-riktig.firebaseapp.com",
+      databaseURL: "https://hoved-klesbutikk-riktig.firebaseio.com",
+      projectId: "hoved-klesbutikk-riktig",
+      storageBucket: "hoved-klesbutikk-riktig.appspot.com",
+      messagingSenderId: "844489859082"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+</head>
+
+<body>
+  <header>
+    <!-- seksjon for den delen over søkemotoren -->
+    <section class="header_øverst">
+
+      <!-- kode for den lange hvite linjen øverst -->
+      <section class="lang">
+        <a>Gratis <b><span style="color:blue"> frakt</span></b> og <b><span style="color:blue">retur</span></b> året rundt</a>
+      </section>
+
+      <section class="usynlig">
+      </section>
+
+      <!-- kode for logoen -->
+      <section class="logo">
+        <a href="index.html"><img src="bilder_klær_riktig/ny_logo.png" alt="logo" class="logo"></a>
+      </section>
+
+      <section class="usynlig1">
+      </section>
+
+      <!-- kode for logg inn, ønskeliste og handlekurv knappene er under her  -->
+      <section class="lenke">
+        <a href="logginn.html"><img src="bilder_klær_riktig/innlogging.svg" alt="bilde" class="iconbilde"> </a>
+        <a href="logginn.html"><br>LOGG INN</a>
+      </section>
+
+      <!-- kode for  ønskeliste knappen er under her  -->
+      <section class="lenke">
+        <a href="ønskeliste.html"><img src="bilder_klær_riktig/ønskeliste.png" alt="bilde" class="iconbilde"> </a>
+        <a href="ønskeliste.html">ØNSKELISTE</a>
+      </section>
+      <!-- kode for Handlekurv knappen er under her  -->
+      <section class="lenke">
+        <a href="handlekurv.html"><img src="bilder_klær_riktig/kurv1.png" alt="bilde" class="iconbilde"> </a>
+        <a href=handlekurv.html><br>KURV</a>
+      </section>
+
+    </section>
+    <!-- slutt på kode for handlekurv, ønskeliste og logg inn -->
+
+    <!-- kode for søkefeltet -->
+    <section class="søkemotor">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <input type="text" placeholder="Søk etter klær eller merker...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </section>
+
+    <!-- kode for navigasjonbarene starter under her-->
+    <nav class="navigation">
+
+      <!-- kode for dropned for klær i navigasjons baren-->
+      <section class="dropned">
+        <a href="klær.html" class="dropknapp">Klær</a>
+        <section class="dropned-content">
+          <a href="gensere.html">gensere</a>
+          <a href="bukser.html">Bukser</a>
+          <a href="skjorter.html">skjorter</a>
+          <a href="jakker.html">jakker</a>
+        </section>
+      </section>
+
+      <section class="dropned">
+        <a href="sport.html" class="dropknapp">Sport</a>
+      </section>
+
+      <section class="dropned">
+        <a href="tilbehor.html" class="dropknapp">Tilbehør</a>
+      </section>
+
+
+      <section class="dropned">
+        <a href="sko.html" class="dropknapp">Sko</a>
+      </section>
+
+      <section class="dropned">
+        <a href="nyheter.html" class="dropknapp">Nyheter</a>
+      </section>
+
+      <section class="dropned">
+        <a href="salg.html" class="dropknapp">Salg</a>
+      </section>
+
+    </nav>
+
+  </header>
+  <!-- slutt på kode for header-->
+
+  <!-- kode for alt over main og main for sortering -->
+  <section class="klær_hoved">
+
+    <section class="usynlig_valg_linje"></section>
+
+    <!--kode for sorteringsmulighetene-->
+    <div class="valg_klær1">
+
+      <!-- kode for å sortere etter merke-->
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">MERKE</button>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          <a onclick="bukser1()">ALLE</a>
+          <a onclick="merke_klaer()">RALPH LAUREN</a>
+          <a onclick="merke2_klaer()">HUGO BOSS</a>
+          <a onclick="merke3_klaer()">GANT</a>
+          <a onclick="merke4_klaer()">TOMMY HILFIGER</a>
+          <a onclick="merke5_klaer()">VERSACE</a>
+          <a onclick="merke6_klaer()">LYLE&SCOTT</a>
+        </div>
+      </div>
+
+      <!-- kode for å sortere etter anledning-->
+      <div class="dropdown">
+        <button onclick="myFunction2()" class="dropbtn">Type</button>
+        <div id="myDropdown2" class="dropdown-content">
+          <a onclick="bukser1()">ALLE</a>
+          <a onclick="type_jeans()">JEANS</a>
+          <a onclick="type_joggebukse()">JOGGBUKSE</a>
+          <a onclick="type_dress_bukse()">DRESS BUKSE</a>
+          <a onclick="type_shorts()">Shorts</a>
+        </div>
+      </div>
+
+      <!-- kode for å sortere etter pris-->
+      <div class="dropdown">
+        <button onclick="myFunction3()" class="dropbtn">Pris</button>
+        <div id="myDropdown3" class="dropdown-content">
+          <a onclick="bukser1()">ALLE</a>
+          <a onclick="pris_500()">100-500 kr</a>
+          <a onclick="pris_1000()">500-1000 kr</a>
+          <a onclick="pris_10_000()">1000-10 000 kr</a>
+        </div>
+      </div>
+
+      <!-- kode for å sortere etter Farge-->
+      <div class="dropdown">
+        <button onclick="myFunction4()" class="dropbtn">Farge</button>
+        <div id="myDropdown4" class="dropdown-content">
+          <a onclick="bukser1()">ALLE</a>
+          <a onclick="farge_klaer_hvit()">HVIT</a>
+          <a onclick="farge_klaer_svart()">SVART</a>
+          <a onclick="farge_klaer_blå()">BLÅ</a>
+          <a onclick="farge_klaer_brun()">BRUN</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- kode for å sortere i tabellen-->
+    <section class="tabell_full">
+      <ul class="tabell_halv">
+        <li>
+          <section class="klær_tekst">
+            <a href="klær.html">Klær</a>
+          </section>
+        </li>
+        <li><a href="skjorter.html" class="tabell_ord">Skjorter </a></li>
+        <li><a href="jakker.html" class="tabell_ord">Jakker</a></li>
+        <li><a href="gensere.html" class="tabell_ord">Gensere</a></li>
+        <li><a href="bukser.html" class="tabell_ord_valgt">Bukser </a></li>
+      </ul>
+    </section>
+
+    <!-- kode i linjen under den første linjen med sortering. for å sortere etter bærkraftig og flerer forskjellige ting under knappen sorter-->
+    <section class="linje2_valg">
+
+      <!-- sorterer etter bærekraftig-->
+      <section class="Bærekraftig">
+        Bærekraftig:
+        <input class="Bærekraftig_boks" type="checkbox" onclick="baerekraftig()"></input>
+      </section>
+      <!--usynlig del i linje 2-->
+      <section class="usynlig_linje2_valg">
+      </section>
+
+      <!-- sorterings knapp i linje 2-->
+      <p class="sorter_etter">Sorter etter:</p>
+      <div class="sortering_hele">
+        <button onclick="myFunction5()" class="dropbtn">Sorter</button>
+        <div id="myDropdown5" class="dropdown-content">
+          <a onclick="popoulære_klaer()">populære</a>
+          <a onclick="salg_klaer()">Salg</a>
+          <a onclick="nyheter_klaer()">Nyheter</a>
+          <a onclick="billigste_klaer()">billigste</a>
+          <a onclick="dyreste_klaer()">dyreste</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- kode for Main elemntet er under her  -->
+    <main>
+
+    </main>
+
+  </section>
+  <!-- kode for reklamen-->
+  <section class="reklame2">
+    <a href="klær.html"><img src="bilder_klær_riktig/reklame_2bild.jpg" alt="bilde"></a>
+  </section>
+
+  <!-- kode for innholdet i footer -->
+  <footer>
+
+    <section class="hele_footer">
+
+      <!-- kode for linje 1 i footer -->
+      <section class="om_oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th>INFORMASJON</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="logginn.html"> LOGG INN</a></td>
+            </tr>
+            <tr>
+              <td><a href="ønskeliste.html">ØNSKELISTE</a></td>
+            </tr>
+            <tr>
+              <td><a href="kundeservice.html">KONTAKT OSS</a></td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">FÅ NYHETSBREV</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- kode for linje 2 i footer -->
+      <section class="oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th><a href="index.html">VARER</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <a href="klær.html">klær</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="sport.html">sport</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="sko.html">sko</a></td>
+            </tr>
+            <tr>
+              <td><a href="tilbehor.html">tilbehør</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- kode for linje 3 i footer -->
+      <section class="oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th><a href="oss.html">OM OSS</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="oss.html">søk jobb</a></td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">ansatte</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">historikk</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- del i footer for sosiale medier bildene -->
+      <section class="sosial_footer">
+        <table>
+          <thead>
+            <tr>
+              <th>Følg oss</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://www.facebook.com"><img src="bilder_klær_riktig/face.png" class="sosbilder"></a></td>
+              <td><a href="http://www.twitter.com"><img src="bilder_klær_riktig/twit.png" class="sosbilder"></a></td>
+              <td><a href="http://www.instagram.com"><img src="bilder_klær_riktig/insta.jpg" class="sosbilder"></a></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      </section>
+    </section>
+  </footer>
+
+  <!-- javascript starter under her -->
+  <script>
+    const main = document.querySelector("main"); // Variabel som referer til mian-elementet
+    //Skriver referanser til database under her:
+    const db = firebase.database();
+    const bukser = db.ref("varer/bukser"); //Referere til dataene som ligger under varer/bukser.
+
+
+    function visVare(snapshot) {
+      //Javascript-funksjon som skriver varene ut på nettsiden i main-elementet
+      let varer = snapshot.val();
+      let key = snapshot.key;
+      let parent = snapshot.ref.parent.key;
+      let parentParent = snapshot.ref.parent.parent.key;
+      let ref = parent + "/" + key;
+      let prisTekst = ``;
+      if(varer.Salg === true){
+        prisTekst = `<p class="pris_varer_salg">Pris: ${varer.pris} kr</p>`;
+      }
+      else{
+        prisTekst = `<p class="pris_varer">Pris: ${varer.pris} kr</p>`
+      }
+
+        console.log(snapshot.val())
+
+      main.innerHTML +=
+        `
+        <article class="vare">
+      <a href="klesplagg.html?id=${key}&parent=${parent}">
+        <section class="bilde">  <img src="${varer.bilde1}" alt=""> </section>
+        <h1 class="navn_varer">${varer.modell} - ${varer.merke1}</h1>
+        ${prisTekst}
+        </a>
+        </article>
+      `;
+      }
+
+
+    function visVare_andre_vei(snapshot) {
+      //Javascript-funksjon som skriver varene ut på nettsiden i main-elementet bare andre vei
+      let varer = snapshot.val();
+      let key = snapshot.key;
+      let parent = snapshot.ref.parent.key;
+      let parentParent = snapshot.ref.parent.parent.key;
+      let ref = parent + "/" + key;
+
+      console.log(snapshot.val())
+      main.innerHTML =
+        `
+        <article class="vare">
+        <a href="klesplagg.html?id=${key}&parent=${parent}">
+        <section class="bilde">  <img src="${varer.bilde1}" alt=""> </section>
+        <h1 class="navn_varer">${varer.modell} - ${varer.merke1}</h1>
+        <p class="pris_varer">Pris: ${varer.pris} kr</p>
+        </a>
+        </article>
+        ` +
+        main.innerHTML;
+    }
+
+
+
+
+    function bukser1() {
+      // Funksjoner til spørringene
+      main.innerHTML = ``; // sletter innholdet i main.
+      bukser
+        .orderByChild("modell")
+        .on("child_added", visVare); // viser frem det spesifikke vi vil vise på den måten vi har valgt i visVare
+    }
+
+
+    // Funksjoner for hva slags bukse merke det er
+    function merke_klaer() {
+      main.innerHTML = ``; // sletter innholdet i main.
+      bukser
+        .orderByChild("merke1") // sorterer etter merke1 fra databasen
+        .equalTo("Ralph Lauren") // merke 1 skal være lik Ralph Lauren
+        .on("child_added", visVare); // viser frem det spesifikke vi vil vise
+    }
+
+    function merke2_klaer() {
+      main.innerHTML = ``; // sletter innholdet i main.
+      bukser
+        .orderByChild("merke1")
+        .equalTo("HUGO BOSS")
+        .on("child_added", visVare);
+    }
+
+    function merke3_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("merke1")
+        .equalTo("Gant")
+        .on("child_added", visVare);
+    }
+
+
+    function merke4_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("merke1")
+        .equalTo("Tommy hilfiger")
+        .on("child_added", visVare);
+    }
+
+    function merke5_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("merke1")
+        .equalTo("versace")
+        .on("child_added", visVare);
+    }
+
+    function merke6_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("merke1")
+        .equalTo("LYLE&SCOTT")
+        .on("child_added", visVare);
+    }
+
+
+    function type_jeans() {
+      main.innerHTML = ``;;
+      bukser
+        .orderByChild("type")
+        .equalTo("jeans")
+        .on("child_added", visVare);
+    }
+
+
+    function type_joggebukse() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("type")
+        .equalTo("joggebukse")
+        .on("child_added", visVare);
+
+    }
+
+    function type_dress_bukse() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("type")
+        .equalTo("dress_bukse")
+        .on("child_added", visVare);
+    }
+
+    function type_shorts() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("type")
+        .equalTo("shorts")
+        .on("child_added", visVare);
+    }
+
+
+
+    function pris_500() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("pris")
+        .startAt(100)
+        .endAt(500)
+        .on("child_added", visVare);
+    }
+
+
+    function pris_1000() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("pris")
+        .startAt(500)
+        .endAt(1000)
+        .on("child_added", visVare);
+    }
+
+
+    function pris_10_000() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("pris")
+        .startAt(1000)
+        .endAt(10000)
+        .on("child_added", visVare);
+    }
+
+
+
+    function farge_klaer_hvit() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("Farge1")
+        .equalTo("hvit")
+        .on("child_added", visVare);
+    }
+
+    function farge_klaer_svart() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("Farge1")
+        .equalTo("svart")
+        .on("child_added", visVare);
+    }
+
+    function farge_klaer_blå() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("Farge1")
+        .equalTo("blå")
+        .on("child_added", visVare);
+    }
+    function farge_klaer_brun() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("Farge1")
+        .equalTo("brun")
+        .on("child_added", visVare);
+    }
+
+
+    function baerekraftig() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("baerekraftig")
+        .equalTo(true)
+        .on("child_added", visVare);
+
+
+    }
+
+
+    function popoulære_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("popularitet")
+        .startAt(1)
+        .endAt(10)
+        .on("child_added", visVare);
+
+    }
+
+
+
+    function salg_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("Salg")
+        .equalTo(true)
+        .on("child_added", visVare);
+
+    }
+
+
+
+    function dyreste_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("pris")
+        .on("child_added", visVare_andre_vei);
+
+    }
+
+
+    function billigste_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("pris")
+        .startAt(1)
+        .endAt(10000)
+        .on("child_added", visVare);
+
+    }
+
+
+
+    function nyheter_klaer() {
+      main.innerHTML = ``;
+      bukser
+        .orderByChild("Nyheter")
+        .equalTo(true)
+        .on("child_added", visVare);
+
+
+    }
+
+
+    popoulære_klaer(); // Funksjon som kjøres når siden lastes
+  </script>
+
+
+</body>
+
+</html>

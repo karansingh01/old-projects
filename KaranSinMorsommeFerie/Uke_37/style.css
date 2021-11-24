@@ -1,0 +1,28 @@
+
+body{
+
+  background-image:url("åste2.jpg");
+  color: blue;
+
+}
+main{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+  p {
+    background-color: red;
+    padding: 30px;
+  }
+
+  h1 {
+    background-color: #000099;
+  }
+
+  p,h1  {
+color: white;
+  }
+
+  

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.1/css/foundation-float.min.css">
+    <style>
+        #divReg{
+            width: 50%;
+            margin: auto;
+        }
+        button{
+            background-color: blueviolet;
+            color: white;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Lag</th>
+                <th>Spilt</th>
+                <th>Vunnet</th>
+                <th>Uavgjort</th>
+                <th>Tap</th>
+                <th>Poeng</th>
+            </tr>
+        </thead>
+        <tbody id="tabell">
+
+        </tbody>
+    </table>
+
+    <div id="divReg">
+        <label for="inpLag">Lag:</label>
+        <input id="inpLag" type="text">
+
+        <label for="inpVunnet">Vunnet:</label>
+        <input id="inpVunnet" type="text">
+
+        <label for="inpUavgjort">Uavgjort:</label>
+        <input id="inpUavgjort" type="text">
+
+        <label for="inpTap">Tap:</label>
+        <input id="inpTap" type="text">
+
+        <button id="btnReg">Registrer lag</button>
+    </div>
+
+
+
+
+    <script>
+        const tabell = document.querySelector("#tabell");
+        const inpLag = document.querySelector("#inpLag");
+        const inpVunnet = document.querySelector("#inpVunnet");
+        const inpUavgjort = document.querySelector("#inpUavgjort");
+        const inpTap = document.querySelector("#inpTap");
+        const btnReg = document.querySelector("#btnReg");
+
+        const eliteserien = [
+                {
+                    navn: "Start",
+                    vunnet: 3,
+                    uavgjort: 1,
+                    tap: 0
+                },
+                {
+                    navn: "Viking",
+                    vunnet: 0,
+                    uavgjort: 1,
+                    tap: 2
+                },
+                {
+                    navn: "Odd",
+                    vunnet: 2,
+                    uavgjort: 1,
+                    tap: 1
+                }
+            ];
+
+            function sorterPoeng(a, b){
+                return (b.vunnet * 3 + b.uavgjort) - (a.vunnet * 3 + a.uavgjort);
+            }
+
+            eliteserien.sort(sorterPoeng);
+
+function skrivLag() {
+  tabell.innerHTML = ``;
+  eliteserien.sort(sorterPoeng);
+            for(let i = 0; i < eliteserien.length; i += 1){
+                let spilte = eliteserien[i].vunnet + eliteserien[i].uavgjort + eliteserien[i].tap;
+                let poeng = eliteserien[i].vunnet * 3 + eliteserien[i].uavgjort;
+                tabell.innerHTML += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${eliteserien[i].navn}</td>
+                        <td>${spilte}</td>
+                        <td>${eliteserien[i].vunnet}</td>
+                        <td>${eliteserien[i].uavgjort}</td>
+                        <td>${eliteserien[i].tap}</td>
+                        <td>${poeng}</td>
+                    </tr>
+                `;
+            }
+          }
+          skrivLag();
+
+            btnReg.onclick = function(){
+                  eliteserien.push({
+                      navn: inpLag.value,
+                      vunnet: Number(inpVunnet.value),
+                      uavgjort: Number(inpUavgjort.value),
+                      tap: Number(inpTap.value)
+                  });
+      console.log(eliteserien);
+      skrivLag();
+            }
+
+    </script>
+</body>
+</html>

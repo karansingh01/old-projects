@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <label for="inpBredde">Skriv inn bredde</label>
+  <input type="number" name="" id="inpBredde" value="">
+
+  <label for="inpHøyde">Skriv inn høyde:</label>
+  <input type="number" name="" id="inpHoyde" value="">
+
+  <label for="TREKANT">TREKANT:</label>
+  <input type="radio" name="form" id="trekant" value="trekant">
+
+  <label for="REKTANGEL">REKTANGEL</label>
+  <input type="radio" name="form" id="rektangel" value="rektangel">
+
+  <button type="button" id="btnStart" name="button">Trykk for å regne ut</button>
+
+  <div id="resultat">
+
+  </div>
+
+  <script type="text/javascript">
+    const inpBredde = document.querySelector("#inpBredde");
+    const inpHoyde = document.querySelector("#inpHoyde");
+    const btnStart = document.querySelector("#btnStart");
+    const trekant = document.querySelector("#trekant");
+    const rektangel = document.querySelector("#rektangel");
+    const resultat = document.querySelector("#resultat");
+
+
+    btnStart.onclick = function() {
+      let bredde = Number(inpBredde.value);
+      let hoyde = Number(inpHoyde.value);
+
+
+      if (rektangel.checked) {
+        let Areal = bredde * hoyde;
+        resultat.innerHTML = `Arealet er ${Areal}`;
+      } else if (trekant.checked) {
+        let Areal = (bredde * hoyde) / 2;
+        resultat.innerHTML = `Arealet er ${Areal}`;
+      } else {
+        resultat.innerHTML = 'Du må velge hvilken form';
+      }
+
+
+    }
+  </script>
+
+</body>
+
+</html>

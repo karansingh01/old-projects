@@ -1,0 +1,103 @@
+{
+"1":{
+  "svar":"En unik nøkkel til hvert objekt i databasen som gjør at vi lett kan søke i databasen. Det Gjør at vi kan skille mellom objekter med lik verdi, eksempel to bøker med samme navn"
+},
+
+"2":{
+  "a":{
+"svar":"Elevene på en skole kan bruke person nummer som primærnøkkel"
+  },
+  "b":{
+"svar":"Fritidsbåter kan ha identifiseringsnummer"
+  },
+  "c":{
+"svar":"planter kan ha deres latinskenavn og nummer etter hvis det er flere av samme art."
+  },
+  "d":{
+"svar":"Kontaktene mine kan ha telefon numer som primær nøkkel"
+  },
+  "e":{
+"svar":"Stjerner på himmelen kan ha forskjellige navn som primærnøkkel"
+}
+
+
+
+},
+
+"3":{
+  "svar":"Kandidatnøkler er alle alternativene som kan brukes som primærnøkkel."
+},
+
+"4":{
+"svar":"en id som gjør informasjonen unik. Brukes for å unngå dobbeltlagring"
+},
+
+"5":{
+  "svar":"Teknikker som brukes for å unngå dobbeltlagring og duplisering kalles normalisering"
+},
+
+"6":{
+  "bruker":{
+  "Karan":{
+    "highscore":99999,
+    "sistspilt":"2. januar",
+    "mail":"karan.s.01@hotmail.com"
+
+  }
+
+},
+"Åste":{
+  "highscore":-4000000,
+  "sistspilt":"28. januar",
+  "mail":"åste.er.retard@yahoo.in"
+
+}
+
+},
+
+
+
+"meldinger":{
+  "0001":{
+    "tekst":"hei på deg",
+    "brukerID":"Åste"
+},
+
+"0002":{
+  "tekst":"Jeg har ikke venner og liker is",
+  "brukerID":"Alexander"
+}
+},
+
+
+"7":{
+  "film":{
+  "FilmID":"3",
+  "tittel":"Sharknado",
+  "regissør-Fornavn":"Bob",
+  "regissør-etternavn":"Stern",
+  "informasjon":"Universal Studios, 2004"
+},
+
+
+  "film":{
+  "FilmID":"5",
+  "tittel":"Star wars",
+  "regissør-Fornavn":"Steven",
+  "regissør-etternavn":"Spielberg",
+  "informasjon":"Paramount, 2004"
+},
+
+"film":{
+"FilmID":"8",
+"tittel":"E.T",
+"regissør-Fornavn":"Steven",
+"regissør-etternavn":"Spielberg",
+"informasjon":"Paramount, 2009"
+},
+
+
+
+}
+
+}

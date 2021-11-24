@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Oppgave 1</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        margin: 10px;
+      }
+      #divUnghund {
+        position: absolute;
+        width: 150px; /* Bredden på bildet */
+        height: 110px; /* Høyden på bildet */
+        top: 130px; /* 3*margin + bredde */
+        left: 10px;
+        background-image: url(bilder/unghund.jpg); /* Gjør bildet fra 1a til bakgrunnsbilde i div-elementet */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="divUnghund"></div>
+    <img src="bilder/valp.jpg" id="imgValp">
+    <audio src="bilder/jeg vil ha en liten hund.mp3" id="audLyd" loop></audio> <!-- Sånn at man alltid kan pause den -->
+    <script>
+      var divUnghund = document.querySelector("#divUnghund");
+      var imgValp = document.querySelector("#imgValp");
+      var audLyd = document.querySelector("#audLyd");
+
+      var aktiv = false; // På/av-knapp. Nå er den: false=av
+      imgValp.onclick =  function () {
+        if (aktiv == false) {
+          audLyd.currentTime = 0; // Setter tiden til 0
+          audLyd.play();
+          aktiv = true; // Nå er den: true=på. Dersom man trykker på knappen igjen, blir den false/av
+        }
+        else {
+          audLyd.pause();
+          aktiv = false;
+        }
+      }
+
+      divUnghund.onclick = function() {
+        divUnghund.animate(
+          [{left:"10px",transform:"rotate(0deg)"}, // Starter på 0 grader og 10 piksler fra venstre
+          {left:(innerWidth-160)+"px",transform:"rotate(180deg)"}, // bredde + margin. Slutter på 180 grader og 10 piksler fra høyre
+          {left:"10px",transform:"rotate(360deg)"}], // Går tilbake til start
+          {duration:3000}
+        );
+      };
+    </script>
+  </body>
+</html>

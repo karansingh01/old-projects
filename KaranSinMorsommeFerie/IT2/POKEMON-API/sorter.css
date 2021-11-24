@@ -1,0 +1,104 @@
+.logo {
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+}
+
+#head {
+  text-align: center;
+}
+
+#liste {
+  margin-left: 390px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+
+h1 {
+  font-style: oblique;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+ul {
+  position: relative;
+  padding: 15px;
+  margin-right: 360px;
+  background-color: lightblue;
+  border-radius: 5px;
+  display: grid;
+grid-template-columns: repeat(2, 1fr);}
+
+
+
+#over{
+  text-align: center;
+  font-size: 20px;
+}
+
+#slett1 {
+  padding-right: 25px;
+  padding-left: 25px;
+  position: absolute;
+  left: 85%;
+  top: 7%;
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#rating{
+  position: absolute;
+  left: 45%;
+  top: 7%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+}
+
+#inpPokemon, #inpTall {
+  padding-right: 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+#label {
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+button {
+  padding: 9px;
+  margin: 5px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+body {
+  background-color: salmon;
+}
+
+#alt {
+  border-radius: 10px;
+  background-color: #d0ff00;
+  border-color: black;
+  border-style: solid;
+  padding: 10px;
+  margin-left: 300px;
+  margin-right: 300px;
+}

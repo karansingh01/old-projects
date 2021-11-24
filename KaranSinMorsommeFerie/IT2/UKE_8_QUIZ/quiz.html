@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #start{
+        display: block;
+        margin: auto;
+      }
+      body{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Karan sin Quiz</h2>
+
+<button id="start" type="button" name="button">Trykk her for å starte</button>
+
+    <form>
+      <div>
+        <h4>Har Karan Gluten allergi?</h4>
+        <label for="ja">Ja</label>
+        <input id="rba" type="radio" name="nr1" value="ja" />
+        <label for="nei">Nei</label>
+        <input id="rbb" type="radio" name="nr1" value="nei" />
+        <label for="litt">Litt</label>
+        <input id="rbc" type="radio" name="nr1" value="litt" />
+        <label for="vet">Vet ikke</label>
+        <input id="rbd" type="radio" name="nr1" value="vet" />
+      </div>
+<button type="submit" name="button">Send inn</button>
+    </form>
+
+<script type="text/javascript">
+const form = document.querySelector("form")
+const rba = document.querySelector("#rba")
+const rbb = document.querySelector("#rbb")
+const rbc = document.querySelector("#rbc")
+const rbd = document.querySelector("#rbd")
+const losninger = {
+
+  nr1: "nei",
+  nr2: "ja",
+  nr3: "litt"
+};
+
+let poeng = 0;
+
+form.onsubmit = function submit(event) {
+  event.preventDefault(); // Hindrer nettsiden i å oppdatere seg
+  const formdata = new FormData(form);
+
+for (let valg of formdata) {
+  console.log(valg);
+
+if (losninger[valg[0]] === valg[1]) {
+    console.log("Riktig svar" + valg[0]);
+    poeng += 1;
+  }
+}
+
+}
+
+</script>
+
+
+  </body>
+</html>

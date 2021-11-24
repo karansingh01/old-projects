@@ -1,0 +1,22 @@
+{
+  "gjester":{
+
+  },
+  "rom" : {
+    "VIP" : {
+      "ledige" : 2,
+      "pris" : 1350,
+      "seng" : "Queen-size luksus bed"
+    },
+    "standard" : {
+      "ledige" : 4,
+      "pris" : 850,
+      "seng" : "dobbeltseng"
+    },
+    "Suite" : {
+      "ledige" : 1,
+      "pris" : 7900,
+      "seng" : "King-size luksus bed"
+    }
+  }
+}

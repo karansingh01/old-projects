@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Oppgave 1</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="bilde1">
+        <img src="vedlegg/bilde_1.jpg" alt="">
+      </div>
+      <div id="bilde2">
+        <img src="vedlegg/bilde1.jpg" alt="">
+      </div>
+      <div id="bilde3">
+        <img src="vedlegg/bilde1.jpg" alt="">
+      </div>
+      <div id="tekst">
+
+      </div>
+    </div>
+    <script>
+      const bilde1 = document.querySelector("#bilde1");
+      const bilde2 = document.querySelector("#bilde2");
+      const bilde3 = document.querySelector("#bilde3");
+      const tekst = document.querySelector("#tekst");
+
+      bilde1.onclick = function(){
+        tekst.innerHTML = "For bilde med bakgrunn til bruk på nettside burde filformatet.
+        jpg brukes, fordi .jpg-bilder egner seg godt til komprimering og har lav filstørrelse. .jpg-filer er punktgrafikk."
+      }
+      bilde2.onclick = function(){
+        tekst.innerHTML = "For bilde med gjennomsiktig(transparent) bakgrunn til bruk på nettside burde filformatet
+        .png brukes, fordi .png-bilder støtter gjennomsiktig bakgrunn og har høy bildekvalitet. .png-filer er punktgrafikk-bilder"
+      }
+      bilde3.onclick = function(){
+        tekst.innerHTML = "For logo til bruk på store reklameskilt burde filformatet .svg brukes, fordi
+         .svg-grafikk kan skalerers uten tap av kvalitet. .svg-filer er vektorgrafikk."
+      }
+    </script>
+  </body>
+</html>

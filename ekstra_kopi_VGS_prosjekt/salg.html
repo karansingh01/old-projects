@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SISAKA-NY-KLÆR</title>
+  <link rel="stylesheet" href="klær.css">
+  <script src="main.js">
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBXt6HrwrG3frVTfTwqeXKUOOmNr5jwON0",
+      authDomain: "hoved-klesbutikk-riktig.firebaseapp.com",
+      databaseURL: "https://hoved-klesbutikk-riktig.firebaseio.com",
+      projectId: "hoved-klesbutikk-riktig",
+      storageBucket: "hoved-klesbutikk-riktig.appspot.com",
+      messagingSenderId: "844489859082"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+
+</head>
+
+<body>
+  <header>
+    <!-- seksjon for den delen over søkemotoren -->
+    <section class="header_øverst">
+
+      <!-- kode for den lange hvite linjen øverst -->
+      <section class="lang">
+        <a>Gratis <b><span style="color:blue"> frakt</span></b> og <b><span style="color:blue">retur</span></b> året rundt</a>
+      </section>
+
+      <section class="usynlig">
+      </section>
+
+      <!-- kode for logoen -->
+      <section class="logo">
+        <a href="index.html"><img src="bilder_klær_riktig/ny_logo.png" alt="logo" class="logo"></a>
+      </section>
+
+      <section class="usynlig1">
+      </section>
+
+      <!-- kode for logg inn, ønskeliste og handlekurv knappene er under her  -->
+      <section class="lenke">
+        <a href="logginn.html"><img src="bilder_klær_riktig/innlogging.svg" alt="bilde" class="iconbilde"> </a>
+        <a href="logginn.html"><br>LOGG INN</a>
+      </section>
+
+      <!-- kode for  ønskeliste knappen er under her  -->
+      <section class="lenke">
+        <a href="ønskeliste.html"><img src="bilder_klær_riktig/ønskeliste.png" alt="bilde" class="iconbilde"> </a>
+        <a href="ønskeliste.html">ØNSKELISTE</a>
+      </section>
+      <!-- kode for Handlekurv knappen er under her  -->
+      <section class="lenke">
+        <a href="handlekurv.html"><img src="bilder_klær_riktig/kurv1.png" alt="bilde" class="iconbilde"> </a>
+        <a href=handlekurv.html><br>KURV</a>
+      </section>
+
+    </section>
+    <!-- slutt på kode for handlekurv, ønskeliste og logg inn -->
+
+    <!-- kode for søkefeltet -->
+    <section class="søkemotor">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <input type="text" placeholder="Søk etter klær eller merker...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </section>
+
+    <!-- kode for navigasjonbarene starter under her-->
+    <nav class="navigation">
+
+      <!-- kode for dropned for klær i navigasjons baren-->
+      <section class="dropned">
+        <a href="klær.html" class="dropknapp">Klær</a>
+        <section class="dropned-content">
+          <a href="gensere.html">gensere</a>
+          <a href="bukser.html">Bukser</a>
+          <a href="skjorter.html">skjorter</a>
+          <a href="jakker.html">jakker</a>
+        </section>
+      </section>
+
+      <section class="dropned">
+        <a href="sport.html" class="dropknapp">Sport</a>
+      </section>
+
+      <section class="dropned">
+        <a href="tilbehor.html" class="dropknapp">Tilbehør</a>
+      </section>
+
+
+      <section class="dropned">
+        <a href="sko.html" class="dropknapp">Sko</a>
+      </section>
+
+      <section class="dropned">
+        <a href="nyheter.html" class="dropknapp">Nyheter</a>
+      </section>
+
+      <section class="dropned">
+        <a href="salg.html" class="dropknapp">Salg</a>
+      </section>
+
+    </nav>
+
+  </header>
+  <!-- slutt på kode for header-->
+
+
+  <section class="klær_hoved">
+
+    <!-- kode for å sortere i tabellen-->
+    <section class="tabell_full">
+      <ul class="tabell_halv">
+        <li>
+          <section class="klær_tekst"><a onclick="Salg_alle()">Salg</a>
+          </section>
+      </ul>
+    </section>
+
+    <main>
+    </main>
+
+  </section>
+
+  <!-- kode for reklamen-->
+  <section class="reklame2">
+    <a href="klær.html"><img src="bilder_klær_riktig/reklame_2bild.jpg" alt="bilde"></a>
+  </section>
+
+  <!-- kode for innholdet i footer -->
+  <footer>
+
+    <section class="hele_footer">
+
+      <!-- kode for linje 1 i footer -->
+      <section class="om_oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th>INFORMASJON</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="logginn.html"> LOGG INN</a></td>
+            </tr>
+            <tr>
+              <td><a href="ønskeliste.html">ØNSKELISTE</a></td>
+            </tr>
+            <tr>
+              <td><a href="kundeservice.html">KONTAKT OSS</a></td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">FÅ NYHETSBREV</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- kode for linje 2 i footer -->
+      <section class="oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th><a href="index.html">VARER</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <a href="klær.html">klær</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="sport.html">sport</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="sko.html">sko</a></td>
+            </tr>
+            <tr>
+              <td><a href="tilbehor.html">tilbehør</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- kode for linje 3 i footer -->
+      <section class="oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th><a href="oss.html">OM OSS</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="oss.html">søk jobb</a></td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">ansatte</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">historikk</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- del av footer med sosiale medier bilder -->
+      <section class="sosial_footer">
+        <table>
+          <thead>
+            <tr>
+              <th>Følg oss</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://www.facebook.com"><img src="bilder_klær_riktig/face.png" class="sosbilder"></a></td>
+              <td><a href="http://www.twitter.com"><img src="bilder_klær_riktig/twit.png" class="sosbilder"></a></td>
+              <td><a href="http://www.instagram.com"><img src="bilder_klær_riktig/insta.jpg" class="sosbilder"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </section>
+  </footer>
+
+
+  <!-- javascript starter under her -->
+
+  <script>
+    const main = document.querySelector("main"); // Variabel som referer til mian-elementet
+    //Skriver referanser til database under her:
+    const db = firebase.database();
+    const bukser = db.ref("varer/bukser"); //Referere til dataene som ligger under varer/bukser.
+    const skjorter = db.ref("varer/skjorter");
+    const gensere = db.ref("varer/gensere");
+    const sport = db.ref("varer/sport");
+    const jakker = db.ref("varer/jakker");
+    const sko = db.ref("varer/sko");
+    const tilbehor = db.ref("varer/tilbehor");
+
+
+    function visVare(snapshot) {
+      //Javascript-funksjon som skriver varene ut på nettsiden i main-elementet
+      let varer = snapshot.val();
+      let key = snapshot.key;
+      let parent = snapshot.ref.parent.key;
+      let parentParent = snapshot.ref.parent.parent.key;
+      let ref = parent + "/" + key;
+      let prisTekst = ``;
+      if(varer.Salg === true){
+        prisTekst = `<p class="pris_varer_salg">Pris: ${varer.pris} kr</p>`;
+      }
+      else{
+        prisTekst = `<p class="pris_varer">Pris: ${varer.pris} kr</p>`
+      }
+
+        console.log(snapshot.val())
+
+      main.innerHTML +=
+        `
+        <article class="vare">
+      <a href="klesplagg.html?id=${key}&parent=${parent}">
+        <section class="bilde">  <img src="${varer.bilde1}" alt=""> </section>
+        <h1 class="navn_varer">${varer.modell} - ${varer.merke1}</h1>
+        ${prisTekst}
+        </a>
+        </article>
+      `;
+      }
+
+
+
+
+
+    function visVare_andre_vei(snapshot) {
+      //Javascript-funksjon som skriver varene ut på nettsiden i main-elementet bare andre vei
+      let varer = snapshot.val();
+      let key = snapshot.key;
+      let parent = snapshot.ref.parent.key;
+      let parentParent = snapshot.ref.parent.parent.key;
+      let ref = parent + "/" + key;
+
+      console.log(snapshot.val())
+      main.innerHTML =
+        `
+        <article class="vare">
+        <a href="klesplagg.html?id=${key}&parent=${parent}">
+        <section class="bilde">  <img src="${varer.bilde1}" alt=""> </section>
+        <h1 class="navn_varer">${varer.modell} - ${varer.merke1}</h1>
+        <p class="pris_varer">Pris: ${varer.pris} kr</p>
+        </a>
+        </article>
+        ` +
+        main.innerHTML;
+    }
+
+
+
+
+            function Salg_alle() {
+              // Funksjoner til spørringene
+              main.innerHTML = ""; // sletter innholdet i main.
+              gensere
+                .orderByChild("Salg")
+                .equalTo(true)
+                .on("child_added", visVare);
+              jakker
+                .orderByChild("Salg")
+                .equalTo(true)
+                .on("child_added", visVare);
+              bukser
+                .orderByChild("Salg")
+                .equalTo(true)
+                .on("child_added", visVare);
+              skjorter
+                .orderByChild("Salg")
+                .equalTo(true)
+                .on("child_added", visVare);
+              sko
+                .orderByChild("Salg")
+                .equalTo(true)
+                .on("child_added", visVare);
+              tilbehor
+                .orderByChild("Salg")
+                .equalTo(true)
+                .on("child_added", visVare);
+              sport
+                .orderByChild("Salg")
+                .equalTo(true)
+                .on("child_added", visVare);
+            }
+
+
+
+
+            Salg_alle(); // Funksjon som kjøres når siden lastes
+  </script>
+
+
+</body>

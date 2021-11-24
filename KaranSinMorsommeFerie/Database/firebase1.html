@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyACdQUmZXXAeDy4j7L3-0RNW2xMJwJQr1E",
+      authDomain: "minforstedatabase1-5e342.firebaseapp.com",
+      databaseURL: "https://minforstedatabase1-5e342.firebaseio.com",
+      projectId: "minforstedatabase1-5e342",
+      storageBucket: "minforstedatabase1-5e342.appspot.com",
+      messagingSenderId: "206856832804"
+    };
+
+
+
+
+    firebase.initializeApp(config);
+  </script>
+</head>
+/*
+<body>
+  <h1>Superchat</h1>
+*/
+<article id="txtMeldinger">
+
+</article>
+
+  <form class="" method="post">
+    <label for="inpNavn">Navn:</label>
+    <input id="inpNavn" type="text" name="navn2" value="" placeholder="navn">
+    <label for="inpTelefon">Telefon:</label>
+    <input id="inpTelefon" type="text" name="inpTelefon" placeholder="tlf" value="">
+    <button id="btnKnapp" type="button" name="button">Send inn</button>
+
+  </form>
+
+  <script type="text/javascript">
+
+
+let database= firebase.database();
+let meldinger = database.ref("meldinger");
+let nyMelding = {
+  "avsender" : "Kari Ku",
+  "tekst" : "Nå går alt bra"
+};
+
+meldinger.push(nyMelding);
+
+
+
+
+        const db = firebase.database();
+        const kontaktliste = db.ref("kontaktliste");
+        const inpNavnk = document.querySelector("#inpNavn");
+        const inpTelefonk = document.querySelector("#inpTelefon");
+        const btnKnappl = document.querySelector("#btnKnapp");
+        btnKnapp.onclick = function(event){
+          event.preventDefault();
+          let navn = inpNavnk.value;
+          let telefon = inpTelefon.value;
+          kontaktliste.push(
+            {
+              "name": navn,
+              "telephone": telefon
+            }
+          );
+        }
+
+
+    kontaktliste.push({
+      "Firstname": "Karan Singh",
+      "LastName": "Sandhu",
+      "phoneNumber": 99112250,
+      "Adress": "Solveien 37",
+      "city": "Asker",
+
+
+
+    })
+
+
+    let nyMelding = {
+      "avsender": "Fornavn" ,
+      "tekst" : "Meldingen"
+    }
+  </script>
+</body>
+
+</html>

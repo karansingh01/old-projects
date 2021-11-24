@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      img{
+        width: 100px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+
+<img src="kong.jpeg" alt="">
+<button type="button" id="btnStart" name="button">Start</button>
+<button type="button" id="btnStopp" name="button">Stopp</button>
+
+<script type="text/javascript">
+const kongen = document.querySelector("img");
+const btnStart = document.querySelector("#btnStart");
+const btnStopp = document.querySelector("#btnStopp");
+
+const kongeAnimasjon = kongen.animate([
+  {
+transform: "translateX(0) scale(1) rotatet(0)",
+  },{
+    transform: "translateX(1000px) scale(2) rotatet(2turn)",
+  },{
+    transform: "translateX(100px) scale(2) rotatet(2turn)",
+
+
+  }
+
+],{
+  duration:1000,
+  iterations: 2, //infinity
+  fill: "forwards", //backwards tilbake start
+  direction: "alternate",
+  easing:"ease-in-out"
+})
+kongeAnimasjon.pause();
+
+btnStart.onclick = function(){
+  kongeAnimasjon.play();
+}
+btnStopp.onclick= function() {
+kongeAnimasjon.pause();
+}
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <style media="screen">
+
+
+    .info_bestilling{
+     font-size: 25px;
+     background-color: salmon;
+     opacity: 0.9;
+     border-style: solid;
+     border-radius: 10px;
+     border-color: black;
+     margin: 20px 250px;
+     padding: 20px;
+   }
+
+   .registrer{
+     font-size: 30px;
+     background-color: green;
+     padding: 10px;
+     border-radius: 5px;
+   }
+  .registrer:hover{
+    background-color: lightgreen;
+  }
+
+
+
+</style>
+  <div class="info_bestilling">
+    <h1>Hundeslottet hundehotell</h1>
+    <h2>Bestill rom her</h2>
+    Fornavn: <input id="inpFor" placeholder="Skriv her fornavn..."><br><br>
+    Etternavn: <input id="inpEtter" required placeholder="Skriv her etternavn..."><br><br>
+
+    antall dager: <input id="inpDager" required placeholder="Skriv inn dager her..." type="number"><br><br>
+    antall hunder: <input id="inpHunder" required placeholder="Skriv inn antall hunder her..." type="number"><br><br>
+
+    <label for="klipp">klipp:</label>
+    <input type="radio" name="form" id="klipp" value="klipp">
+
+    <label for="vask">vask:</label>
+    <input type="radio" name="form" id="vask" value="vask">
+
+
+    Velg romtype: <select id="inpRomType">
+      <option value="">Velg</option>
+      <option id="luksus" value="luksus">luksus</option>
+      <option id="standard" value="standard">standard</option>
+      <option id="økonomi" value="okonomi">økonomi</option>
+
+    </select><br><br>
+
+
+    <button id="registrer" class="registrer">Register gjest</button>
+    <p id="tekstUt1"></p>
+    <div id="tekstUt2">
+
+    </div>
+
+    <p id="tekstUt"></p>
+
+    <script>
+      const tekstUt = document.querySelector("#tekstUt");
+      const tekstUt2 = document.querySelector("#tekstUt2");
+      const registrer = document.querySelector("#registrer");
+      const inpEtter = document.querySelector("#inpEtter");
+      const inpRomType = document.querySelector("#inpRomType");
+      const inpDager = document.querySelector("#inpRomType");
+      const klipp = document.querySelector("#inpRomType");
+      const vask = document.querySelector("#inpRomType");
+
+
+      function pris() {
+        if (inpRomType.value == "standard") {
+          let prisen = 200
+          tekstUt2.innerHTML += "prisen er 200kr"
+        } else if (inpRomType.value == "luksus") {
+          let prisen = 300
+        } else if (inpRomType.value == "okonomi") {
+          let prisen = 100
+        }
+      }
+
+      function pleie() {
+        if (klipp.checked) {
+          tekstUt2.innerHTML += "vi skal klippe hunden din."
+        } else if (klipp.checked && vask.checked) {
+          tekstUt2.innerHTML += "du skal vaske og klippe hundene dine"
+        } else if (vask.checked) {
+          tekstUt2.innerHTML += "vi skal vaske hunden din for deg."
+        }
+      }
+
+
+
+      registrer.onclick = function() {
+        pris();
+        pleie();
+        tekstUt.innerHTML = `takk for din bestilling ${inpEtter.value} for ${inpRomType.value}
+rom bestillingen for ${inpDager.value} dager og ${pris}.
+`
+      }
+    </script>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <label for="rbja">Ja</label>
+  <input id="rbja" type="radio" name="jaEllerNei" value="ja">
+
+  <label for="rbnei">Nei</label>
+  <input id="rbnei" type="radio" name="jaEllerNei" value="Nei">
+
+<script type="text/javascript">
+const rbja = document.querySelector("#rbja");
+const rbnei = document.querySelector("#rbnei");
+
+
+function sjekkRadio() {
+  if(rbja.checked){
+    alert("Du valgte Ja")
+  }
+  else {
+    alert("Du valgte nei")
+  }
+}
+
+rbja.onclick = sjekkRadio; // ikke paranteser når 
+rbnei.onclick = sjekkRadio; // hvorfor ikke ()
+
+
+</script>
+
+</body>
+
+</html>

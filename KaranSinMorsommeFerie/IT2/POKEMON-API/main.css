@@ -1,0 +1,116 @@
+body {
+  background-color: lightgrey;
+}
+main{
+  margin: 100px;
+  background-color: white;
+
+}
+
+
+.logo {
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+}
+
+
+.under_nav {
+  text-align: center;
+  /* Lager en grid. */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* styling til text*/
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+.del_2{
+  text-align: center;
+  /* Lager en grid. */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* styling til text*/
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+.favoritt{
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+.quiz_her{
+  background-image: url(bilder/pokemon3.jpeg);
+  /* endrer plasseing*/
+  padding: 140px;
+}
+.sorter_her{
+  background-image: url(bilder/pokemon5.jpeg);
+  padding: 140px;
+}
+.eget_get {
+  background-image: url(bilder/pokemon2.jpeg);
+  padding: 140px;
+  margin-top: 40px;
+}
+.spillere_get {
+  background-image: url(bilder/pokemon1.jpeg);
+  /* endrer plasseing*/
+  padding: 140px;
+  margin-top: 40px;
+}
+.favoritt{
+  background-image: url(bilder/pokemon4.jpeg);
+padding: 140px;
+}
+
+.spillere_get>a, .eget_get>a, .quiz_her>a, .sorter_her>a, .favoritt>a {
+  /* styler tekst og endrer plasseing til a */
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 2px;
+  border-style: double;
+  border-color: black;
+  padding: 20px 0px;
+  background-color: grey;
+}
+
+
+.spillere_get:hover, .quiz_her:hover, .eget_get:hover, .sorter_her:hover, .favoritt:hover {
+  /* overganges tid og størrelse endring */
+  transition-duration: 500ms;
+  opacity: 0.7;
+  filter: alpha(opacity=50);
+}
+
+
+.spillere_get>a:hover, .quiz_her>a:hover, .eget_get>a:hover, .sorter_her>a:hover, .favoritt>a:hover {
+  transition-duration: 500ms;
+  color: #2F2F2E;
+  border-style: solid;
+  background-color: white;
+}
+
+h3{
+  text-align: center;
+  margin-top: 50px;
+}
+video{
+  width: 50%;
+  margin-top: 0px;
+  padding-left: 350px;
+  outline: none;
+}
+#video_fart, #video_normal{
+display: block;
+margin: auto;
+font-size: 20px;
+padding: 5px;
+}

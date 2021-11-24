@@ -1,0 +1,950 @@
+body {
+  margin: 0px;
+  top: 0px;
+}
+
+header {
+  background-color: #c6e0de;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 2;
+}
+
+header>.lang {
+  grid-column: span 12;
+  background-color: white;
+  color: black;
+  text-transform: lowercase;
+  text-decoration: underline;
+  font-style: normal;
+  font-weight: lighter;
+}
+mark {
+  color: blue;
+}
+
+header>.logginn {
+  background-color: white;
+  font-size: 13px;
+  margin: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.logginnbilde {
+  width: 30px;
+}
+
+header>.usynlig {
+  grid-column: span 4;
+}
+
+.usynlig1 {
+  grid-column: span 1;
+}
+
+header>.lenke {
+  align-self: center;
+  text-decoration: none;
+}
+
+.logo {
+  width: 150px;
+  height: 80px;
+  padding-top: 8px;
+  padding-left: 25px;
+  padding-bottom: 2px;
+  grid-column: span 1;
+  margin-left: 50px;
+}
+
+header>.lenke>a {
+  color: black;
+  text-decoration: none;
+  padding: 4px;
+}
+
+header>.lenke>a:hover {
+  color: darkgrey;
+  text-decoration: underline;
+  transition: all ease-in-out 350ms;
+}
+
+header>.damherbar {
+  grid-column: span 4;
+  font-size: 22px;
+}
+
+header {
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+main {
+  margin-top: 100px;
+  background-image: url(bilder/stj_bak.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*Main*/
+
+
+nav {
+  background-color: #b8d0ce;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+nav>.klesvalg {
+  grid-column: span 2;
+}
+
+nav>.klesvalg>a {
+  padding: 12px;
+  color: blue;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-style: normal;
+  font-family: monospace, inherit, serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav>.klesvalg>a:hover {
+  color: red;
+  text-decoration: underline;
+  transition: all ease-in-out 200ms;
+}
+
+nav>.denusynlig {
+  grid-column: span 1;
+}
+
+nav>.søkemotor {
+  grid-column: span 1;
+  margin-top: 10px;
+}
+
+nav>.søkemotor>[type=text] {
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 5px;
+}
+
+nav>.søkemotor>[type=submit] {
+  border: 1px solid;
+  border-radius: 9px;
+  padding: 7px;
+  margin-right: 0px;
+}
+
+.navigation a {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.dropned {
+  float: left;
+  overflow: hidden;
+}
+
+.dropned .dropknapp {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dropned-content {
+  display: none;
+  position: absolute;
+  background-color: #b8d0ce;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropned-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropned-content a:hover {
+  text-decoration: underline;
+  color: darkgrey;
+  text-decoration: underline;
+  transition: all ease-in-out 350ms;
+}
+
+.dropned:hover .dropned-content {
+  display: block;
+}
+
+.under_nav {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.women_get {
+  background-color: salmon;
+  color: white;
+  padding: 20px;
+}
+
+.women_get>a, .Men_get>a {
+  color: white;
+  text-decoration: none;
+}
+
+.Men_get {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+}
+
+.women_get:hover {
+  transition-duration: 500ms;
+  background-color: pink
+}
+
+.Men_get:hover {
+  transition-duration: 500ms;
+  background-color: lightblue;
+}
+
+.reklame1>a>img {
+  width: 100%;
+  height: 500px;
+}
+
+.reklame1 {
+  margin-left: 60px;
+  margin-right: 60px;
+  height: 500px;
+  background-image: url(bilder/reklame_women2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all ease-in-out 1s;
+}
+
+.reklame1:hover {
+  background-image: url(bilder/reklame_men2.jpg);
+}
+
+.Hoved_grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px 50px;
+}
+
+.nr1, .nr2, .nr3 {
+  margin: 0px 10px;
+}
+
+.H1 {
+  color: lightgrey;
+  margin-left: 60px;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.H2 {
+  color: white;
+  margin: 15px 50px;
+  margin-top: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: bold;
+  background-color: red;
+  text-align: center;
+  padding: 30px;
+}
+
+main>.nyheter_hoved {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0px 50px;
+  background-color: #fff2ea;
+}
+
+.velge_klær:hover, .nyheter_index:hover {
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
+}
+
+.nyheter_index {
+  grid-column: span 1;
+  margin: 20px 10px;
+}
+
+.navn>a, .Merke>a, .pris>a {
+  color: black;
+  text-decoration: none;
+}
+
+.nyheter_index:hover {
+  margin-top: 5px;
+}
+
+.bilde {
+  margin: 0px;
+  grid-column: span 1;
+  width: 100%
+}
+
+.Merke {
+  font-style: normal;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: lowercase;
+  font-size: 19px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.navn {
+  font-style: normal;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-transform: lowercase;
+  padding: 2px;
+  font-size: 18px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.pris {
+  font-style: normal;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-transform: lowercase;
+  font-size: 18px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.nåpris {
+  color: red;
+  background-color: #fff2ea;
+}
+
+.førpris {
+  text-decoration: line-through;
+  color: grey;
+  background-color: white;
+}
+
+.brands {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #fff2ea;
+  margin: 0px 50px;
+  padding: 25px;
+}
+
+.brand_enogalle:hover {
+  margin-top: 8px;
+  filter: invert(33%);
+}
+
+.brand_overskrift {
+  color: white;
+  margin: 10px 50px;
+  margin-top: 70px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: bold;
+  background-color: #4d4d4d;
+  text-align: center;
+  padding: 30px;
+}
+
+.reklame2>a>img {
+  width: 100%;
+  height: 300px;
+  transition: 0.8s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hele_footer {
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 40px 100px;
+}
+
+th>a {
+  text-decoration: none;
+  color: white;
+}
+
+td>a {
+  text-decoration: none;
+  color: white;
+}
+
+.sosbilder {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+thead {
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+tbody {
+  font-style: normal;
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: lighter;
+  text-transform: lowercase;
+}
+
+/*ca index slutt*/
+
+
+
+/* ca Herre klær start*/
+h3 {
+  margin-left: 90px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-bottom: 0px;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.herre_img, .dame_img, .barn_img {
+  filter: invert(38%);
+  z-index: -1;
+  position: static;
+}
+
+.herre_hoved {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 50px;
+  background-color: #fff2ea;
+}
+
+.velge_klær {
+  margin-top: 20px;
+  margin-right: 40px;
+}
+
+.velge_klær:hover {
+  margin-top: 15px
+}
+
+.valg {
+  background-color: #fff2ea;
+  text-align: center;
+}
+
+.overskrift {
+  background-color: #fff2ea;
+  text-align: center;
+  margin-bottom: 0px;
+  margin: 20px 50px;
+}
+
+.selve_overskrift {
+  font-size: 80px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.velge_ting>a {
+  background-color: #fff2ea;
+  color: black;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin: 0px 50px;
+  text-decoration: none;
+}
+
+.velge_ting {
+  text-align: center;
+}
+
+.velge_ord:hover {
+  text-decoration: underline;
+}
+
+.Det_meste_herre {
+  background-color: #fff2ea;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.tabell_full {
+  grid-row: span 4;
+  grid-column: span 0.8;
+}
+
+.Klær_tekst {
+  color: black;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.tabell_halv {
+  list-style-type: none;
+  text-align: left;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px;
+}
+
+.tabell_ord {
+  text-decoration: none;
+  color: black;
+  padding-left: 30px;
+  font-weight: normal;
+  text-transform: lowercase;
+  font-size: 14;
+  font-style: normal;
+}
+
+.tabell_ord:hover {
+  text-decoration: underline;
+  color: grey;
+}
+
+.velge_herre_klær {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 10px 50px;
+  padding: 25px;
+}
+
+.alle_4>a>img {
+  width: 95%;
+  align-items: center;
+}
+
+/*Herre slutt*/
+
+
+
+
+/*klær herre start*/
+
+.h1_over {
+  background-color: #fff2ea;
+  font-size: 50px;
+  margin: 0px 50px;
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 25px;
+  text-align: center;
+  border-color: black;
+  text-transform: uppercase;
+}
+
+.h1_salg {
+  background-color: #fff2ea;
+  font-size: 50px;
+  margin-bottom: 0;
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 25px;
+  text-align: center;
+  border-color: black;
+  text-transform: uppercase;
+  color: red;
+}
+
+.valg_klær1, #valg_klær1 {
+  display: grid;
+  background-color: #fff2ea;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0px 50px;
+  padding: 25px;
+}
+
+.knapp2 {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 4px 40px;
+  height: 40px;
+  font-size: 18px;
+}
+
+.custom-select {
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.select-items div, .select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.dame_reklame {
+  margin: 0px 50px;
+}
+
+.dame_reklame>a>img {
+  width: 100%
+}
+
+/*klær herre/dame/barn slutt*/
+
+
+
+
+/*kles Plagg start*/
+
+
+.H1_klesplagg {
+  margin-bottom: 0px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.herre_hoved_plagg {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 30px;
+  background-color: #fff2ea;
+  padding-bottom: 50px;
+}
+
+.hoved_plagg {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.Stort_bilde {
+  width: 80.5%;
+  margin-left: 80px;
+  margin-right: 0px;
+}
+
+.plaggbilde2 {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.lite_bilde1 {
+  width: 80%;
+}
+
+.plaggbilde3 {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.lite_bilde2 {
+  width: 80%;
+}
+
+.velge_ting_plagg {
+  width: 95%;
+  background-color: #e6e6e6;
+  grid-row: span 1;
+  grid-column: span 1;
+  text-align: center;
+}
+
+.Merke2 {
+  font-size: 30px;
+  padding-top: 50px;
+  font-family: monospace;
+  font-style: normal;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.navn2 {
+  padding: 5px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.pris2, .nåpris2, .førpris2 {
+  font-size: 25px;
+  margin: 12px 10px;
+}
+
+.pris2 {
+  font-style: normal;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-transform: lowercase;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.nåpris2 {
+  color: red;
+  background-color: #e6e6e6;
+}
+
+.førpris2 {
+  text-decoration: line-through;
+  color: grey;
+  background-color: #e6e6e6;
+}
+
+.pris {
+  font-style: normal;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-transform: lowercase;
+  font-size: 18px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.bokser {
+  width: 80%;
+  padding-top: 7px;
+  margin: 10px;
+  border-radius: 0px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.handlekurv_knapp {
+  border-radius: 3px;
+  border-color: black;
+  padding: 20px;
+  margin-top: 10px;
+  width: 80%;
+  font-size: 20px;
+  margin: 10px;
+  background-color: #333333;
+}
+
+.handlekurv_knapp>a {
+
+  color: white;
+  text-decoration: none;
+}
+
+.ønske_liste {
+  border-style: solid;
+  border-radius: 10px;
+  background-color: white;
+  margin: 0 120px;
+}
+
+.ønske_liste>a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.ønske_liste:hover {
+  background-color: salmon;
+}
+
+/*plagg slutt*/
+
+
+
+a:active {
+  color: white;
+}
+
+
+
+/*sko start*/
+
+.sko_kjønn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 30px 50px;
+}
+
+.Sko_herre, .Sko_dame, .Sko_barn {
+  margin: 0px 10px;
+}
+
+a>p {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #4d4d4d;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-right: 5px;
+  margin-top: 0px;
+}
+
+/* ca sko slutt*/
+
+
+
+/*utsolgt start*/
+
+.utsolgt {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0px 50px;
+  background-color: #fff2ea;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/*utsolgt slutt*/
+
+
+/*loginn start*/
+.loginn_tekst {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 200px;
+  color: white;
+}
+
+.loginn_tilbake_til_forside {
+  color: white;
+  text-align: left;
+}
+
+.passord{
+  margin-left: 50px;
+}
+.logginn_alt {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  margin: 0px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.registrer_deg {
+  border-radius: 50px;
+  border-style: dotted;
+  margin: 30px 200px;
+  padding: 40px;
+  color: white;
+  text-decoration: underline;
+  background-color: salmon;
+}
+
+/*loginn slutt*/

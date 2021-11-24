@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <style media="screen">
+
+
+    #divReg{
+      width: 50%;
+      margin: 100px;
+  }
+  button{
+      background-color: blueviolet;
+      color: white;
+      padding: 1rem;
+      border-radius: 1rem;
+  }
+</style>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Lag</th>
+        <th>rase</th>
+        <th>klasse</th>
+      </tr>
+    </thead>
+    <tbody id="tabell">
+
+    </tbody>
+  </table>
+
+  <div id="divReg">
+    <label for="inpNavn">Navn:</label>
+    <input id="inpNavn" type="text">
+
+    rase: <select id="inpRase">
+      <option value="">Velg</option>
+      <option value="vorseth">vorseth</option>
+      <option value="golden">Golden Retriever</option>
+      <option value="kinesisk">Kinesisk nakenhund</option>
+    </select>
+
+
+
+    <label for="inpklasse">klasse:</label>
+    <input id="inpklasse" type="text">
+
+
+
+
+    <button id="btnReg">Registrer Hund</button>
+
+  </div>
+  <button type="button" id="fjern" name="button">Vis kun de jeg har påmeldt</button>
+
+  <div id="registrert">
+
+  </div>
+
+  <div id="bilde">
+    <img id="valp" src="bilder/valp.jpg" alt="">
+    <img id="unghund" src="bilder/unghund.jpg" alt="">
+  </div>
+
+  <script>
+    const tabell = document.querySelector("#tabell");
+    const inpNavn = document.querySelector("#inpNavn");
+    const inpRase = document.querySelector("#inpRase");
+    const inpklasse = document.querySelector("#inpklasse");
+    const btnReg = document.querySelector("#btnReg");
+    const bilde = document.querySelector("#bilde");
+    const valp = document.querySelector("#valp");
+    const unghund = document.querySelector("#unghund");
+    const fjern = document.querySelector("#fjern");
+    const registrert = document.querySelector("#registrert");
+
+    let valper = 1
+    let unghunder = 2
+
+    const hunder = [{
+        navn: "Storm",
+        rase: "Vorseth",
+        klasse: "Unghund",
+      },
+      {
+        navn: "Karo",
+        rase: "Golden retriever",
+        klasse: "valp",
+      },
+      {
+        navn: "Pedro",
+        rase: "Vorseth",
+        klasse: "Unghund",
+      }
+    ];
+
+    function skrivHund() {
+      tabell.innerHTML = ``;
+      for (let i = 0; i < hunder.length; i += 1) {
+        tabell.innerHTML += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${hunder[i].navn}</td>
+                <td>${hunder[i].rase}</td>
+                <td>${hunder[i].klasse}</td>
+            </tr>
+        `;
+      }
+    }
+    skrivHund();
+
+    btnReg.onclick = function() {
+      hunder.push({
+        navn: inpNavn.value,
+        rase: (inpRase.value),
+        klasse: (inpklasse.value),
+      });
+      if (inpklasse.value === "valp") {
+        bilde.innerHTML = valp;
+        valper = valper + 1
+      } else if (inpklasse.value === "") {
+        unghunder = unghunder + 1
+        bilde.innerHTML = `img.src=${unghund.src};`
+      } else {
+        bilde.innerHTML = "";
+      }
+      skrivHund();
+      registrert.innerHTML = `<div>
+Du har registrert hunden ${inpNavn.value}
+ som er av rasen ${inpRase.value} og i klassen ${inpklasse.value}
+</div>
+<div>
+Det er nå påmeldt ${valper} valper og ${unghunder} unghunder.
+</div>
+ `
+    }
+
+    fjern.onclick = function() {
+      hunder.splice(0, 3)
+      skrivHund();
+    }
+  </script>
+</body>
+
+</html>

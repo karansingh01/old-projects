@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>KUNDESERVICE</title>
+  <link rel="stylesheet" href="kundeservice.css">
+
+
+
+  <script src="main.js">
+
+  </script>
+</head>
+
+<body>
+  <header>
+    <!-- seksjon for den delen over søkemotoren -->
+    <section class="header_øverst">
+
+      <!-- kode for den lange hvite linjen øverst -->
+      <section class="lang">
+        <a>Gratis <b><span style="color:blue"> frakt</span></b> og <b><span style="color:blue">retur</span></b> året rundt</a>
+      </section>
+
+      <section class="usynlig">
+      </section>
+
+      <!-- kode for logoen -->
+      <section class="logo">
+        <a href="index.html"><img src="bilder_klær_riktig/ny_logo.png" alt="logo" class="logo"></a>
+      </section>
+
+      <section class="usynlig1">
+      </section>
+
+      <!-- kode for logg inn, ønskeliste og handlekurv knappene er under her  -->
+      <section class="lenke">
+        <a href="logginn.html"><img src="bilder_klær_riktig/innlogging.svg" alt="bilde" class="iconbilde"> </a>
+        <a href="logginn.html"><br>LOGG INN</a>
+      </section>
+
+      <!-- kode for  ønskeliste knappen er under her  -->
+      <section class="lenke">
+        <a href="ønskeliste.html"><img src="bilder_klær_riktig/ønskeliste.png" alt="bilde" class="iconbilde"> </a>
+        <a href="ønskeliste.html">ØNSKELISTE</a>
+      </section>
+      <!-- kode for Handlekurv knappen er under her  -->
+      <section class="lenke">
+        <a href="handlekurv.html"><img src="bilder_klær_riktig/kurv1.png" alt="bilde" class="iconbilde"> </a>
+        <a href=handlekurv.html><br>KURV</a>
+      </section>
+
+    </section>
+    <!-- slutt på kode for handlekurv, ønskeliste og logg inn -->
+
+    <!-- kode for søkefeltet -->
+    <section class="søkemotor">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <input type="text" placeholder="Søk etter klær eller merker...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </section>
+
+    <!-- kode for navigasjonbarene starter under her-->
+    <nav class="navigation">
+
+      <!-- kode for dropned for klær i navigasjons baren-->
+      <section class="dropned">
+        <a href="klær.html" class="dropknapp">Klær</a>
+        <section class="dropned-content">
+          <a href="gensere.html">gensere</a>
+          <a href="bukser.html">Bukser</a>
+          <a href="skjorter.html">skjorter</a>
+          <a href="jakker.html">jakker</a>
+        </section>
+      </section>
+
+      <section class="dropned">
+        <a href="sport.html" class="dropknapp">Sport</a>
+      </section>
+
+      <section class="dropned">
+        <a href="tilbehor.html" class="dropknapp">Tilbehør</a>
+      </section>
+
+
+      <section class="dropned">
+        <a href="sko.html" class="dropknapp">Sko</a>
+      </section>
+
+      <section class="dropned">
+        <a href="nyheter.html" class="dropknapp">Nyheter</a>
+      </section>
+
+      <section class="dropned">
+        <a href="salg.html" class="dropknapp">Salg</a>
+      </section>
+
+    </nav>
+
+  </header>
+  <!-- slutt på kode for header-->
+
+
+  <div class="chat-popup" id="myForm">
+    <form action="kundeservice-ferdig.html" class="form-container">
+      <h1>KUNDESERVICE</h1>
+      <h4>Vi svarer inne noen få virkedager</h4>
+      <label for="msg"><b>Send Melding her:</b></label>
+      <textarea placeholder="Type message.." name="msg" required></textarea>
+
+      <button type="submit" class="btn">Send</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
+
+
+
+
+  <section class="reklame2">
+    <a href="klær.html"><img src="bilder_klær_riktig/reklame_2bild.jpg" alt="bilde"></a>
+  </section>
+
+
+  <footer>
+
+    <section class="hele_footer">
+
+
+      <section class="om_oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th>INFORMASJON</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="logginn.html"> LOGG INN</a></td>
+            </tr>
+            <tr>
+              <td><a href="ønskeliste.html">ØNSKELISTE</a></td>
+            </tr>
+            <tr>
+              <td><a href="kundeservice.html">KONTAKT OSS</a></td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">FÅ NYHETSBREV</a></td>
+            </tr>
+          </tbody>
+
+        </table>
+      </section>
+
+      <section class="">
+        <table>
+          <thead>
+            <tr>
+              <th><a href="index.html">VARER</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <a href="klær.html">klær</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="sport.html">sport</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="sko.html">sko</a></td>
+            </tr>
+            <tr>
+              <td><a href="tilbehor.html">tilbehør</a></td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </section>
+
+      <section class="oss_footer">
+        <table>
+          <thead>
+            <tr>
+              <th><a href="oss.html">OM OSS</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="oss.html">søk jobb</a></td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">ansatte</a>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="oss.html">historikk</a></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+
+
+
+      <section class="sosial_footer">
+        <table>
+          <thead>
+            <tr>
+              <th>Følg oss</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://www.facebook.com"><img src="bilder_klær_riktig/face.png" class="sosbilder"></a></td>
+              <td><a href="http://www.twitter.com"><img src="bilder_klær_riktig/twit.png" class="sosbilder"></a></td>
+              <td><a href="http://www.instagram.com"><img src="bilder_klær_riktig/insta.jpg" class="sosbilder"></a></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      </section>
+
+
+
+    </section>
+  </footer>

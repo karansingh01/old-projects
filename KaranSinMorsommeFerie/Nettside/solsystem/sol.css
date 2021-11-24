@@ -1,0 +1,69 @@
+<style media="screen">
+  <body {
+
+    border-style: solid;
+    text-align: center;
+    padding: 20px;
+    border color: black;
+    color: blue;
+
+  }
+</style>
+
+<style media="screen">
+  header {
+    text-align: center;
+    font-family: fantasy, monospace, cursive;
+    background-color: salmon;
+    border-style: solid;
+  }
+</style>
+
+
+<style media="screen">
+  main {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #bfbfbf;
+    text-align: center;
+    margin: auto;
+
+  }
+
+  main>article {
+    background-color: cyan;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: auto;
+    border-radius:
+  }
+
+  footer {
+
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#redirected{
+background-color:grey;
+
+}
+
+</style>
+</head>
+
+<body>
+<header>
+  <h1>Planetene i vårt solsystem</h1>
+
+</header>
+
+<a href="index.html">
+<p id="redirected">hjem</p>
+</a>

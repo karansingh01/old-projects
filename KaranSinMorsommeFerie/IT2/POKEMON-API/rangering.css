@@ -1,0 +1,20 @@
+.logo {
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+}
+
+
+#divReg{
+    width: 50%;
+    margin: auto;
+}
+button{
+    background-color: blueviolet;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+header{
+text-align: center;
+}

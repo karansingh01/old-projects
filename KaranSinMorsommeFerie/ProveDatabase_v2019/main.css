@@ -1,0 +1,45 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 20px;
+  grid-gap: 2rem;
+}
+
+h1 {
+  font-size: 39px;
+}
+
+.knapp {
+  background-color: salmon;
+  border: none;
+  color: white;
+  padding: 19px 39px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 90px;
+  margin-bottom: 10px;
+}
+
+.knapp:hover {
+  background-color: white;
+  color: darkgrey;
+  text-decoration: underline;
+  transition: all ease-in-out 350ms;
+}
+
+.Dyr {
+  background-color: lightgrey;
+  border-radius: 3px;
+  border-style: solid;
+}
+.Dyr:hover{
+  background-color: grey;
+  transition: all ease-in-out 450ms;
+}

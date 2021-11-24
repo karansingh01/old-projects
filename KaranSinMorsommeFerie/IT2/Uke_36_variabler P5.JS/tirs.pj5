@@ -1,0 +1,72 @@
+function preload(){
+  // put preload code here
+}
+
+  var circleX
+  var circleY = 200
+  var size
+  var col = 1;
+
+
+  var spot = {
+    x : 100,
+    y : 50
+  };
+
+ var color ={
+   r : 255,
+   g :0,
+   b : 0
+ };
+
+let xPososisjon = 120;
+let yPosisjon = 135;
+
+let x = 50;
+let y = 150;
+let radius = 50;
+
+function setup() {
+  // put setup code here
+  createCanvas(windowWidth,windowHeight);
+//  print("setum function")
+circleX = 20;
+size = 30;
+
+
+}
+
+function draw() {
+circle(x,y,radius)
+
+  // put drawing code here
+
+
+
+
+      color.r= random (100,255);
+      color.g = random (0);
+      color.b = random (100,190 );
+      spot.x = random(0, width);
+      spot.y = random (0, height);
+        fill(color.r, color.g, color.b, 100);
+        ellipse(spot.x,spot.y,24,24);
+
+
+
+<iframe src="https://editor.p5js.org/karan_sandhu/embed/77Fq6wu9l"></iframe>
+
+
+
+  fill(247, 247, 17);
+  circle(750,50,90);
+
+
+  circleX = circleX + 1;
+  circleY = circleY + 1;
+size = size + 1
+
+
+//  console.log(frameCount);
+
+}

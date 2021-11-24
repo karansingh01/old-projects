@@ -1,0 +1,117 @@
+
+
+
+
+.sko_kjønn {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+
+
+@media(max-width:1200px){
+  .sko_kjønn{
+  grid-template-columns: repeat(3, 1fr);
+}
+}
+@media(max-width:900px){
+  .sko_kjønn{
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media(max-width:600px){
+  .sko_kjønn{
+  grid-template-columns: repeat(1, 1fr);
+}
+}
+
+nav {
+  background-color: #b8d0ce;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+nav>.klesvalg {
+  grid-column: span 2;
+}
+
+nav>.klesvalg>a {
+  padding: 12px;
+  color: blue;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-style: normal;
+  font-family: monospace, inherit, serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav>.klesvalg>a:hover {
+  text-decoration: underline;
+  transition: all ease-in-out 200ms;
+}
+
+nav>.denusynlig {
+  grid-column: span 1;
+}
+
+
+.navigation a {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.dropned {
+  float: left;
+  overflow: hidden;
+}
+
+.dropned .dropknapp {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+@media (max-width:500px;) {
+header>nav{
+  flex-direction: column;
+}
+}
+header>nav{
+  align-items: center;
+}
+
+  .flex{
+display:flex;
+}
+.brød1{
+  background-color:black;
+}
+.burger{
+  background-color: black;
+}
+.brød2{
+  background-color: black;
+}

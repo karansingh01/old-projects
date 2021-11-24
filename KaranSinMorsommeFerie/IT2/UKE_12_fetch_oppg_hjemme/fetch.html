@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Pokemon</h1>
+
+        <div id="divPoke"></div>
+
+            <button id="btnHent">Hent pokemon</button>
+        <script>
+            // https://pokeapi.co/api/v2/pokemon/pikachu
+
+            const btnHent = document.querySelector("#btnHent");
+            const divPoke = document.querySelector("#divPoke");
+
+            btnHent.onclick = async function(){
+                const url = "https://pokeapi.co/api/v2/pokemon/pikachu";
+                const res = await fetch(url);
+                const data = await res.json();
+                //console.log(data);
+                console.log(data.name);
+                console.log(data.sprites.front_default);
+
+                divPoke.innerHTML = `
+                    <h2>${data.name}</h2>
+                    <img src=${data.sprites.front_default}>
+                `;
+            }
+
+
+        </script>
+    </body>
+</html>

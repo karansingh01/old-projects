@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    .firkant {
+      height: 500px;
+      width: 500px;
+      background-color: blue;
+      position: relative; // da ligger den relativt til absolute
+    }
+.firkant:hover .litenfirkant{
+left: 0%;
+top: 90%;
+transform: scale(2) rotate(360deg);
+}
+    .litenfirkant {
+      height: 50px;
+      width: 50px;
+      background-color: red;
+      position:absolute; /* han legger seg absolutt til hele nettsiden*/
+      left: 90%; /* hvis postition absolute so kan man gjore dette, = hvor mange px fra venstre*/
+      top:0%;
+      transition: 1s;
+    }
+
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="storfirkant">
+    <div class="firkant">
+      <div class="litenfirkant">
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="" charset="utf-8"></script>
+</body>
+
+</html>

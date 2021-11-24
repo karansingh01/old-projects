@@ -1,0 +1,64 @@
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    @keyframes trekant {
+      from {
+        left: 0%;
+        top: 10%;
+      }
+
+      to {
+        left: 90%;
+        top: 10%;
+      }
+    }
+
+    .trille {
+      position: relative;
+      animation: trekant 4s infinite alternate ease-in-out;
+    }
+
+@keyframes roter {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+
+  }
+}
+
+
+    .hjul {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      left: 360px;
+      top: 140px;
+      animation: roter 4s infinite alternate ease-in-out;
+
+    }
+    .trillebår {
+      width: 500px;
+      height: 300px;
+
+
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="trille">
+  <img class="trillebår" src="trillebår.png" alt="">
+  <img class="hjul" src="hjul-png-5.png" alt="">
+</div>
+
+
+</body>
+
+</html>

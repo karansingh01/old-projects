@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+<link rel="stylesheet" href="sorter2.css">
+
+</head>
+
+<body>
+
+  <div class="app">
+    <div class="divInput">
+      <label for="inpId" >Pokemon id</label>
+      <input id="inpId" type="text" name="" value="" placeholder="pokemon id nummer">
+
+      <label for="inpRang" >Rangering(10 er best, minus er mulig)</label>
+      <input id="inpRang" type="number" name="" value="" placeholder="pokemon rangering">
+      <button id="btnRang" type="button" name="button">Legg til</button>
+      <select id="sortering"  name="">
+<option value="lavTilHoy">Lav til Høy</option>
+<option value="HoyTilLav">Høy til Lav</option>
+      </select>
+    </div>
+
+<div class="divRang">
+  ingen pokemon er registrert
+
+  </div>
+</div>
+
+  <script type="text/javascript">
+
+    const inpRang = document.querySelector("#inpRang"); // Variabel som referer til elementer i html
+    const inpId = document.querySelector("#inpId");
+    const btnRang = document.querySelector("#btnRang");
+    const divRang = document.querySelector(".divRang");
+    const sortering = document.querySelector("#sortering");
+
+    let pokemon = [];
+
+    btnRang.onclick = registrerrang;
+
+    sortering.onchange = function(){
+    nySortering();
+  //  skrivUtrang();
+    }
+
+console.log(pokemon);
+
+
+    function registrerrang() {
+
+      let send = {
+        "navn":inpId.value,
+        "rangering": inpRang.value,
+      //  "bilde": data.sprites.front_default
+      }
+
+      pokemon.push(send); // pusher rangerature i input fetet til Arrayen rangeratur
+      nySortering(); // sorterer rangereaturer-arrayen avhengig av verdien i sorterings- select
+  //    skrivUtrang(); // skriver ut rangeraturene på siden
+      skrivUtPokemon()
+
+    }
+
+    function nySortering() {
+      if (sortering.value === "lavTilHoy") {
+        pokemon.sort(sorterTallLavTilHoy)
+      } else if (sortering.value === "HoyTilLav") {
+        pokemon.sort(sorterTallHoyTilLav)
+      }
+    }
+
+
+    async function skrivUtPokemon() {
+        divRang.innerHTML = ``;
+        const url = `https://pokeapi.co/api/v2/pokemon/${Number(inpId.value)}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        for (let pok of pokemon) {
+          if (pok > 0) {
+            divRang.innerHTML += `
+            <h2>${pok.navn}</h2>
+            <h2>${pok.rangering}</h2>
+            `;
+          }
+        else {
+            divRang.innerHTML += `
+        <h2>${pok.navn}  </h2>
+        <img src=${data.sprites.front_default}>
+        `;
+          }
+        }
+      }
+
+/*
+
+  async function skrivUtrang() {
+      divRang.innerHTML = ``;
+      for (let pok of pokemon) {
+        if (pok > 0) {
+          divRang.innerHTML += `
+          <div class="soyle positiv" style="height:${rang*10+200}px"> rangering:${rang}
+
+          </div>
+          `;
+        }
+      else {
+          divRang.innerHTML += `
+      <div class="soyle negativ" style="height:${rang*10 +200}px"> rangering:${rang}
+
+      </div>
+      `;
+        }
+      }
+    }
+
+*/
+;
+    //sorterings funksjoner:
+    function sorterTallLavTilHoy(a, b) {
+      for (let poke of pokemon) {
+        let navn_sort = poke.navn
+        return a.navn_sort - b.navn_sort;
+    }
+    }
+
+    function sorterTallHoyTilLav(a, b) {
+      return b - a;
+    }
+  </script>
+</body>
+
+</html>

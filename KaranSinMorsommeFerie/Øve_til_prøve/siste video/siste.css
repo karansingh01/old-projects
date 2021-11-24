@@ -1,0 +1,41 @@
+body{
+  background-color: salmon;
+  font-family:cursive,fantasy,sans-serif;
+  font-size: 24;
+  color: blue;
+}
+header{
+  background-color: lightblue;
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+
+}
+h1{
+  text-align: center;
+}
+
+
+ul li{
+  display: inline;
+}
+ul a{
+  background-color: lightgrey;
+  margin: 50px;
+  padding: 10px 30px;
+color: blue;
+font-weight: bold;
+text-decoration: none;
+border-radius: 20px;
+
+}
+ul a:hover{
+  background-color: white;
+  color: black;
+}

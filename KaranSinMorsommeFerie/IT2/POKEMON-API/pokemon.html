@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>POKEDEX</title>
+  <link rel="stylesheet" href="pokemons.css">
+  <link rel="shortcut icon" href="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png">
+
+</head>
+
+<body>
+
+  <div class="logo">
+    <a href="index.html"><img src="../../portefolje/A Hoved Database/bilder_klar_riktig/ny_logo.png" alt="logo" class="logo"></a>
+  </div>
+
+
+  <div class="div alt">
+    <h1>POKEMON</h1>
+
+    <div id="søk">
+      <h2>Søk etter pokemon</h2>
+      <input type="text" id="inpSøk" name="" placeholder="skriv pokemon navn" value="">
+      <button type="button" id="btnSøk" name="button">Søk</button>
+    </div>
+
+    <h2 class="sorter_overskrift">sorter etter</h2>
+    <div id="sorter">
+
+      <div id="visAlle">
+        <button type="button" name="button">Vis alle</button>
+      </div>
+
+      <div id="vis150">
+        <button type="button" name="button">vis GEN 1 Pokemon</button>
+      </div>
+
+      <div id="navn">
+        <button type="button" name="button">navn</button>
+      </div>
+
+      <div id="vekt">
+        <button id="vekt" type="button" name="button">vekt</button>
+      </div>
+
+
+      <div id="hoyde">
+        <button type="button" name="button">høyde</button>
+      </div>
+
+
+    </div>
+
+    <div id="pokemon">
+
+      <div id="en_pokemon">
+      </div>
+
+    </div>
+
+    <div id="over_10m">
+
+    </div>
+  </div>
+
+  <script>
+    const pokemon = document.querySelector("#pokemon"); // Globale Variabel som referer til elementer i html
+    const en_pokemon = document.querySelector("#en_pokemon");
+    const kort = document.querySelector("#kort");
+    const inpSok = document.querySelector("#inpSøk");
+    const btnSok = document.querySelector("#btnSøk");
+    const navn_btn = document.querySelector("#navn");
+    const visAlle = document.querySelector("#visAlle");
+    const vis150 = document.querySelector("#vis150");
+    const vekt_btn = document.querySelector("#vekt");
+    const hoyde_btn = document.querySelector("#hoyde");
+    const over_10m = document.querySelector("#over_10m");
+
+
+    let pokemon_array = [];
+
+    console.log(pokemon_array);
+    //console.log(pokemon_array[0].navn);
+    async function pokemon_funk(Antall) { //funksjonshodet med parameter
+      en_pokemon.innerHTML = ``; // tømmer inner html hver gang fuksjonen kjører
+      for (let i = 1; i <= Antall; i++) {
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}`; //  konstanten url som er linken til poekapi son endres etter hva i er.
+        const res = await fetch(url); //fetch hente dataen,skriver hvor det skal hente fra i ()parantese
+        // siden det er async kan vi vente på asynkron oppgave å fulføre noe javascript ikke gjør vanlighvis derfo har vi await.
+        const data = await res.json(); // gjør om json filen som apien er til et javascript objekkt.
+
+        pokemon_array.push({
+          navn: data.name,
+          bilde: data.sprites.front_default,
+          nummer: i.toString().padStart(3, "0"),
+          type: data.types[0].type.name,
+          vekt: Number(data.weight),
+          hoyde: Number(data.height)
+        });
+
+        //    pokemon_array.sort(sorter_navn)
+        en_pokemon.innerHTML +=
+          `
+        <div id="kort">
+                    <h2>${data.name}  </h2>
+                    <img src=${data.sprites.front_default}>
+                    <h2> #${i.toString().padStart(3, "0")}</h2>
+                    <h3> hoved Type : ${ data.types[0].type.name} </h3>
+                    <h3> vekt : ${data.weight} kg</h3>
+                    <h3> høyde : ${data.height} meter </h3>
+                    </div>
+                  `
+      }
+      let over10 = 0
+      for (let poke of pokemon_array) { // travasserer et array
+        if (poke.hoyde >= 10) {
+          over10 = over10 + 1;
+        }
+      }
+      en_pokemon.innerHTML += `Visste du at det er ${over10} pokemons over 10 meter på denne listen`
+    }
+
+    pokemon_funk(20) // funksjonskall
+
+
+    //pokemon_array.sort(sorter_navn)
+
+    btnSok.onclick = async function() {
+      const navn = inpSok.value.toLowerCase(); // lokal variabel deklarert. navn er søke verdien i små bokstaver.
+      const url = `https://pokeapi.co/api/v2/pokemon/${navn}`; //  constant funksjon url som er linken til poekapi son endres etter hva navnet er
+      const res = await fetch(url); //hente dataen,skriver hvor det skal hente fra i ()parantese
+      //res er respsone som er svaret, vente på å få svaret, hente fra url
+      const data = await res.json();
+      en_pokemon.innerHTML =
+        `
+      <div id="inne_på_kort">
+                  <h1>${data.name}  </h1>
+                  <img src=${data.sprites.front_default}>
+<div id="info_pokemon">
+                  <h3> hoved Type : ${data.types[0].type.name} </h3>
+                  <h3> vekt : ${data.weight} kg </h3>
+                  <h3> høyde : ${data.height} meter </h3>
+                  </div>
+                  </div>
+    `;
+    }
+/*
+    en_pokemon.onclick = async function() { // med async venter man på svar
+      en_pokemon.innerHTML = ``;
+      const url = `https://pokeapi.co/api/v2/pokemon/${pokemon_array.nummer}`; //  constant funksjon url som er linken til poekapi son endres etter hva i er.
+      const res = await fetch(url); //hente dataen,skriver hvor det skal hente fra i ()parantese
+      const data = await res.json(); //await fetch() =  ==== res er respsone som er svaret, vente på å få svaret.
+      en_pokemon.innerHTML =
+        `
+          <div id="inne_på_kort">
+                      <h1>${pokemon_array.navn}  </h1>
+                      <img src=${pokemon_array.bilde}>
+    <div id="info_pokemon">
+                      <h3> hoved Type : ${pokemon_array.typer} </h3>
+                      <h3> vekt : ${pokemon_array.vekt} kg </h3>
+                      <h3> høyde : ${pokemon_array.hoyde} meter </h3>
+                      </div>
+                      </div>
+        `;
+    }
+*/
+    visAlle.onclick = async function() { // anonym funksjon som er hendelsestyrt
+      pokemon_funk(807) // setter antall lik 807 slik at i kan gå helt opp til 807
+    }
+    vis150.onclick = async function() {
+      pokemon_funk(150) // setter antall lik 150 slik at i kan gå helt opp til 150
+    }
+
+    navn_btn.onclick = function() {
+      pokemon_array.sort(sorter_navn)
+    }
+
+    function sorter_navn(a, b) { // funksjon for å sortere etter navn
+      return a.navn - b.navn;
+    }
+
+    vekt_btn.onclick = function() {
+      pokemon_array.sort(sorterVekt);
+    }
+
+    function sorterVekt(a, b) { // funksjon for å sortere etter vekt
+      return a.vekt - b.vekt;
+    }
+
+    hoyde_btn.onclick = async function() {
+      pokemon_array.sort(sorterHoyde);
+    }
+    async function sorterHoyde(a, b) { // funksjon for å sortere etter høyde
+      return (b.hoyde) - (a.hoyde);
+    }
+  </script>
+</body>
+
+</html>

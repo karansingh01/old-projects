@@ -1,0 +1,134 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.1/css/foundation-float.min.css">
+    <style>
+        #divReg{
+            width: 50%;
+            margin: auto;
+        }
+        button{
+            background-color: blueviolet;
+            color: white;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Navn</th>
+                <th>Sjanger</th>
+                <th>Direktør</th>
+                <th>Rating</th>
+                <th>Bilde</th>
+            </tr>
+        </thead>
+        <tbody id="tabell">
+
+        </tbody>
+    </table>
+
+    <div id="divReg">
+        <label for="navn">Navn:</label>
+        <input id="navn" type="text">
+
+        <label for="inpSjanger">Sjanger</label>
+        <input id="inpSjanger" type="text">
+
+        <label for="inpDirektør">Direktør:</label>
+        <input id="inpDirektør" type="text">
+
+        <label for="inpRating">Rating:</label>
+        <input id="inpRating" type="text">
+
+        <label for="inpBilde">Rating:</label>
+        <input id="inpBilde" type="text">
+
+        <button id="btnReg">Registrer lag</button>
+    </div>
+
+
+
+
+    <script>
+        const tabell = document.querySelector("#tabell");
+        const navn = document.querySelector("#navn");
+        const inpSjanger = document.querySelector("#inpSjanger");
+        const inpDirektør = document.querySelector("#inpDirektør");
+        const inpRating = document.querySelector("#inpRating");
+        const btnReg = document.querySelector("#btnReg");
+
+        const film = [
+                {
+                    navn: "Star Wars",
+                    Sjanger: "action og fantasy",
+                    Direktør: "skkrkt",
+                    Rating: 8.7
+                },
+                {
+                  navn: "Hera Pheri",
+                  Sjanger: "komedie",
+                  Direktør: "lsss",
+                  Rating: 9.9
+                },
+                {
+                  navn: "Biler 2",
+                  Sjanger: "action og komedie",
+                  Direktør: "eeeed",
+                  Rating: 9.2
+                }
+            ];
+
+            function sorterPoeng(a, b){
+                return (b.Rating) - (a.Rating);
+            }
+
+            film.sort(sorterPoeng);
+
+function skrivFilm () {
+  tabell.innerHTML = ``;
+  film.sort(sorterPoeng);
+            for(let i = 0; i < film.length; i += 1){
+                tabell.innerHTML += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${film[i].navn}</td>
+                        <td>${film[i].Sjanger}</td>
+                        <td>${film[i].Direktør}</td>
+                        <td>${film[i].Rating}</td>
+
+                    </tr>
+                `;
+            }
+          }
+          skrivFilm();
+
+            btnReg.onclick = function(){
+                  film.push({
+                      navn: navn.value,
+                      Sjanger: inpSjanger.value,
+                      Direktør: inpDirektør.value,
+                      Rating: Number(inpRating.value),
+                      Bilde: `<img src="${(inpBilde.value)}"`
+                  });
+      console.log(film);
+      skrivFilm();
+            }
+
+/*
+Du skal lage en nettside hvor brukere kan registrere info om filmer. Nettsiden skal vise filmene brukerne legger til med beskrivelse og IMDB-rating.
+Legg filmene til som objekter i en array.
+Ekstra utfordring 2: Brukerne kan legge til bilder som kommer opp på nettsiden.
+<!DOCTYPE html>
+*/
+
+    </script>
+</body>
+</html>

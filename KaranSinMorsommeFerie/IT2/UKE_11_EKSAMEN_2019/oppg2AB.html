@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    body{
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <label for="inpBredde">Skriv inn bredde</label>
+  <input type="number" id="inpBredde">
+
+  <label for="inpHøyde">Skriv inn høyde i piksler:</label>
+  <input type="number" id="inpHoyde">
+
+  <button type="button" id="btnRegn" name="button">Trykk for å regne ut</button>
+  <div>
+
+    <div id="resultat">
+   </div>
+      <img src="kvadrat.jpg" alt="Bildet som viser hvilket format kalkulatoren viser.">
+
+  </div>
+
+  <script type="text/javascript">
+    const inpBredde = document.querySelector("#inpBredde");
+    const inpHoyde = document.querySelector("#inpHoyde");
+    const btnRegn = document.querySelector("#btnRegn");
+    const resultat = document.querySelector("#resultat");
+    const img = document.querySelector("img");
+
+
+    btnRegn.onclick = function() {
+      let bredde = Number(inpBredde.value);
+      let hoyde = Number(inpHoyde.value);
+
+      if (bredde>1920) {
+        resultat.innerHTML = `Hva er det du driver med, bildet må være mindre enn 1920 pixler i bredden`
+      }
+
+else {
+  if (bredde>hoyde) {
+    img.src= "liggende.jpg";
+  }
+  else if (bredde<hoyde) {
+img.src= "stående.jpg";
+  }
+else {
+  img.src="kvadrat.jpg";
+}
+let piksler = bredde * hoyde;
+let megapiksler = (bredde*hoyde/1000000);
+resultat.innerHTML = `Pikslene er ${piksler} og Pikslene i megapiskler er ${megapiksler}`;
+}
+    }
+  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- TODO -->
+<bean id="display" class="no.itera.spring.Display"/>
+  <bean id="calculator" class="no.itera.spring.Calculator"/>
+
+  <bean id="calculation" class="no.itera.spring.Calculation">
+    <constructor-arg name="calculator" ref="calculator"/>
+    <constructor-arg name="display" ref="display"/>
+  </bean>
+<!--
+  Create the context for a constructor injected application here
+
+constructor-arg  == for constructor
+property == for setter
+
+  Hints:
+
+  * Create a bean for each service
+  * Create a bean for Calculation - use constructor-arg
+-->
+
+</beans>

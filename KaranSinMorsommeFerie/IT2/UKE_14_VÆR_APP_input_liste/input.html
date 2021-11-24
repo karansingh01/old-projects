@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <select id="selByer">
+    <option value="Ingen">Velg Sted</option>
+    <option value="Oslo">Oslo</option>
+    <option value="Bergen">Bergen</option>
+    <option value="Kristiansand">Kristiansand</option>
+    <option value="Sandvika">Sandvika</option>
+    <option value="Trondheim">Trondheim</option>
+  </select>
+
+  <p id="info"></p>
+
+</body>
+
+<script type="text/javascript">
+  const selByer = document.querySelector("#selByer");
+  const info = document.querySelector("#info");
+
+
+  const steder = {
+    Oslo: {
+        innbyggere: 676813,
+        fylke: "Oslo",
+        lat: 59.91,
+        lon: 10.75
+    },
+    Bergen: {
+        innbyggere: 257087,
+        fylke: "Vestland",
+        lat: 60.39,
+        lon: 5.32
+    },
+    Kristiansand: {
+        innbyggere: 64057,
+        fylke: "Agder",
+        lat: 58.14,
+        lon: 7.99
+    },
+    Sandvika: {
+        innbyggere: 114186,
+        fylke: "Viken",
+        lat: 60.53,
+        lon: 11.18
+    },
+    Trondheim: {
+        innbyggere: 186364,
+        fylke: "Trøndelag",
+        lat: 63.43,
+        lon: 10.39
+    },
+}
+const fylker = {
+    "Agder": {
+        bilde: `<img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Agder_v%C3%A5pen.svg">`
+    },
+    "Oslo": {
+        bilde: "https://upload.wikimedia.org/wikipedia/commons/d/da/Oslo_komm.svg"
+    },
+    "Trøndelag": {
+        bilde: `<img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Tr%C3%B8ndelag_v%C3%A5pen.svg">`
+    },
+    "Vestland": {
+        bilde: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Vestland_v%C3%A5pen.svg"
+    },
+    "Viken": {
+        bilde: "https://upload.wikimedia.org/wikipedia/commons/0/09/Viken_v%C3%A5pen.svg"
+    },
+}
+
+selByer.onchange = function() {
+let valgtBy = selByer.value;
+let valgtFylke = steder[valgtBy].fylke
+let bildeadresse = fylker[valgtFylke].bilde;
+info.innerHTML = `
+  <div>
+    <p>Innbyggere: ${steder[valgtBy].innbyggere}</p>
+    <p>Fylke: ${steder[valgtBy].fylke}</p>
+    <p>Fylkebilde:<img src="${bildeadresse}"></p>
+  </div>
+  `
+
+}
+
+
+</script>
+
+</html>

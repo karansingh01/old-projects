@@ -1,0 +1,85 @@
+body {
+  background-color: lightgrey;
+}
+#divInp{
+  text-align: center;
+}
+input{
+border-radius: 5px;
+padding: 5px;
+}
+
+.logo {
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+}
+
+button:focus{
+  transform: rotate(180deg);
+  transition-duration: 2s;
+  outline: none;
+
+}
+
+
+button{
+    background-color: blueviolet;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+#kort>background-img{
+  width: 84px;
+
+}
+#kort{
+  background-image:url("bilder/poke_kort_bak.jpg");
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+    width: 26%;
+    height: 415px;
+    margin: auto;
+    margin-top: 100px;
+    border-style:hidden;
+    border-radius: 45px;
+
+}
+
+
+#bilde{
+  padding: 18px;
+  padding-left: 50px;
+  width:270px;
+  height:180px;;
+  margin: auto;
+  border-width: 2px;
+}
+#øverst_kort{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 70px;
+}
+#type_pokemon{
+  font-weight: 600;
+  font-size: 23px;
+}
+#abillity{
+font-size: 16px;
+font-family: monospace;
+font-weight: 400;
+}
+
+#nederst_kort{
+  padding: 18px;
+  padding-left: 50px;
+}
+
+#inpType{
+  padding: 5px;
+  font-size: 17px;
+}
